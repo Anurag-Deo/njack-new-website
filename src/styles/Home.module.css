@@ -3,11 +3,12 @@
 .parentDiv{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   /* height: 100vh; */
   width: 100vw;
   background-color: #fff;
+  position: absolute;
 }
 
 .heroSection{
@@ -42,13 +43,10 @@
 }
 
 .aboutSection{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 50vh;
   width: 60vw;
   background-color: #fff;
+  position: relative;
 }
 
 .aboutSection h2 {
@@ -71,16 +69,22 @@
 }
 
 .section{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
   width: 100vw;
   background-color: #fff;
+  position: relative;
 }
 
-.section h2 {
+.section .cardSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sectionHeading {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;

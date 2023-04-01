@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '../styles/Home.module.css'
+import Eventcard from '@/components/eventCard/eventCard'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,20 +25,24 @@ export default function Home() {
           <h2>About Us</h2>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, dolores. Sequi commodi nobis laudantium, quod quisquam tempore dolor veritatis consectetur ratione aut labore possimus at, minus eum magni architecto adipisci. Odit similique dicta deleniti, quisquam qui cupiditate dolores. Enim adipisci vel nihil aspernatur pariatur neque doloremque deleniti, quidem temporibus, voluptatum, ducimus beatae id. Voluptatibus, ab asperiores minus quod voluptate rem.</p>
         </div>
-        <div className={styles.section}>
-          <h2>Upcomming Events</h2>
+        <div className={styles.section} style={{backgroundColor: '#F1F1F1'}}>
+          <h2 className={styles.sectionHeading}>Upcomming Events</h2>
           <div className={styles.cardSection}>
             {/* TODO: Add the event cards as a components */}
+            <Eventcard image={"/home/heroImage.png"} eventName={"Paper Reading Session"} desc={"Paper reading session covering linear regression"} registerLink={"#"} />
+            <Eventcard image={"/home/heroImage.png"} eventName={"CSS Workshop"} desc={"CSS Workshop covering intermediate and advanced CSS"} registerLink={"#"} />
+            <Eventcard image={"/home/heroImage.png"} eventName={"Contest Discussion"} desc={"Monthly contest disscussion"} registerLink={"#"} />
+            <Eventcard image={"/home/heroImage.png"} eventName={"Cybersecurity 101"} desc={"Basic introduction to the cybersecurity"} registerLink={"#"} />
           </div>
         </div>
         <div className={styles.section}>
-          <h2>Departments</h2>
+          <h2 className={styles.sectionHeading}>Departments</h2>
           <div className={styles.cardSection}>
             {/* TODO: Add the department cards as a components */}
           </div>
         </div>
         <div className={styles.section}>
-          <h2>Team</h2>
+          <h2 className={styles.sectionHeading}>Team</h2>
           <h3>Coordinators</h3>
           <div className={styles.cardSection}>
             {/* TODO: Add the coordinator cards as a components */}
