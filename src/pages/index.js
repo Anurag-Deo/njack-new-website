@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 import Eventcard from '@/components/eventCard/eventCard'
+import Deptcard from '@/components/departmentCard/deptCard'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +26,7 @@ export default function Home() {
           <h2>About Us</h2>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, dolores. Sequi commodi nobis laudantium, quod quisquam tempore dolor veritatis consectetur ratione aut labore possimus at, minus eum magni architecto adipisci. Odit similique dicta deleniti, quisquam qui cupiditate dolores. Enim adipisci vel nihil aspernatur pariatur neque doloremque deleniti, quidem temporibus, voluptatum, ducimus beatae id. Voluptatibus, ab asperiores minus quod voluptate rem.</p>
         </div>
-        <div className={styles.section} style={{backgroundColor: '#F1F1F1'}}>
+        <div className={styles.section} style={{ backgroundColor: '#F1F1F1' }}>
           <h2 className={styles.sectionHeading}>Upcomming Events</h2>
           <div className={styles.cardSection}>
             {/* TODO: Add the event cards as a components */}
@@ -39,6 +40,10 @@ export default function Home() {
           <h2 className={styles.sectionHeading}>Departments</h2>
           <div className={styles.cardSection}>
             {/* TODO: Add the department cards as a components */}
+            <Deptcard deptName={"Competitive Programming"} deptImage={"/home/heroImage.png"} deptDesc={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum."} deptLink={"#"} bgColor={"#FF6559"}/>
+            <Deptcard deptName={"Dev and OS"} deptImage={"/home/heroImage.png"} deptDesc={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum."} deptLink={"#"} bgColor={"#0091BD"}/>
+            <Deptcard deptName={"Machine Learning"} deptImage={"/home/heroImage.png"} deptDesc={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum."} deptLink={"#"} bgColor={"#FFAC2A"}/>
+            <Deptcard deptName={"Cyber Securities"} deptImage={"/home/heroImage.png"} deptDesc={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum."} deptLink={"#"} bgColor={"#6EEDF3"}/>
           </div>
         </div>
         <div className={styles.section}>

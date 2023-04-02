@@ -1,22 +1,20 @@
-.card{
+.card {
     width: 350px;
-    /* height: 450px; */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    min-height: 450px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* align-items: center;     */
+    background-color: #fff;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
     transition: all 0.3s ease;
     cursor: pointer;
-    position: relative;
     overflow: hidden;
-    min-height: 450px;
 }
 
-.card img{
+.card img {
     height: 50%;
     width: 100%;
     object-fit: cover;
@@ -24,32 +22,32 @@
     margin-bottom: 10px;
 }
 
-.card h2{
-    font-size: 2.1rem ;
+.card h2 {
+    font-size: 2.1rem;
     font-weight: 500;
     margin-block: 10px;
-    font-family: Josefin Sans;
     font-weight: 700;
+    font-family: Josefin Sans;
 }
 
-.card p{
+.card p {
     font-size: 1.4rem;
     font-weight: 300;
     margin-block: 10px;
-    font-family: Josefin Sans;
     line-height: 20px;
+    font-family: Josefin Sans;
 }
 
-.registerBtn{
-    width: 100%;
+.registerBtn {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     margin-top: 30px;
     text-decoration: none;
 }
 
-.registerBtn span{
+.registerBtn span {
     color: #F36D32;
     width: 60%;
     background-color: #fff;
