@@ -1,63 +1,62 @@
 .card {
-    width: 350px;
-    min-height: 450px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
+	width: 240px;
+	max-width: 80%;
+	height: 350px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	justify-content: space-between;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	overflow: hidden;
 }
 
 .card img {
-    height: 50%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+	height: 50%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 10px;
 }
 
 .card h2 {
-    font-size: 2.1rem;
-    font-weight: 500;
-    margin-block: 10px;
-    font-weight: 700;
-    font-family: Josefin Sans;
+	font-size: 1.2rem;
+	font-weight: 500;
+	font-family: Josefin Sans, light;
 }
 
 .card p {
-    font-size: 1.4rem;
-    font-weight: 300;
-    margin-block: 10px;
-    line-height: 20px;
-    font-family: Josefin Sans;
+	font-size: 1.1rem;
+	font-weight: 300;
+	margin-block: 10px;
+	line-height: 20px;
+	font-family: Josefin Sans;
 }
 
 .registerBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 30px;
-    text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-top: 15px;
+	text-decoration: none;
 }
 
 .registerBtn span {
-    color: #F36D32;
-    width: 60%;
-    background-color: #fff;
-    border: 2px solid #F36D32;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: Josefin Sans;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    text-align: center;
+	color: #f36d32;
+	width: 80%;
+	background-color: #fff;
+	border: 1.5px solid #f36d32;
+	padding: 10px 20px;
+	font-size: 0.8rem;
+	font-weight: 400;
+	font-family: Josefin Sans;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	text-align: center;
 }
