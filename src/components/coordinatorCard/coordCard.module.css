@@ -1,0 +1,61 @@
+.coordCard {
+	width: 150px;
+	border-radius: 30px;
+	margin-block: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-inline: 15px;
+}
+
+.subCoordCard {
+	display: flex;
+	justify-content: baseline;
+	padding-inline: 15px;
+	width: 100%;
+	flex-direction: row;
+	height: 30px;
+}
+
+.coordImage {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	object-fit: contain;
+	margin-bottom: 20px;
+}
+
+.coordName {
+	color: black;
+	height: 35px;
+	text-align: center;
+	font-size: 1.2rem;
+	font-family: Josefin Sans;
+	font-weight: 400;
+	width: max-content;
+}
+
+.coordCard p,
+.subCoordCard p {
+	font-size: 1.2rem;
+	font-family: Josefin Sans;
+	color: black;
+	font-weight: 300;
+	text-align: center;
+	line-height: 15px;
+	margin-bottom: 10%;
+}
+
+.coordIcon {
+	margin-top: -2%;
+	width: 50px;
+	display: flex;
+	align-self: center;
+	justify-content: space-between;
+}
+
+.coordIcon img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
