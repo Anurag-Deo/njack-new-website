@@ -1,18 +1,28 @@
 .card {
 	width: 240px;
 	max-width: 80%;
-	height: 350px;
+	height: 400px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	background-color: #fff;
 	padding: 20px;
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.383);
 	justify-content: space-between;
 	transition: all 0.3s ease;
 	cursor: pointer;
 	overflow: hidden;
+}
+
+.card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.383);
+	background-color: #f6f6f6;
+}
+
+.old {
+	filter: saturate(0.1);
 }
 
 .card img {

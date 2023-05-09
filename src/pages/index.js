@@ -1,14 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+//import Image from 'next/image'
+//import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
-import Eventcard from '@/components/eventCard/eventCard'
-import Deptcard from '@/components/departmentCard/deptCard'
-import { CoordCard, SubCoordCard } from '@/components/coordinatorCard/coordCard'
-import Header from '@/components/header/header'
-import Footer from '@/components/footer/footer'
+import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
 
-const inter = Inter({ subsets: ['latin'] })
+//const inter = Inter({ subsets: ['latin'] })
+//Unused font
 
 export default function Home() {
 	return (
@@ -24,56 +21,64 @@ export default function Home() {
 				<div className={styles.heroSection}>
 					<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
 					<div className={styles.heroText}>NJACK</div>
-					<div className={styles.subHeroText}>Not Just Another Computer-Science Klub</div>
+					<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
 				</div>
 				<div className={styles.aboutSection}>
 					<h2>About us</h2>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, dolores. Sequi commodi nobis laudantium, quod quisquam tempore dolor veritatis consectetur ratione aut labore
-						possimus at, minus eum magni architecto adipisci. Odit similique dicta deleniti, quisquam qui cupiditate dolores.{'\n\n'}Enim adipisci vel nihil aspernatur pariatur neque
-						doloremque deleniti, quidem temporibus, voluptatum, ducimus beatae id. Voluptatibus, ab asperiores minus quod voluptate rem.
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, dolores. Sequi commodi nobis laudantium, quod quisquam tempore dolor veritatis consectetur ratione aut labore possimus at, minus eum magni architecto
+						adipisci. Odit similique dicta deleniti, quisquam qui cupiditate dolores.{'\n\n'}Enim adipisci vel nihil aspernatur pariatur neque doloremque deleniti, quidem temporibus, voluptatum, ducimus beatae id. Voluptatibus, ab
+						asperiores minus quod voluptate rem.
 					</p>
 				</div>
 				<div className={styles.section} style={{ backgroundColor: '#F1F1F1' }}>
 					<h2 className={styles.sectionHeading}>Upcoming Events</h2>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the event cards as a components */}
-						<Eventcard image={'/home/heroImage.png'} eventName={'Paper Reading Session'} desc={'Paper reading session covering linear regression'} registerLink={'#'} />
-						<Eventcard image={'/home/heroImage.png'} eventName={'CSS Workshop'} desc={'CSS Workshop covering intermediate and advanced CSS'} registerLink={'#'} />
-						<Eventcard image={'/home/heroImage.png'} eventName={'Contest Discussion'} desc={'Monthly contest disscussion'} registerLink={'#'} />
-						<Eventcard image={'/home/heroImage.png'} eventName={'Cybersecurity 101'} desc={'Basic introduction to the cybersecurity'} registerLink={'#'} />
+						<EventCard image={'/home/heroImage.png'} eventName={'Paper Reading Session'} desc={'Paper reading session covering linear regression'} registerLink={'#'} />
+						<EventCard image={'/home/heroImage.png'} eventName={'CSS Workshop'} desc={'CSS Workshop covering intermediate and advanced CSS'} registerLink={'#'} />
+						<EventCard image={'/home/heroImage.png'} eventName={'Contest Discussion'} desc={'Monthly contest disscussion'} registerLink={'#'} />
+						<EventCard image={'/home/heroImage.png'} eventName={'Cybersecurity 101'} desc={'Basic introduction to the cybersecurity'} registerLink={'#'} />
 					</div>
 				</div>
 				<div className={styles.section}>
 					<h2 className={styles.sectionHeading}>Our Departments</h2>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the department cards as a components */}
-						<Deptcard
+						<DeptCard
 							deptName={'Competitive Programming'}
 							deptImage={'/home/heroImage.png'}
-							deptDesc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-							deptLink={'#'}
+							deptDesc={
+								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+							}
+							deptLink={'/departments/cp'}
 							bgColor={'#FF6559'}
 						/>
-						<Deptcard
+						<DeptCard
 							deptName={'Dev and OS'}
 							deptImage={'/home/heroImage.png'}
-							deptDesc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-							deptLink={'departments/devos'}
+							deptDesc={
+								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+							}
+							deptLink={'/departments/devos'}
 							bgColor={'#0091BD'}
 						/>
-						<Deptcard
+						<DeptCard
 							deptName={'Machine Learning'}
 							deptImage={'/home/heroImage.png'}
-							deptDesc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-							deptLink={'#'}
+							deptDesc={
+								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+							}
+							deptLink={'/departments/ml'}
 							bgColor={'#FFAC2A'}
 						/>
-						<Deptcard
+						<DeptCard
 							deptName={'Cyber Securities'}
 							deptImage={'/home/heroImage.png'}
-							deptDesc={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-							deptLink={'#'}
+							deptDesc={
+								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+							}
+							deptLink={'/departments/cybersec'}
 							bgColor={'#6EEDF3'}
 						/>
 					</div>
@@ -129,10 +134,11 @@ export default function Home() {
 					</div>
 				</div>
 				<img
+					alt='TeamWork'
 					src='\home\team.png'
 					style={{
 						alignSelf: 'end',
-						margin: '5%',
+						marginInline: '5%',
 						maxWidth: '90vw',
 						maxHeight: '25vh',
 						objectFit: 'contain',

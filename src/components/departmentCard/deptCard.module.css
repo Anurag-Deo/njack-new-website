@@ -1,77 +1,56 @@
-.deptName{
-    background-color: orange;
-    color: white;
-    height: 50px;
-    width: 300px;
-    text-align: center;
-    font-size: 1.5rem;
-    padding-block: 15px;
-    font-family: Josefin Sans;
-    font-weight: 700;
-    margin-bottom: 40px;
-    clip-path: polygon(
-        0 50%,
-        10% 0,
-        90% 0,
-        100% 45%,
-        100% 50%,
-        90% 100%,
-        10% 100%,
-        0% 50%,
-        0% 50%
-      )
+.deptName {
+	background-color: orange;
+	clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 45%, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 0% 50%);
+	color: white;
+	font-family: Josefin Sans;
+	font-size: 1.2rem;
+	font-weight: 500;
+	height: fit-content;
+	margin-bottom: 40px;
+	overflow: hidden;
+	padding-block: 15px;
+	text-align: center;
+	width: 200px;
 }
 
-.deptcard{
-    background-color: orange;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-    margin-block: 10px;
-    display: flex;
-    flex-direction: column;
-    padding-inline: 15px;
-    padding-top: 15px;
-    padding-bottom: 100px;
-
-    clip-path: polygon(
-        0 0%,
-        0% 0,
-        100% 0,
-        100% 20%,
-        100% 85%, /* Curvature distance */
-        50% 100%,
-        50% 100%,
-        0% 85%,/* Curvature distance */
-        0% 50%
-      )
+.deptcard {
+	background-color: orange;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	clip-path: polygon(0 0%, 0% 0, 100% 0, 100% 20%, 100% 85%, /* Curvature distance */ 50% 100%, 50% 100%, 0% 85%, /* Curvature distance */ 0% 50%);
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 100px;
+	padding-inline: 10px;
+	padding-top: 15px;
+	width: 200px;
 }
 
-.deptcard img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 25px;
+.deptcard img {
+	border-radius: 10px;
+	height: 150px;
+	margin-bottom: 25px;
+	object-fit: cover;
+	width: 100%;
 }
 
-.deptcard p{
-    font-size: 1.2rem;
-    font-family: Josefin Sans;
-    color: white;
-    font-weight: 700;
-    padding-left: 10px;
-    line-height: 25px;
+.deptcard p {
+	color: white;
+	font-family: Josefin Sans;
+	font-size: 1.1rem;
+	font-weight: 400;
+	line-height: 25px;
+	padding-left: 10px;
 }
 
-.deptcard a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-family: Josefin Sans;
-    font-weight: 700;
-    padding: 10px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: left;
+.deptcard a {
+	border-radius: 10px;
+	color: white;
+	font-family: Josefin Sans;
+	font-size: 1.1rem;
+	font-weight: 700;
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
+	transition: all 0.3s ease;
 }
