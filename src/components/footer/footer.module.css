@@ -1,5 +1,6 @@
 .footer {
-	height: max-content;
+	--_footer-h: 100%;
+	height: var(--_footer-h);
 	justify-content: space-evenly;
 	display: flex;
 	align-items: baseline;
@@ -8,6 +9,7 @@
 	/*up right down left*/
 	width: 100%;
 	background-color: #0f0f0f;
+	margin-top: 75px;
 }
 
 .footer div {
@@ -41,4 +43,25 @@
 	top: 1px;
 	filter: saturate(0) brightness(500%);
 	right: 5px;
+}
+
+.drawer {
+	--_drawer-visible: none;
+	background-color: #000000;
+	display: var(--_drawer-visible);
+	flex-direction: column;
+	min-height: fit-content;
+	margin-left: -20px;
+	/* margin-right: 20px; */
+	bottom: 11rem;
+	padding: 20px;
+	position: absolute;
+	row-gap: 20px;
+	width: fit-content;
+	z-index: 1;
+	text-decoration: none;
+}
+
+.drawer.isVisible {
+	--_drawer-visible: flex;
 }

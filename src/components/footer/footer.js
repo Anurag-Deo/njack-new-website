@@ -1,8 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 import styles from './footer.module.css'
 const Footer = ({}) => {
+	const [isVisible, setVisibility] = useState(false)
+	const handleMouse = (event) => {
+		setVisibility((current) => !current)
+	}
+	const handleClick = (event) => {
+		setVisibility(false)
+	}
 	return (
-		<footer className={styles.footer}>
+		<footer onMouseLeave={handleClick} className={styles.footer}>
 			<div>
 				<div>
 					<h4>NJACK</h4>
@@ -16,11 +23,13 @@ const Footer = ({}) => {
 			</div>
 			<div>
 				<div>
+					{isVisible && <DeptDrawer isVisible={isVisible} />}
 					<h3>Important Links</h3>
 					<a href='\resources'>Resources</a>
 					<br />
-					<a href='\departments\'>Departments</a>
-					<br />
+					<section onClick={handleMouse}>
+						<a style={{ cursor: 'pointer' }}>Departments</a>
+					</section>
 					<a href='\gallery'>Gallery</a>
 					<br />
 					<a href='\contactus'>Contact</a>
@@ -46,6 +55,17 @@ const Footer = ({}) => {
 				</div>
 			</div>
 		</footer>
+	)
+}
+
+const DeptDrawer = ({ isVisible }) => {
+	return (
+		<section className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
+			<a href='\departments\cp'>Competitive Programming</a>
+			<a href='\departments\devos'>Dev & OS</a>
+			<a href='\departments\ml'>Machine Learning</a>
+			<a href='\departments\cybersec'>Cyber Securities</a>
+		</section>
 	)
 }
 

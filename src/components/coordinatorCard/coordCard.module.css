@@ -10,11 +10,10 @@
 
 .subCoordCard {
 	display: flex;
-	justify-content: baseline;
 	padding-inline: 15px;
 	width: 100%;
 	flex-direction: row;
-	height: 30px;
+	height: 40px;
 }
 
 .coordImage {
@@ -44,6 +43,7 @@
 	text-align: center;
 	line-height: 15px;
 	margin-bottom: 10%;
+	padding-block: 3px;
 }
 
 .coordIcon {

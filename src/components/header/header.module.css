@@ -1,40 +1,140 @@
 .header {
+	--_img-h: 6.666vh;
+	--_img-min-h: 25px;
 	background-color: #220000;
 	display: flex;
-	width: 100%;
 	height: fit-content;
 	justify-content: space-between;
 	position: fixed;
+	width: 100%;
 	z-index: 1;
 }
 
-.header img {
-	width: 8%;
-	min-width: 50px;
-	margin-left: 5%;
+/* If you add more menu items change here */
+/*                 _____keep it 0.5px less*/
+@media (max-width: 399.5px) {
+	.header {
+		--_menu-visible: none;
+		--_menuButton-visible: flex;
+	}
+
+	.header .drawer {
+		right: 50vw;
+		top: 0%;
+	}
+}
+/* and here        ___                    */
+@media (min-width: 400px) {
+	.header {
+		--_menu-visible: flex;
+		--_menuButton-visible: none;
+	}
+
+	.header .drawer {
+		left: calc(30% - calc(0.8rem * 3.5));
+		top: 100%;
+		margin-right: 20px;
+	}
 }
 
-.header div {
-	min-width: 50%;
+.header img {
 	align-self: center;
-	display: flex;
+	max-height: var(--_img-h);
+	min-height: var(--_img-min-h);
+}
+
+.header section {
+	display: var(--_menu-visible);
 	justify-content: space-evenly;
-	align-items: center;
-	height: 40px;
-	position: relative;
 	margin-right: 10px;
+	min-height: var(--_img-min-h);
+	position: relative;
+	min-width: 50%;
+}
+
+.header div,
+.header a {
+	align-items: center;
+	display: flex;
+	height: 100%;
 }
 
 .header a {
 	text-decoration: none;
 	color: #fff;
-	font-size: 0.8rem;
-	font-weight: 700;
+	font-size: 0.7rem;
+	font-weight: 400;
 	text-align: center;
 	font-family: Josefin Sans;
-	padding-right: 2%;
+	padding-inline: 3px;
 }
 
 #selected {
 	color: #ff9f69;
+}
+
+.header .drawer {
+	--_drawer-visible: none;
+	background-color: rgba(34, 00, 00, 0.8);
+	box-shadow: 0px 0px 20px 10px rgba(54, 00, 00, 0.8) inset;
+	display: var(--_drawer-visible);
+	flex-direction: column;
+	height: fit-content;
+	min-width: fit-content;
+	padding: 20px 0;
+	position: absolute;
+	row-gap: 20px;
+	width: calc(30% - calc(0.8rem * 1.5));
+	z-index: 2;
+}
+
+.drawer a {
+	padding-inline: 20px;
+}
+
+.drawer.isVisible {
+	--_drawer-visible: flex;
+}
+
+#copy {
+	position: unset;
+	visibility: hidden;
+	z-index: 0;
+}
+
+#menuButton {
+	display: var(--_menuButton-visible);
+	padding-left: calc(50vw - var(--_img-h));
+}
+
+#menuButton img {
+	padding: 20%;
+	filter: invert(1);
+	cursor: pointer;
+}
+
+#menuDrawerVisible {
+	--_menu-visible: flex;
+	background-color: rgba(34, 00, 00, 0.95);
+	flex-direction: column;
+	min-height: 40vh;
+	height: max-content;
+	max-height: 50vh;
+	right: 0%;
+	margin-right: 0px;
+	min-width: 50vw;
+	position: absolute;
+	top: 100%;
+	z-index: 1;
+}
+
+#menuDrawerVisible a {
+	padding-left: 20px;
+	font-size: 0.9rem;
+}
+
+#menuDrawerVisible a,
+#menuDrawerVisible div {
+	flex: 1;
+	min-height: 100%;
 }
