@@ -12,7 +12,7 @@
 
 /* If you add more menu items change here */
 /*                 _____keep it 0.5px less*/
-@media (max-width: 399.5px) {
+@media (max-width: 599.5px) {
 	.header {
 		--_menu-visible: none;
 		--_menuButton-visible: flex;
@@ -22,16 +22,26 @@
 		right: 50vw;
 		top: 0%;
 	}
+	.header .resourcedrawer {
+		right: 50vw;
+		top: 0%;
+	}
 }
 /* and here        ___                    */
-@media (min-width: 400px) {
+@media (min-width: 600px) {
 	.header {
 		--_menu-visible: flex;
 		--_menuButton-visible: none;
 	}
 
 	.header .drawer {
-		left: calc(30% - calc(0.8rem * 3.5));
+		left: calc(25% - calc(0.8rem * 5.5));
+		top: 100%;
+		margin-right: 20px;
+	}
+
+	.header .resourcedrawer {
+		left: calc(45% - calc(0.8rem * 5.5));
 		top: 100%;
 		margin-right: 20px;
 	}
@@ -73,7 +83,7 @@
 	color: #ff9f69;
 }
 
-.header .drawer {
+.header .drawer{
 	--_drawer-visible: none;
 	background-color: rgba(34, 00, 00, 0.8);
 	box-shadow: 0px 0px 20px 10px rgba(54, 00, 00, 0.8) inset;
@@ -87,13 +97,30 @@
 	width: calc(30% - calc(0.8rem * 1.5));
 	z-index: 2;
 }
+.header .resourcedrawer{
+	--_resourcedrawer-visible: none;
+	background-color: rgba(34, 00, 00, 0.8);
+	box-shadow: 0px 0px 20px 10px rgba(54, 00, 00, 0.8) inset;
+	display: var(--_resourcedrawer-visible);
+	flex-direction: column;
+	height: fit-content;
+	min-width: fit-content;
+	padding: 20px 0;
+	position: absolute;
+	row-gap: 20px;
+	width: calc(30% - calc(0.8rem * 1.5));
+	z-index: 2;
+}
 
-.drawer a {
+.drawer a, .resourcedrawer a {
 	padding-inline: 20px;
 }
 
 .drawer.isVisible {
 	--_drawer-visible: flex;
+}
+.resourcedrawer.isVisible {
+	--_resourcedrawer-visible: flex;
 }
 
 #copy {
