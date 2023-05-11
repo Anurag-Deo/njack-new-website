@@ -1,0 +1,11 @@
+.galleryContainer{
+    margin-inline: 150px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 768px){
+    .galleryContainer{
+        margin-inline: 50px;
+    }
+}
+    

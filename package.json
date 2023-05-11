@@ -12,6 +12,8 @@
     "next": "13.2.4",
     "pigeon-maps": "^0.21.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-grid-gallery": "^1.0.0",
+    "react-image-lightbox": "^5.1.4"
   }
 }
