@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "next": "13.2.4",
+    "notion-client": "^6.16.0",
+    "notion-utils": "^6.16.0",
     "pigeon-maps": "^0.21.3",
     "react": "18.2.0",
     "react-chrono": "^2.2.0",
     "react-dom": "18.2.0",
     "react-grid-gallery": "^1.0.0",
-    "react-image-lightbox": "^5.1.4"
+    "react-image-lightbox": "^5.1.4",
+    "react-notion-x": "^6.16.0"
   }
 }

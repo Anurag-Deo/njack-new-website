@@ -51,7 +51,7 @@ const contactus = () => {
 						</Map>
 					</section>
 				</div>
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</>
 	)
