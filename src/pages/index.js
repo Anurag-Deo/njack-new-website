@@ -3,6 +3,7 @@ import Head from 'next/head'
 //import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
+import { members } from './members'
 
 //const inter = Inter({ subsets: ['latin'] })
 //Unused font
@@ -88,48 +89,49 @@ export default function Home() {
 					<h3>Coordinators</h3>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the coordinator cards as a components */}
-						<CoordCard coordName={'Full Name'} coordImage={'/home/coordImage.png'} coordCommitee={'Committee'} coordLinkedIn={'mark-zuckerberg-618bba58'} coordGitHub={'Anurag-Deo'} />
+						{members[0].map((member) => {
+							if (member.committee === 'Overall Coordinator') {
+								return <CoordCard coordName={member.name} coordImage={member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+							}
+						})}
 					</div>
 					<div className={styles.cardSection}>
-						<CoordCard coordName={'Lorem Ipsum'} coordImage={'/home/coordImage.png'} coordCommitee={'Committee'} coordLinkedIn={'mark-zuckerberg-618bba58'} coordGitHub={'Anurag-Deo'} />
-						<CoordCard coordName={'Lorem Ipsum'} coordImage={'/home/coordImage.png'} coordCommitee={'Committee'} coordLinkedIn={'mark-zuckerberg-618bba58'} coordGitHub={'Anurag-Deo'} />
-						<CoordCard coordName={'Lorem Ipsum'} coordImage={'/home/coordImage.png'} coordCommitee={'Committee'} coordLinkedIn={'mark-zuckerberg-618bba58'} coordGitHub={'Anurag-Deo'} />
-						<CoordCard coordName={'Lorem Ipsum'} coordImage={'/home/coordImage.png'} coordCommitee={'Committee'} coordLinkedIn={'mark-zuckerberg-618bba58'} coordGitHub={'Anurag-Deo'} />
+						{members[0].map((member) => {
+							if (member.committee !== 'Overall Coordinator') {
+								return <CoordCard coordName={member.name} coordImage={member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+							}
+						})}
 					</div>
 					<h3>Sub-Coordinators</h3>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the team cards as a components */}
 						<div className={styles.committee}>
-							<p>Committee1</p>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
+							<p>Competitive Programming</p>
+							{members[1].map((member) => {
+							if(member.committee === 'CP'){
+							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+							}})}
 						</div>
 						<div className={styles.committee}>
-							<p>Committee2</p>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
+							<p>Development & Open Source</p>
+							{members[1].map((member) => {
+							if(member.committee === 'Dev&OS'){
+							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+							}})}
 						</div>
 						<div className={styles.committee}>
-							<p>Committee3</p>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
+							<p>Machine Learning</p>
+							{members[1].map((member) => {
+							if(member.committee === 'ML'){
+							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+							}})}
 						</div>
 						<div className={styles.committee}>
-							<p>Committee4</p>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
-							<SubCoordCard coordName={'Lorem Ipsum'} coordLinkedIn={'mark-zuckerberg-618bba58'}></SubCoordCard>
+							<p>Cyber Securities</p>
+							{members[1].map((member) => {
+							if(member.committee === 'CyberSec'){
+							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+							}})}
 						</div>
 					</div>
 				</div>

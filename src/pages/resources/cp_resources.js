@@ -33,6 +33,7 @@ const cp_resources = ({ pageData }) => {
       <Header selected={'Resources'} />
       <div>
       <Head>
+      <title>NJACK | CP Resources</title>
         <style>
           {`
             .notion-page{
@@ -43,6 +44,9 @@ const cp_resources = ({ pageData }) => {
             }
             .notion-header{
               z-index: 0 !important;
+            }
+            .notion-board-view .notion-board-view-size-medium{
+              padding-left: 0px !important;
             }
           `}
         </style>

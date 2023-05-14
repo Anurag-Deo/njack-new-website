@@ -1,5 +1,6 @@
 import React from 'react'
 import DeptLayout from './deptLayout'
+import {members} from '../members'
 
 const cp = () => {
 	const deptName = 'Competitive Programming'
@@ -14,17 +15,33 @@ const cp = () => {
 		{ key: 3, old: false, eventName: 'EventName', desc: 'Lorem ipsum do or sit amet consectetur adipiscing elit,', image: '/home/heroImage.png', registerLink: '#' },
 	]
 
-	const coordName = 'Full Name'
-	const coordImage = '/home/coordImage.png'
-	const coordLinkedIn = 'mark-zuckerberg-618bba58'
-	const coordGitHub = 'Anurag-Deo'
 
-	const subCoordArr = [
-		{ key: 1, coordName: 'Full Name', coordImage: '/home/coordImage.png', coordCommitee: 'Subcoordinator', coordLinkedIn: 'mark-zuckerberg-618bba58', coordGitHub: 'Anurag-Deo' },
-		{ key: 2, coordName: 'Full Name', coordImage: '/home/coordImage.png', coordCommitee: 'Subcoordinator', coordLinkedIn: 'mark-zuckerberg-618bba58', coordGitHub: 'Anurag-Deo' },
-		{ key: 3, coordName: 'Full Name', coordImage: '/home/coordImage.png', coordCommitee: 'Subcoordinator', coordLinkedIn: 'mark-zuckerberg-618bba58', coordGitHub: 'Anurag-Deo' },
-		{ key: 4, coordName: 'Full Name', coordImage: '/home/coordImage.png', coordCommitee: 'Subcoordinator', coordLinkedIn: 'mark-zuckerberg-618bba58', coordGitHub: 'Anurag-Deo' },
-	]
+	const coordArr = []
+	const subCoordArr = []
+	for(let i=0;i<members[0].length;i++){
+		if(members[0][i].committee === 'CP'){
+			coordArr.push({
+				key: i+1,
+				coordName: members[0][i].name,
+				coordImage: members[0][i].image,
+				coordCommitee: members[0][i].committee,
+				coordLinkedIn: members[0][i].linkedin,
+				coordGitHub: members[0][i].github
+			})
+		}
+	}
+	for(let i=0;i<members[1].length;i++){
+		if(members[1][i].committee === 'CP'){
+			subCoordArr.push({
+				key: i+1,
+				coordName: members[1][i].name,
+				coordImage: members[1][i].image,
+				coordCommitee: members[1][i].committee,
+				coordLinkedIn: members[1][i].linkedin,
+				coordGitHub: members[1][i].github
+			})
+		}
+	}
 
 	return (
 		<DeptLayout
@@ -33,10 +50,7 @@ const cp = () => {
 			deptImage={deptImage}
 			deptDesc={deptDesc}
 			eventsArr={eventsArr}
-			coordName={coordName}
-			coordImage={coordImage}
-			coordLinkedIn={coordLinkedIn}
-			coordGitHub={coordGitHub}
+			coordArr={coordArr}
 			subCoordArr={subCoordArr}
 		/>
 	)

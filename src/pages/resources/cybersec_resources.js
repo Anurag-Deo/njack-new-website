@@ -33,6 +33,7 @@ const cybersec_resources = ({ pageData }) => {
       <Header selected={'Resources'} />
       <div>
       <Head>
+      <title>NJACK | CyberSec Resources</title>
         <style>
           {`
             .notion-page{

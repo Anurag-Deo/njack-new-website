@@ -7,10 +7,10 @@ const CoordCard = ({ coordName, coordImage, coordCommitee, coordLinkedIn, coordG
 			<div className={styles.coordName}>{coordName}</div>
 			<p>{coordCommitee}</p>
 			<div className={styles.coordIcon}>
-				<a href={'https://www.linkedin.com/in/' + coordLinkedIn}>
+				<a href={coordLinkedIn}>
 					<img src='/home/LinkedIn.png' alt='LinkedIn Page' />
 				</a>
-				<a href={'https://www.github.com/' + coordGitHub}>
+				<a href={coordGitHub}>
 					<img src='/home/GitHub.png' alt='GitHub Page' />
 				</a>
 			</div>
@@ -22,7 +22,7 @@ const SubCoordCard = ({ coordName, coordLinkedIn }) => {
 	return (
 		<div className={styles.subCoordCard}>
 			<div className={styles.coordIcon}>
-				<a href={'https://www.linkedin.com/in/' + coordLinkedIn}>
+				<a href={coordLinkedIn}>
 					<img src='/home/LinkedIn.png' alt='LinkedIn Page' />
 				</a>
 			</div>

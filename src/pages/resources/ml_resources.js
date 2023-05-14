@@ -33,6 +33,7 @@ const ml_resources = ({ pageData }) => {
       <Header selected={'Resources'} />
       <div>
       <Head>
+      <title>NJACK | ML Resources</title>
         <style>
           {`
             .notion-page{

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/department.module.css'
 import { EventCard, CoordCard, Footer, Header } from '@/components'
 
-const DeptLayout = ({ deptName, deptCoordName, deptImage, deptDesc, eventsArr, coordName, coordImage, coordLinkedIn, coordGitHub, subCoordArr }) => {
+const DeptLayout = ({ deptName, deptCoordName, deptImage, deptDesc, eventsArr, coordArr, subCoordArr }) => {
 	return (
 		<>
 			<Header selected={'Departments'} />
@@ -10,7 +10,7 @@ const DeptLayout = ({ deptName, deptCoordName, deptImage, deptDesc, eventsArr, c
 				<DeptTitle deptName={deptName} deptCoordName={deptCoordName} deptImage={deptImage} />
 				<DeptDescription deptDesc={deptDesc} />
 				<EventCards eventsArr={eventsArr} />
-				<CoordSection coordName={coordName} coordImage={coordImage} coordLinkedIn={coordLinkedIn} coordGitHub={coordGitHub} subCoordArr={subCoordArr} />
+				<CoordSection coordArr={coordArr} subCoordArr={subCoordArr} />
 				<Footer />
 			</div>
 		</>
@@ -50,12 +50,14 @@ const EventCards = ({ eventsArr }) => {
 	)
 }
 
-const CoordSection = ({ coordName, coordImage, coordLinkedIn, coordGitHub, subCoordArr }) => {
+const CoordSection = ({ coordArr, subCoordArr }) => {
 	return (
 		<div className={styles.section}>
 			<h2 className={styles.sectionHeading}>Team</h2>
 			<div className={styles.cardSection}>
-				<CoordCard coordName={coordName} coordImage={coordImage} coordCommitee={'Coordinator'} coordLinkedIn={coordLinkedIn} coordGitHub={coordGitHub} />
+				{coordArr.map((coord) => {
+					return <CoordCard key={coord.key} coordName={coord.coordName} coordImage={coord.coordImage} coordCommitee={coord.coordCommitee} coordLinkedIn={coord.coordLinkedIn} coordGitHub={coord.coordGitHub} />
+				})}
 			</div>
 			<div className={styles.cardSection}>
 				{subCoordArr.map((subCoord) => {
