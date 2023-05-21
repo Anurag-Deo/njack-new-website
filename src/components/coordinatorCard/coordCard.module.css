@@ -19,8 +19,8 @@
 .coordImage {
 	width: 100px;
 	height: 100px;
-	border-radius: 100px;
-	object-fit: contain;
+	border-radius: 50%;
+	object-fit: cover;
 	margin-bottom: 20px;
 }
 

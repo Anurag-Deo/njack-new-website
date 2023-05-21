@@ -10,6 +10,12 @@ const nextConfig = {
       'pbs.twimg.com',
       's3.us-west-2.amazonaws.com'
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
     formats: ['image/avif', 'image/webp']
   }
 }

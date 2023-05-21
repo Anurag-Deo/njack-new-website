@@ -9,6 +9,12 @@ import { members } from './members'
 //Unused font
 
 export default function Home() {
+	const eventsArr = [
+		{ key: 1, old: true, eventName: 'Workshop on Git and Github', desc: 'Git and github are important aspects of the open source contribution. This begginer friendly session primarily focuses on giving all the attendies basic knowledge of version control systems', image: 'https://www.freecodecamp.org/news/content/images/2022/07/git-github.png', registerLink: '#' },
+		{ key: 2, old: true, eventName: 'Workshop on HTML and CSS', desc: 'HTML and CSS are the basic fundamentals of web development. The knowledge of HTML and CSS helps to learn web development', image: 'https://png.pngitem.com/pimgs/s/206-2069813_file-css-and-html-css-logo-svg-hd.png', registerLink: '#' },
+		{ key: 3, old: true, eventName: 'Workshop on Introduction to Android Development', desc: 'Android is a fast growing market and the knowledge of android development helps in making cool looking apps on your own', image: 'https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1146429/retina_1708x683_0917-kotlin-boost-android-development-Waldek_Newsletter-02f7acf50c2d6c342af8ff367498b7b8.png', registerLink: '#' },
+		{ key: 4, old: true, eventName: 'Workshop on Game Development', desc: 'Games like BGMI, Valorant are quite exciting to play but its much more exciting to develop those games. In this session we will learn basics of game development', image:'https://www.pngkit.com/png/detail/296-2966473_mobile-game-development-mobile-game-development-png.png', registerLink: '#' },
+	]
 	return (
 		<>
 			<Head>
@@ -36,10 +42,9 @@ export default function Home() {
 					<h2 className={styles.sectionHeading}>Upcoming Events</h2>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the event cards as a components */}
-						<EventCard image={'/home/heroImage.png'} eventName={'Paper Reading Session'} desc={'Paper reading session covering linear regression'} registerLink={'#'} />
-						<EventCard image={'/home/heroImage.png'} eventName={'CSS Workshop'} desc={'CSS Workshop covering intermediate and advanced CSS'} registerLink={'#'} />
-						<EventCard image={'/home/heroImage.png'} eventName={'Contest Discussion'} desc={'Monthly contest disscussion'} registerLink={'#'} />
-						<EventCard image={'/home/heroImage.png'} eventName={'Cybersecurity 101'} desc={'Basic introduction to the cybersecurity'} registerLink={'#'} />
+						{eventsArr.map((event) => {
+							return <EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} />
+						})}
 					</div>
 				</div>
 				<div className={styles.section}>
@@ -91,14 +96,14 @@ export default function Home() {
 						{/* TODO: Add the coordinator cards as a components */}
 						{members[0].map((member) => {
 							if (member.committee === 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id="+member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
 							}
 						})}
 					</div>
 					<div className={styles.cardSection}>
 						{members[0].map((member) => {
 							if (member.committee !== 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id="+member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
 							}
 						})}
 					</div>

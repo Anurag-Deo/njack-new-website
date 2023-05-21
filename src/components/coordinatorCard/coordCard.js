@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './coordCard.module.css'
+import Image from 'next/image'
 const CoordCard = ({ coordName, coordImage, coordCommitee, coordLinkedIn, coordGitHub }) => {
 	return (
 		<div className={styles.coordCard}>
-			<img className={styles.coordImage} src={coordImage} alt='Image' />
+			<Image width={100} height={100} className={styles.coordImage} src={coordImage} alt='Image' />
 			<div className={styles.coordName}>{coordName}</div>
 			<p>{coordCommitee}</p>
 			<div className={styles.coordIcon}>

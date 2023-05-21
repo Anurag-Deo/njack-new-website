@@ -1,6 +1,7 @@
 import React from 'react'
 import DeptLayout from './deptLayout'
 import {members} from '../members'
+import { eventsArr } from '../events'
 
 const cp = () => {
 	const deptName = 'Competitive Programming'
@@ -9,15 +10,11 @@ const cp = () => {
 	const deptDesc =
 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
-	const eventsArr = [
-		{ key: 1, old: true, eventName: 'EventName', desc: 'Lorem ipsum do or sit amet consectetur adipiscing elit,', image: '/home/heroImage.png', registerLink: '#' },
-		{ key: 2, old: false, eventName: 'EventName', desc: 'Lorem ipsum do or sit amet consectetur adipiscing elit,', image: '/home/heroImage.png', registerLink: '#' },
-		{ key: 3, old: false, eventName: 'EventName', desc: 'Lorem ipsum do or sit amet consectetur adipiscing elit,', image: '/home/heroImage.png', registerLink: '#' },
-	]
 
 
 	const coordArr = []
 	const subCoordArr = []
+	const events = []
 	for(let i=0;i<members[0].length;i++){
 		if(members[0][i].committee === 'CP'){
 			coordArr.push({
@@ -42,6 +39,11 @@ const cp = () => {
 			})
 		}
 	}
+	for(let i=0;i<eventsArr.length;i++){
+		if(eventsArr[i].dept === 'CP'){
+			events.push(eventsArr[i])
+		}
+	}
 
 	return (
 		<DeptLayout
@@ -49,7 +51,7 @@ const cp = () => {
 			deptCoordName={deptCoordName}
 			deptImage={deptImage}
 			deptDesc={deptDesc}
-			eventsArr={eventsArr}
+			eventsArr={events}
 			coordArr={coordArr}
 			subCoordArr={subCoordArr}
 		/>

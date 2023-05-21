@@ -56,12 +56,12 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
 			<h2 className={styles.sectionHeading}>Team</h2>
 			<div className={styles.cardSection}>
 				{coordArr.map((coord) => {
-					return <CoordCard key={coord.key} coordName={coord.coordName} coordImage={coord.coordImage} coordCommitee={coord.coordCommitee} coordLinkedIn={coord.coordLinkedIn} coordGitHub={coord.coordGitHub} />
+					return <CoordCard key={coord.key} coordName={coord.coordName} coordImage={"https://drive.google.com/uc?export=view&id="+coord.coordImage} coordCommitee={coord.coordCommitee} coordLinkedIn={coord.coordLinkedIn} coordGitHub={coord.coordGitHub} />
 				})}
 			</div>
 			<div className={styles.cardSection}>
 				{subCoordArr.map((subCoord) => {
-					return <CoordCard key={subCoord.key} coordName={subCoord.coordName} coordImage={subCoord.coordImage} coordCommitee={subCoord.coordCommitee} coordLinkedIn={subCoord.coordLinkedIn} coordGitHub={subCoord.coordGitHub} />
+					return <CoordCard key={subCoord.key} coordName={subCoord.coordName} coordImage={"https://drive.google.com/uc?export=view&id="+subCoord.coordImage} coordCommitee={subCoord.coordCommitee} coordLinkedIn={subCoord.coordLinkedIn} coordGitHub={subCoord.coordGitHub} />
 				})}
 			</div>
 		</div>
