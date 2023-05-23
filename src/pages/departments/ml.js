@@ -4,12 +4,6 @@ import {members} from '../members'
 import { eventsArr } from '../events'
 
 const ml = () => {
-	const deptName = 'Machine Learning'
-	const deptCoordName = 'Rishikesh Devnathan'
-	const deptImage = '/home/Instagram.png'
-	const deptDesc =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-
 
 	const coordArr = []
 	const subCoordArr = []
@@ -26,6 +20,13 @@ const ml = () => {
 			})
 		}
 	}
+	
+	let coordinators="";
+	for(let item of coordArr){
+		coordinators += item.coordName+", "
+	}
+	coordinators = coordinators.slice(0, -2);
+
 	for(let i=0;i<members[1].length;i++){
 		if(members[1][i].committee === 'ML'){
 			subCoordArr.push({
@@ -43,6 +44,12 @@ const ml = () => {
 			events.push(eventsArr[i])
 		}
 	}
+
+	const deptName = 'Machine Learning'
+	const deptCoordName = coordinators
+	const deptImage = '/home/Instagram.png'
+	const deptDesc =
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
 	return (
 		<DeptLayout

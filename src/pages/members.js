@@ -1,10 +1,10 @@
 export const members = [
   [
     {
-      name: "Siddharth Singh",
+      name: "Anay Karnik",
       committee: "Overall Coordinator",
-      image: "1q9gqscgiEj4MBkQEREOPP9Le0sCYNa2Q",
-      linkedin: "https://www.linkedin.com/in/aditya-kumar-337a08218/",
+      image: "1Z9Omigy2d1ixQx9vQeyHlJ_sUF1-6Jck",
+      linkedin: "https://www.linkedin.com/in/anayvk/",
       github: "https://github.com/Aditya61101",
     },
     {
@@ -13,6 +13,55 @@ export const members = [
       image: "1q9gqscgiEj4MBkQEREOPP9Le0sCYNa2Q",
       linkedin: "https://www.linkedin.com/in/aditya-kumar-337a08218/",
       github: "https://github.com/Aditya61101",
+    },
+    {
+      name: "Sandeep Mishra",
+      committee: "Dev&OS",
+      image: "1tqN27W5fuherbP7vKnKe9cFqXjuc_7s2",
+      linkedin: "https://www.linkedin.com/in/sandeep03edu/",
+      github: "https://github.com/Sandeep03edu",
+    },
+    {
+      name: "Rishikesh Devanathan",
+      committee: "ML",
+      image: "1B4Q9vMmN1UayHZc_VSd0mZVArM2tCPpq",
+      linkedin: "https://www.linkedin.com/in/rishikesh-devanathan",
+      github: "https://github.com/rdev12",
+    },
+    {
+      name: "Ayush Raj",
+      committee: "ML",
+      image: "1dTOTWt4gOXWUZJcZSqHb13vszSczM1ad",
+      linkedin: "https://www.linkedin.com/in/ayushrajreinforcementlearner/",
+      github: "https://github.com/ayu1729",
+    },
+    {
+      name: "Aditya Singh",
+      committee: "ML",
+      image: "1wEWrdr9Dnmc4SBEjBRiLoNKOictcYXs2",
+      linkedin: "https://www.linkedin.com/in/aditya-singh-77320b207/",
+      github: "https://github.com/adi-metal",
+    },
+    {
+      name: "Mayank Kumar",
+      committee: "CP",
+      image: "1dTOTWt4gOXWUZJcZSqHb13vszSczM1ad",
+      linkedin: "https://www.linkedin.com/in/mayank-kumar-82217b215/",
+      github: "https://github.com/mayankfrost",
+    },
+    {
+      name: "Aryaman Amitabh ",
+      committee: "CP",
+      image: "1KVTXcjZYFNcatvDdk_TVZlm0YkthbYgU",
+      linkedin: "https://www.linkedin.com/in/aryaman-amitabh-6a651a234",
+      github: "https://github.com/TimeWarp101",
+    },
+    {
+      name: "Sarthak Biswas ",
+      committee: "Cybersec",
+      image: "1Z6xJH3tXooQrwUVA2Nn9Kx242RrLA9Bs",
+      linkedin: "https://www.linkedin.com/in/sarthak-biswas-a816b3219",
+      github: "https://github.com/Sarthak-Biswas",
     },
   ],
   [
@@ -68,7 +117,7 @@ export const members = [
     {
       name: "Archit Sharma",
       committee: "ML",
-      image: "1HSviZQKujJZQ-IqsneU7lic5sCWQO1Lw",
+      image: "1Z6xJH3tXooQrwUVA2Nn9Kx242RrLA9Bs",
       linkedin: "https://www.linkedin.com/in/archit-sharma-7894b4229",
       github: "https://github.com/sharchit",
     },
@@ -82,7 +131,7 @@ export const members = [
     {
       name: "Syed Danish ",
       committee: "ML",
-      image: "",
+      image: "1yV2lH5iCix4cNUBepYksFEZrU0LVKfzK",
       linkedin: "https://www.linkedin.com/in/syed-danish-1769489a/",
       github: "https://github.com/SMohdDanish?tab=repositories",
     },
@@ -122,7 +171,7 @@ export const members = [
       linkedin: "https://www.linkedin.com/in/ayush-sharma-622323227",
       github: "https://github.com/ayush-Sharma173",
     },
-  ],
+
   {
     name: "Vaibhav Devarasetty ",
     committee: "ML",
@@ -140,8 +189,15 @@ export const members = [
   {
     name: "Umesh Chavda",
     committee: "Dev&OS",
-    image: "",
-    linkedin: "",
-    github: "",
+    image: "1deUUTZ3HyMXFedHBWOMbzQ4pdwRTh62I",
+    linkedin: "https://www.linkedin.com/in/umeshchavda05/",
+    github: "https://github.com/umeshchavda05",
   },
-];
+  {
+    name: "Pragya Harsh",
+    committee: "CP",
+    image: "14TGG_82YBMeBpfCVB7VvBg66TF0gwxya",
+    linkedin: "https://www.linkedin.com/in/pragyaharsh/",
+    github: "https://github.com/BlackSwan9k",
+  }
+]];

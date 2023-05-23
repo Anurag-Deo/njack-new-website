@@ -10,7 +10,7 @@ const Eventcard = ({ image, eventName, desc, registerLink, old }) => {
 			<p>{desc} </p>
 			<a style={{ textDecoration: 'none' }} href={registerLink}>
 				<div className={styles.registerBtn}>
-					<span>Register Now</span>
+					<span>Session Details</span>
 				</div>
 			</a>
 		</div>

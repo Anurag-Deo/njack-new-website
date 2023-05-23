@@ -4,17 +4,11 @@ import {members} from '../members'
 import { eventsArr } from '../events'
 
 const cybersec = () => {
-	const deptName = 'Cyber Security'
-	const deptCoordName = 'Rupak Biswas'
-	const deptImage = '/home/Instagram.png'
-	const deptDesc =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-
 	const coordArr = []
 	const subCoordArr = []
 	const events = []
 	for(let i=0;i<members[0].length;i++){
-		if(members[0][i].committee === 'CyberSec'){
+		if(members[0][i].committee === 'Cybersec'){
 			coordArr.push({
 				key: i+1,
 				coordName: members[0][i].name,
@@ -25,8 +19,15 @@ const cybersec = () => {
 			})
 		}
 	}
+
+	let coordinators="";
+	for(let item of coordArr){
+		coordinators += item.coordName+", "
+	}
+	coordinators = coordinators.slice(0, -2);
+
 	for(let i=0;i<members[1].length;i++){
-		if(members[1][i].committee === 'CyberSec'){
+		if(members[1][i].committee === 'Cybersec'){
 			subCoordArr.push({
 				key: i+1,
 				coordName: members[1][i].name,
@@ -42,6 +43,12 @@ const cybersec = () => {
 			events.push(eventsArr[i])
 		}
 	}
+	const deptName = 'Cyber Security'
+	const deptCoordName = coordinators
+	const deptImage = '/home/Instagram.png'
+	const deptDesc =
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
 	return (
 		<DeptLayout
 			deptName={deptName}
