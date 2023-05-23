@@ -1,16 +1,16 @@
 import React from 'react'
 import DeptLayout from './deptLayout'
-import {members} from '../members'
-import { eventsArr } from '../events'
+import { members } from '../../members'
+import { eventsArr } from '../../events'
 
 const cybersec = () => {
 	const coordArr = []
 	const subCoordArr = []
 	const events = []
-	for(let i=0;i<members[0].length;i++){
-		if(members[0][i].committee === 'Cybersec'){
+	for (let i = 0; i < members[0].length; i++) {
+		if (members[0][i].committee === 'Cybersec') {
 			coordArr.push({
-				key: i+1,
+				key: i + 1,
 				coordName: members[0][i].name,
 				coordImage: members[0][i].image,
 				coordCommitee: members[0][i].committee,
@@ -20,16 +20,16 @@ const cybersec = () => {
 		}
 	}
 
-	let coordinators="";
-	for(let item of coordArr){
-		coordinators += item.coordName+", "
+	let coordinators = "";
+	for (let item of coordArr) {
+		coordinators += item.coordName + ", "
 	}
 	coordinators = coordinators.slice(0, -2);
 
-	for(let i=0;i<members[1].length;i++){
-		if(members[1][i].committee === 'Cybersec'){
+	for (let i = 0; i < members[1].length; i++) {
+		if (members[1][i].committee === 'Cybersec') {
 			subCoordArr.push({
-				key: i+1,
+				key: i + 1,
 				coordName: members[1][i].name,
 				coordImage: members[1][i].image,
 				coordCommitee: members[1][i].committee,
@@ -38,8 +38,8 @@ const cybersec = () => {
 			})
 		}
 	}
-	for(let i=0;i<eventsArr.length;i++){
-		if(eventsArr[i].dept === 'Cybersec'){
+	for (let i = 0; i < eventsArr.length; i++) {
+		if (eventsArr[i].dept === 'Cybersec') {
 			events.push(eventsArr[i])
 		}
 	}

@@ -3,8 +3,8 @@ import Head from 'next/head'
 //import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
-import { members } from './members'
-import { eventsArr } from './events'
+import { members } from '../members'
+import { eventsArr } from '../events'
 
 //const inter = Inter({ subsets: ['latin'] })
 //Unused font

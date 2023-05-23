@@ -42,9 +42,9 @@ const EventCards = ({ eventsArr }) => {
 		<div className={styles.section}>
 			<h2 className={styles.sectionHeading}>Events</h2>
 			<div className={styles.cardSection}>
-				{eventsArr.map((event) => {
+				{eventsArr ? eventsArr.map((event) => {
 					return <EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} />
-				})}
+				}): <h2>No Events</h2>}
 			</div>
 		</div>
 	)
@@ -55,14 +55,14 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
 		<div className={styles.section}>
 			<h2 className={styles.sectionHeading}>Team</h2>
 			<div className={styles.cardSection}>
-				{coordArr.map((coord) => {
+				{coordArr?coordArr.map((coord) => {
 					return <CoordCard key={coord.key} coordName={coord.coordName} coordImage={"https://drive.google.com/uc?export=view&id="+coord.coordImage} coordCommitee={coord.coordCommitee} coordLinkedIn={coord.coordLinkedIn} coordGitHub={coord.coordGitHub} />
-				})}
+				}): <h2>No Coordinators</h2>}
 			</div>
 			<div className={styles.cardSection}>
-				{subCoordArr.map((subCoord) => {
+				{subCoordArr?subCoordArr.map((subCoord) => {
 					return <CoordCard key={subCoord.key} coordName={subCoord.coordName} coordImage={"https://drive.google.com/uc?export=view&id="+subCoord.coordImage} coordCommitee={subCoord.coordCommitee} coordLinkedIn={subCoord.coordLinkedIn} coordGitHub={subCoord.coordGitHub} />
-				})}
+				}): <h2>No Sub Coordinators</h2>}
 			</div>
 		</div>
 	)
