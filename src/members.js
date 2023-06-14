@@ -45,7 +45,7 @@ export const members = [
     {
       name: "Mayank Kumar",
       committee: "CP",
-      image: "1dTOTWt4gOXWUZJcZSqHb13vszSczM1ad",
+      image: "1TRBXO_2-zJ7UjsEo6sYo06fnrWLV96pS",
       linkedin: "https://www.linkedin.com/in/mayank-kumar-82217b215/",
       github: "https://github.com/mayankfrost",
     },
