@@ -48,8 +48,7 @@ const ml = () => {
 	const deptName = 'Machine Learning'
 	const deptCoordName = coordinators
 	const deptImage = '/home/Instagram.png'
-	const deptDesc =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	const deptDesc = "The Machine Learning Department of NJACK is dedicated to exploring the vast field of artificial intelligence and machine learning. Through workshops, lectures, and practical sessions, this department equips members with the knowledge and tools required to tackle complex problems using machine learning algorithms. Students in this department delve into areas such as data preprocessing, model selection, and optimization techniques. By organizing hackathons and machine learning competitions, the Machine Learning Department provides opportunities for members to showcase their skills and creativity in this rapidly evolving domain."
 
 	return (
 		<DeptLayout

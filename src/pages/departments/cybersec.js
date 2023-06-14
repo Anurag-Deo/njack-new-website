@@ -46,8 +46,7 @@ const cybersec = () => {
 	const deptName = 'Cyber Security'
 	const deptCoordName = coordinators
 	const deptImage = '/home/Instagram.png'
-	const deptDesc =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	const deptDesc = "The Cybersecurity Department at NJACK focuses on promoting awareness and understanding of the crucial field of cybersecurity. This department conducts workshops, seminars, and hands-on sessions to educate members about various cybersecurity threats, techniques, and countermeasures. Through practical exercises and simulated scenarios, students gain insights into ethical hacking, network security, cryptography, and more. The Cybersecurity Department also emphasizes the significance of ethical practices in cybersecurity and encourages members to contribute to the development of secure systems and protect against potential vulnerabilities."
 
 	return (
 		<DeptLayout

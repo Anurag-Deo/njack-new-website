@@ -28,9 +28,8 @@ export default function Home() {
 				<div className={styles.aboutSection}>
 					<h2>About us</h2>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, dolores. Sequi commodi nobis laudantium, quod quisquam tempore dolor veritatis consectetur ratione aut labore possimus at, minus eum magni architecto
-						adipisci. Odit similique dicta deleniti, quisquam qui cupiditate dolores.{'\n\n'}Enim adipisci vel nihil aspernatur pariatur neque doloremque deleniti, quidem temporibus, voluptatum, ducimus beatae id. Voluptatibus, ab
-						asperiores minus quod voluptate rem.
+						NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a community of passionate computer science enthusiasts. With its wide range of departments and initiatives, NJACK aims to provide a platform for students to enhance their skills, engage in productive sessions, and participate in fun events.
+						As a collective entity, NJACK serves as a nurturing platform for students passionate about computer science at IIT Patna. It provides a vibrant community where like-minded individuals can come together to share knowledge, collaborate on projects, and stay updated with the latest advancements in the field. NJACK organizes guest lectures, coding competitions, hackathons, and other events to foster learning and networking opportunities for its members. Through its inclusive and supportive environment, NJACK strives to empower students, enabling them to excel in their computer science journey and make meaningful contributions to the world of technology.
 					</p>
 				</div>
 				<div className={styles.section} style={{ backgroundColor: '#F1F1F1' }}>
@@ -38,7 +37,7 @@ export default function Home() {
 					<div className={styles.cardSection}>
 						{/* TODO: Add the event cards as a components */}
 						{eventsArr.map((event) => {
-							return <EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} />
+							return event.old==false?<EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} />:null
 						})}
 					</div>
 				</div>
@@ -50,7 +49,7 @@ export default function Home() {
 							deptName={'Competitive Programming'}
 							deptImage={'/home/heroImage.png'}
 							deptDesc={
-								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+								"The Competitive Programming Department at NJACK is committed to honing students' problem-solving skills, algorithmic thinking, and programming prowess. Through regular coding contests, workshops, and practice sessions, this department helps participants develop their abilities to solve complex programming challenges efficiently."
 							}
 							deptLink={'/departments/cp'}
 							bgColor={'#FF6559'}
@@ -59,7 +58,7 @@ export default function Home() {
 							deptName={'Dev and OS'}
 							deptImage={'/home/heroImage.png'}
 							deptDesc={
-								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+								"The Development and Open Source Department at NJACK encourages students to delve into the world of software development and contribute to the open-source community. Through hands-on workshops, collaborative projects, and mentorship programs, this department nurtures students' skills in building robust and scalable software solutions. "
 							}
 							deptLink={'/departments/devos'}
 							bgColor={'#0091BD'}
@@ -68,7 +67,7 @@ export default function Home() {
 							deptName={'Machine Learning'}
 							deptImage={'/home/heroImage.png'}
 							deptDesc={
-								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+								"The Machine Learning Department of NJACK is dedicated to exploring the vast field of artificial intelligence and machine learning. Through workshops, lectures, and practical sessions, this department equips members with the knowledge and tools required to tackle complex problems using machine learning algorithms."
 							}
 							deptLink={'/departments/ml'}
 							bgColor={'#FFAC2A'}
@@ -77,7 +76,7 @@ export default function Home() {
 							deptName={'Cyber Securities'}
 							deptImage={'/home/heroImage.png'}
 							deptDesc={
-								'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga similique debitis illum, officiis minima enim iusto magnam maxime perspiciatis, delectus laudantium? Corporis illum, vero est aliquam exercitationem tempore nulla modi earum.'
+								"The Cybersecurity Department at NJACK focuses on promoting awareness and understanding of the crucial field of cybersecurity. This department conducts workshops, seminars, and hands-on sessions to educate members about various cybersecurity threats, techniques, and countermeasures."
 							}
 							deptLink={'/departments/cybersec'}
 							bgColor={'#6EEDF3'}

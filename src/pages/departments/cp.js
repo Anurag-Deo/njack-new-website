@@ -47,8 +47,7 @@ const cp = () => {
 	const deptName = 'Competitive Programming'
 	const deptCoordName = coordinators
 	const deptImage = '/home/Instagram.png'
-	const deptDesc =
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	const deptDesc = "The Competitive Programming Department at NJACK is committed to honing students' problem-solving skills, algorithmic thinking, and programming prowess. Through regular coding contests, workshops, and practice sessions, this department helps participants develop their abilities to solve complex programming challenges efficiently. By organizing competitions and training sessions, the Competitive Programming Department ensures that members are well-prepared to participate in national and international coding competitions, representing IIT Patna with excellence."
 
 	return (
 		<DeptLayout

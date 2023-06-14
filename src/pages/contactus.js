@@ -1,7 +1,6 @@
 import { Footer, Header } from '@/components'
 import React from 'react'
 import styles from '../styles/contactus.module.css'
-import { Map, Marker, ZoomControl } from 'pigeon-maps'
 
 const contactus = () => {
 	const mapCenter = [25.5372633, 84.8472938]
@@ -17,10 +16,10 @@ const contactus = () => {
 					<section className={styles.leftSection}>
 						<h2>NJACK IIT Patna</h2>
 						<a href='mailto:njack@iitp.ac.in'>njack@iitp.ac.in</a>
-						<p>+91 XXXXX XXXXX</p>
+						<p>+91 63880 17215</p>
 						<br />
 						<p>Address</p>
-						<p id={styles.address}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p id={styles.address}>Gymkhana, Indian Institute of Technology Patna, Bihta, Bihar</p>
 						<br />
 						<div id={styles.social}>
 							<p>Social Media</p>
@@ -41,14 +40,9 @@ const contactus = () => {
 						</div>
 					</section>
 					<section className={styles.rightSection}>
-						<Map height={'100%'} defaultCenter={mapCenter} defaultZoom={10}>
-							<ZoomControl />
-							<Marker width={20} anchor={mapCenter}>
-								<Marker width={20} anchor={mapCenter} />
-								<br />
-								<p>IIT, Patna</p>
-							</Marker>
-						</Map>
+					<iframe loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721"
+              width="500px" height="500px" frameborder="0" style={{borderRadius: "5px"}} allowfullscreen></iframe>
 					</section>
 				</div>
 				{/* <Footer /> */}

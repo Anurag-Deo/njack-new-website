@@ -46,6 +46,10 @@
 	padding-block: 3px;
 }
 
+.subCoordCard p{
+	line-height: 23px;
+}
+
 .coordIcon {
 	margin-top: -2%;
 	width: 50px;
