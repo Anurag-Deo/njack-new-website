@@ -44,6 +44,38 @@ export const NotionPage = ({
         <meta name='description' content='React Notion X Minimal Demo' />
 
         <title>NJACK | {title}</title>
+        <style>
+          {`
+            .notion-frame{
+              background-color: #282828;
+              color: #ffffff;
+            }
+            .notion-header{
+              z-index: 0 !important;
+            }
+            .notion-header .notion-nav-header{
+              background-color: #282828;
+              color: #ffffff;
+            }
+            .notion-header .breadcrumb .title{
+              color: #ffffff;
+            }
+            svg{
+              fill: wheat !important;
+            }
+            .notion-collection-column-title-body{
+              color: wheat;
+            }
+            .notion-page-no-cover.notion-page-no-icon{
+              margin-inline: 50px;
+              width: 80% !important;
+            }
+            .notion .notion-code{
+              background-color: #161616;
+              border-radius: 10px;
+            }
+          `}
+        </style>
       </Head>
 
       <NotionRenderer
