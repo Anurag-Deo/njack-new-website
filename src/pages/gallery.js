@@ -21,7 +21,7 @@ const gallery = () => {
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
   return (
-    <>
+    <div style={{backgroundColor: '#161616'}}>
       <Header selected={'Gallery'} />
     <div className={styles.galleryContainer}>
       <Gallery
@@ -46,7 +46,7 @@ const gallery = () => {
       )}
     </div>
     <Footer />
-    </>
+    </div>
   )
 }
 

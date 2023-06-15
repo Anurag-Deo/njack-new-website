@@ -2,13 +2,14 @@
 
 .parentDiv {
 	align-items: center;
-	background-color: #fff;
+	background-color: #161616;
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
 	justify-content: center;
 	position: absolute;
 	width: 100vw;
+	color: white;
 }
 
 .deptTitle {
@@ -75,7 +76,7 @@
 }
 
 .section {
-	background-color: #fff;
+	background-color: #161616;
 	display: grid;
 	margin-bottom: 50px;
 	max-width: 90vw;
@@ -93,13 +94,25 @@
 	row-gap: 40px;
 }
 
-.cardSection div {
+.cardSectionTeams {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 30px;
+	row-gap: 40px;
+	color: white;
+}
+
+.section .cardSection div {
 	margin-inline: 5px;
+	background-color: #282828;
 }
 
 .sectionHeading {
 	font-family: Josefin Sans;
-	font-size: 1.4rem;
+	font-size: 2.4rem;
 	font-weight: 700;
 	justify-self: center;
 	margin-bottom: 50px;

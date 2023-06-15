@@ -22,7 +22,7 @@
 }
 
 .old {
-	filter: saturate(0.1);
+	filter: grayscale(opacity=60%);
 }
 
 .card img {
@@ -54,6 +54,7 @@
 	width: 100%;
 	margin-top: 15px;
 	text-decoration: none;
+	    border-radius: 12px;
 }
 
 
@@ -70,11 +71,18 @@
 	transition: all 0.3s ease;
 	text-transform: uppercase;
 	text-align: center;
+	border-radius: 12px;
 }
 
 .registerBtn span:hover{
 	transform: scale(1.05);
-	background-color: #f6f6f6;
+	background: rgba( 0, 0, 0, 0.6 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	color: #ff6421;
 }
 .registerBtn span:active{
 	transform: scale(0.9);
