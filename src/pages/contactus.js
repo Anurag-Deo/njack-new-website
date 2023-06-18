@@ -1,6 +1,7 @@
 import { Footer, Header } from '@/components'
 import React from 'react'
 import styles from '../styles/contactus.module.css'
+import Link from 'next/link'
 
 const contactus = () => {
 	const mapCenter = [25.5372633, 84.8472938]
@@ -15,7 +16,7 @@ const contactus = () => {
 				<div className={styles.body}>
 					<section className={styles.leftSection}>
 						<h2>NJACK IIT Patna</h2>
-						<a href='mailto:njack@iitp.ac.in'>njack@iitp.ac.in</a>
+						<Link href='mailto:njack@iitp.ac.in'>njack@iitp.ac.in</Link>
 						<p>+91 63880 17215</p>
 						<br />
 						<p>Address</p>
@@ -23,20 +24,20 @@ const contactus = () => {
 						<br />
 						<div id={styles.social}>
 							<p>Social Media</p>
-							<a href='https://www.facebook.com/njack.iitp/'>
+							<Link href='https://www.facebook.com/njack.iitp/'>
 								<img src='\home\Facebook.png' />
 								Facebook
-							</a>
+							</Link>
 							<br />
-							<a href='https://www.instagram.com/njackiitp/'>
+							<Link href='https://www.instagram.com/njackiitp/'>
 								<img src='\home\Instagram.png' />
 								Instagram
-							</a>
+							</Link>
 							<br />
-							<a href='https://in.linkedin.com/company/njack-iit-patna'>
+							<Link href='https://in.linkedin.com/company/njack-iit-patna'>
 								<img src='\home\LinkedIn.png' />
 								LinkedIn
-							</a>
+							</Link>
 						</div>
 					</section>
 					<section className={styles.rightSection}>

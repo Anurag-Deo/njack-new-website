@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './footer.module.css'
+import Link from 'next/link'
 const Footer = ({}) => {
 	const [isVisible, setVisibility] = useState(false)
 	const handleMouse = (event) => {
@@ -13,7 +14,7 @@ const Footer = ({}) => {
 			<div>
 				<div>
 					<h4>NJACK</h4>
-					<a href='mailto:njack@iitp.ac.in'>njack@iitp.ac.in</a>
+						<Link href='mailto:njack@iitp.ac.in'>njack@iitp.ac.in</Link>
 					<p>+91 XXXXX XXXXX</p>
 				</div>
 				<div>
@@ -25,33 +26,33 @@ const Footer = ({}) => {
 				<div>
 					{isVisible && <DeptDrawer isVisible={isVisible} />}
 					<h3>Important Links</h3>
-					<a href='\resources'>Resources</a>
+						<Link href='\resources'>Resources</Link>
 					<br />
 					<section onClick={handleMouse}>
-						<a style={{ cursor: 'pointer' }}>Departments</a>
+							<Link style={{ cursor: 'pointer' }}>Departments</Link>
 					</section>
-					<a href='\gallery'>Gallery</a>
+						<Link href='\gallery'>Gallery</Link>
 					<br />
-					<a href='\contactus'>Contact</a>
+						<Link href='\contactus'>Contact</Link>
 				</div>
 			</div>
 			<div>
 				<div>
 					<h3>Social Links</h3>
-					<a href='https://www.facebook.com/njack.iitp/'>
+						<Link href='https://www.facebook.com/njack.iitp/'>
 						<img src='\home\Facebook.png' />
 						Facebook
-					</a>
+						</Link>
 					<br />
-					<a href='https://www.instagram.com/njackiitp/'>
+						<Link href='https://www.instagram.com/njackiitp/'>
 						<img src='\home\Instagram.png' />
 						Instagram
-					</a>
+						</Link>
 					<br />
-					<a href='https://in.linkedin.com/company/njack-iit-patna'>
+						<Link href='https://in.linkedin.com/company/njack-iit-patna'>
 						<img src='\home\LinkedIn.png' />
 						LinkedIn
-					</a>
+						</Link>
 				</div>
 			</div>
 		</footer>
@@ -61,10 +62,10 @@ const Footer = ({}) => {
 const DeptDrawer = ({ isVisible }) => {
 	return (
 		<section className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
-			<a href='\departments\cp'>Competitive Programming</a>
-			<a href='\departments\devos'>Dev & OS</a>
-			<a href='\departments\ml'>Machine Learning</a>
-			<a href='\departments\cybersec'>Cyber Securities</a>
+			<Link href='/departments/cp'>Competitive Programming</Link>
+			<Link href='/departments/devos'>Dev & OS</Link>
+			<Link href='/departments/ml'>Machine Learning</Link>
+			<Link href='/departments/cybersec'>Cyber Securities</Link>
 		</section>
 	)
 }
