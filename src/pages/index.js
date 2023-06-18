@@ -131,14 +131,14 @@ export default function Home() {
 								}
 							})}
 						</div>
-						<div className={styles.committee}>
+						{/* <div className={styles.committee}>
 							<p>Cyber Securities</p>
 							{members[1].map((member) => {
 								if (member.committee === 'CyberSec') {
 									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
 								}
 							})}
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<img
