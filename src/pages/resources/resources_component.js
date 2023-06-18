@@ -81,6 +81,11 @@ const resources_component = ({ pageData }) => {
             svg{
                 fill: #ffffff !important;
             }
+            .notion-collection-card-cover .notion-collection-card-cover-empty{
+              background: url(https://blog.testproject.io/wp-content/uploads/2021/08/article-of-P1P-2_-002.png) !important;
+              background-position: center;
+              background-size: cover !important;
+            }
           `}
         </style>
       </Head>

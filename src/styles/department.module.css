@@ -19,6 +19,12 @@
 	justify-content: space-around;
 }
 
+@media screen and (max-width: 768px) {
+	.aboutDept{
+		height: auto;
+	}
+}
+
 .deptTitle {
 	display: flex;
 	flex-direction: row;
@@ -38,6 +44,14 @@
 	margin: 0 30px 0 0;
 	flex: 1;
 }
+
+@media screen and (max-width: 768px) {
+	.deptTitle {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+}
+
 
 .deptTitle h1 {
 	color: #ff6559;
@@ -88,12 +102,25 @@
     gap: 50px;
 }
 
+
 .deptDesc div{
 	width: 70%;
 }
 
 .deptDesc p{
 	width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+	.deptDesc {
+		flex-direction: column;
+	}
+	.deptDesc div{
+		width: 100%;
+	}
+	.deptDesc p{
+		width: 100%;
+	}
 }
 
 .lottie{

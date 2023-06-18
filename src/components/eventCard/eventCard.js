@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./EventCard.module.css";
+import styles from "./eventCard.module.css";
 
 const EventCard = ({ image, eventName, desc, registerLink, old }) => {
   return (

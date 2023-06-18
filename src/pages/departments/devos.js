@@ -47,11 +47,9 @@ const devos = () => {
 
 	const deptName = 'Development & Open Source'
 	const deptCoordName = coordinators
-	const deptImage = '/home/Njackdev.png'
+	const deptImage = '/home/NJACK.png'
 	const deptDesc =
 		"NJACK Dev and OS is a distinguished department with a primary focus on the realm of development and open source contributions. Our core activities revolve around conducting informative sessions and workshops on a wide range of topics such as web development, app development, game development, and open source contributions. These sessions are designed to enhance participants' knowledge and skills in their respective fields.\
-        In addition to our regular sessions, we host various engaging events, including Hackathons and HackItOut, which provide participants with a platform to showcase their talents and collaborate on innovative projects. These events serve as catalysts for fostering creativity, teamwork, and problem-solving abilities among the participants.\
-		One of our noteworthy strengths lies in our vibrant and supportive community of developers. This community comprises passionate individuals who are always eager to lend a helping hand and share their expertise. The collaborative atmosphere within our community encourages knowledge sharing, collaboration, and mentorship, enabling developers to grow and thrive in their respective domains.\
 		At NJACK Dev and OS, we are committed to creating a conducive environment for learning, skill development, and fostering a sense of camaraderie among developers. By organizing informative sessions, engaging events, and nurturing an active community, we aim to empower individuals in their pursuit of excellence in the field of development and open source contributions."
 	return (
 		<DeptLayout
