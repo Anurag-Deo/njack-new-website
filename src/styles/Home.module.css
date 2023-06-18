@@ -7,23 +7,44 @@
 	align-items: center;
 	/* height: 100vh; */
 	width: 100vw;
-	background-color: #fff;
+	background-color: #161616;
 	position: absolute;
+	color: white;
 }
 
 .heroSection {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 85vh;
+	height: 95vh;
 	max-height: max-content;
 	width: 100vw;
-	background-image: url('/home/heroImage.png');
-	background-size: cover;
+	/* background-image: url('/home/heroImage.png'); */
+	/* background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
+	background-color: #161616;
+	color: white;
+	padding-inline: 47px;
 }
+
+
+.njackhero {
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.lottiehero {
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
 
 .heroSection img {
 	max-width: 100vw;
@@ -32,7 +53,7 @@
 
 .heroText {
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	font-weight: 600;
 	text-align: center;
 	margin-top: 50px;
@@ -41,7 +62,7 @@
 
 .subHeroText {
 	color: #fff;
-	font-size: 1.1rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 	text-align: center;
 	margin-top: 20px;
@@ -51,10 +72,14 @@
 .aboutSection {
 	height: auto;
 	padding-block: 10vh;
-	max-width: 75vw;
+	max-width: 80vw;
 	width: fit-content;
-	background-color: #fff;
+	background-color: #161616;
 	position: relative;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .aboutSection h2 {
@@ -66,11 +91,12 @@
 }
 
 .aboutSection p {
-	font-size: 1.1rem;
+	font-size: 1.3rem;
+	width: 50%;
 	font-weight: 300;
 	text-align: left;
 	margin-top: 10px;
-	line-height: 20px;
+	line-height: 26px;
 	word-spacing: 4px;
 	font-family: Josefin Sans, light;
 	white-space: pre-wrap;
@@ -78,9 +104,11 @@
 
 .section {
 	width: 100vw;
-	background-color: #fff;
+	background-color: #161616;
 	position: relative;
 	gap: 40px;
+	color: white;
+	margin-block: 66px;
 }
 
 .cardSection {
@@ -99,8 +127,8 @@
 }
 
 .sectionHeading {
-	font-size: 1.2rem;
-	font-weight: 500;
+	font-size: 1.6rem;
+	font-weight: 700;
 	text-align: center;
 	margin-top: 50px;
 	font-family: Josefin Sans;
@@ -118,7 +146,7 @@
 }
 
 .committee {
-	color: black;
+	color: white;
 	height: max-content;
 	text-align: left;
 	font-size: 1.2rem;
@@ -130,4 +158,20 @@
 .committee p {
 	text-indent: 10px;
 	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+	.heroSection {
+		flex-direction: column;
+		height: auto;
+	}
+	.lottiehero{
+		width: 100vw;
+	}
+	.aboutSection{
+		flex-direction: column;
+	}
+	.aboutSection p{
+		width: 100%;
+	}
 }

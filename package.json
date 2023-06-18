@@ -18,6 +18,7 @@
     "react-dom": "18.2.0",
     "react-grid-gallery": "^1.0.0",
     "react-image-lightbox": "^5.1.4",
+    "react-lottie": "^1.2.3",
     "react-notion-x": "^6.16.0"
   }
 }

@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
 import { members } from '../members'
 import { eventsArr } from '../events'
+import DisplayLottie from '@/components/Lottie'
 
 //const inter = Inter({ subsets: ['latin'] })
 //Unused font
@@ -21,23 +22,31 @@ export default function Home() {
 			<Header selected={'Home'} />
 			<div className={styles.parentDiv}>
 				<div className={styles.heroSection}>
-					<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
-					<div className={styles.heroText}>NJACK</div>
-					<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
+					<div className={styles.njackhero}>
+						<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
+						<div className={styles.heroText}>NJACK</div>
+						<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
+					</div>
+					<div className={styles.lottiehero}>
+						<DisplayLottie animationPath='https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json' />
+					</div>
 				</div>
-				<div className={styles.aboutSection}>
 					<h2>About us</h2>
+				<div className={styles.aboutSection}>
+					<div className={styles.lottiehero}>
+						<DisplayLottie animationPath='https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json' />
+					</div>
 					<p>
 						NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a community of passionate computer science enthusiasts. With its wide range of departments and initiatives, NJACK aims to provide a platform for students to enhance their skills, engage in productive sessions, and participate in fun events.
 						As a collective entity, NJACK serves as a nurturing platform for students passionate about computer science at IIT Patna. It provides a vibrant community where like-minded individuals can come together to share knowledge, collaborate on projects, and stay updated with the latest advancements in the field. NJACK organizes guest lectures, coding competitions, hackathons, and other events to foster learning and networking opportunities for its members. Through its inclusive and supportive environment, NJACK strives to empower students, enabling them to excel in their computer science journey and make meaningful contributions to the world of technology.
 					</p>
 				</div>
-				<div className={styles.section} style={{ backgroundColor: '#F1F1F1' }}>
 					<h2 className={styles.sectionHeading}>Upcoming Events</h2>
+				<div className={styles.section}>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the event cards as a components */}
 						{eventsArr.map((event) => {
-							return event.old==false?<EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} />:null
+							return event.old == false ? <EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} /> : null
 						})}
 					</div>
 				</div>
@@ -90,14 +99,14 @@ export default function Home() {
 						{/* TODO: Add the coordinator cards as a components */}
 						{members[0].map((member) => {
 							if (member.committee === 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id="+member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id=" + member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
 							}
 						})}
 					</div>
 					<div className={styles.cardSection}>
 						{members[0].map((member) => {
 							if (member.committee !== 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id="+member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
+								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id=" + member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
 							}
 						})}
 					</div>
@@ -107,30 +116,34 @@ export default function Home() {
 						<div className={styles.committee}>
 							<p>Competitive Programming</p>
 							{members[1].map((member) => {
-							if(member.committee === 'CP'){
-							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
-							}})}
+								if (member.committee === 'CP') {
+									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+								}
+							})}
 						</div>
 						<div className={styles.committee}>
 							<p>Development & Open Source</p>
 							{members[1].map((member) => {
-							if(member.committee === 'Dev&OS'){
-							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
-							}})}
+								if (member.committee === 'Dev&OS') {
+									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+								}
+							})}
 						</div>
 						<div className={styles.committee}>
 							<p>Machine Learning</p>
 							{members[1].map((member) => {
-							if(member.committee === 'ML'){
-							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
-							}})}
+								if (member.committee === 'ML') {
+									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+								}
+							})}
 						</div>
 						<div className={styles.committee}>
 							<p>Cyber Securities</p>
 							{members[1].map((member) => {
-							if(member.committee === 'CyberSec'){
-							return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
-							}})}
+								if (member.committee === 'CyberSec') {
+									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
+								}
+							})}
 						</div>
 					</div>
 				</div>
