@@ -120,6 +120,7 @@
 	row-gap: 40px;
 	flex-wrap: wrap;
 	padding: 20px;
+	
 }
 
 .cardSection div {
@@ -162,8 +163,9 @@
 
 @media screen and (max-width: 768px) {
 	.heroSection {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: auto;
+
 	}
 	.lottiehero{
 		width: 100vw;
