@@ -162,8 +162,9 @@
 
 @media screen and (max-width: 768px) {
 	.heroSection {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: auto;
+
 	}
 	.lottiehero{
 		width: 100vw;
