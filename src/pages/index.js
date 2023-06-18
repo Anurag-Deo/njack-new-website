@@ -6,6 +6,8 @@ import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/
 import { members } from '../members'
 import { eventsArr } from '../events'
 import DisplayLottie from '@/components/Lottie'
+import { motion } from 'framer-motion'
+import { InView } from 'react-intersection-observer';
 
 //const inter = Inter({ subsets: ['latin'] })
 //Unused font
@@ -22,33 +24,52 @@ export default function Home() {
 			<Header selected={'Home'} />
 			<div className={styles.parentDiv}>
 				<div className={styles.heroSection}>
-					<div className={styles.njackhero}>
+					<motion.div className={styles.njackhero}
+						initial={{ opacity: 0, x: '-100%' }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 2 }}
+					>
 						<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
 						<div className={styles.heroText}>NJACK</div>
 						<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
-					</div>
-					<div className={styles.lottiehero}>
+					</motion.div>
+					<motion.div className={styles.lottiehero}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+					>
 						<DisplayLottie animationPath='https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json' />
-					</div>
+					</motion.div>
 				</div>
-					<h2>About us</h2>
+				<h2>About us</h2>
 				<div className={styles.aboutSection}>
-					<div className={styles.lottiehero}>
+					<motion.div className={styles.lottiehero}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 2 }}
+					>
 						<DisplayLottie animationPath='https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json' />
-					</div>
-					<p>
+					</motion.div>
+					<motion.p
+						initial={{ opacity: 0, x: '100%' }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 2 }}>
 						NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a community of passionate computer science enthusiasts. With its wide range of departments and initiatives, NJACK aims to provide a platform for students to enhance their skills, engage in productive sessions, and participate in fun events.
 						As a collective entity, NJACK serves as a nurturing platform for students passionate about computer science at IIT Patna. It provides a vibrant community where like-minded individuals can come together to share knowledge, collaborate on projects, and stay updated with the latest advancements in the field. NJACK organizes guest lectures, coding competitions, hackathons, and other events to foster learning and networking opportunities for its members. Through its inclusive and supportive environment, NJACK strives to empower students, enabling them to excel in their computer science journey and make meaningful contributions to the world of technology.
-					</p>
+					</motion.p>
 				</div>
-					<h2 className={styles.sectionHeading}>Upcoming Events</h2>
+				<h2 className={styles.sectionHeading}>Upcoming Events</h2>
 				<div className={styles.section}>
-					<div className={styles.cardSection}>
+					<motion.div className={styles.cardSection}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 3, delay: 1 }}
+					>
 						{/* TODO: Add the event cards as a components */}
 						{eventsArr.map((event) => {
 							return event.old == false ? <EventCard key={event.key} old={event.old} eventName={event.eventName} desc={event.desc} image={event.image} registerLink={event.registerLink} /> : null
 						})}
-					</div>
+					</motion.div>
 				</div>
 				<div className={styles.section}>
 					<h2 className={styles.sectionHeading}>Our Departments</h2>
@@ -95,21 +116,57 @@ export default function Home() {
 				<div className={styles.section}>
 					<h2 className={styles.sectionHeading}>Our Team</h2>
 					<h3>Coordinators</h3>
-					<div className={styles.cardSection}>
-						{/* TODO: Add the coordinator cards as a components */}
-						{members[0].map((member) => {
-							if (member.committee === 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id=" + member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
-							}
-						})}
-					</div>
-					<div className={styles.cardSection}>
-						{members[0].map((member) => {
-							if (member.committee !== 'Overall Coordinator') {
-								return <CoordCard coordName={member.name} coordImage={"https://drive.google.com/uc?export=view&id=" + member.image} coordCommitee={member.committee} coordLinkedIn={member.linkedin} coordGitHub={member.github} />
-							}
-						})}
-					</div>
+					<InView>
+						{({ inView, ref }) => (
+							<motion.div className={styles.cardSection} ref={ref} style={{justifyContent: 'center'}}>
+								{members[0].map((member, index) => (
+									<motion.div
+										key={member.name}
+										className={styles.card}
+										initial={{ opacity: 0, y: 20 }}
+										animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+									>
+										{member.committee == 'Overall Coordinator' && (
+											<CoordCard
+												coordName={member.name}
+												coordImage={"https://drive.google.com/uc?export=view&id=" + member.image}
+												coordCommitee={member.committee}
+												coordLinkedIn={member.linkedin}
+												coordGitHub={member.github}
+											/>
+										)}
+									</motion.div>
+								))}
+							</motion.div>
+						)}
+					</InView>
+					<InView>
+						{({ inView, ref }) => (
+							<motion.div className={styles.cardSection} ref={ref}>
+								{members[0].map((member, index) => (
+									<motion.div
+										key={member.name}
+										className={styles.card}
+										initial={{ opacity: 0, y: 20 }}
+										animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+									>
+										{member.committee !== 'Overall Coordinator' && (
+											<CoordCard
+												coordName={member.name}
+												coordImage={"https://drive.google.com/uc?export=view&id=" + member.image}
+												coordCommitee={member.committee}
+												coordLinkedIn={member.linkedin}
+												coordGitHub={member.github}
+											/>
+										)}
+									</motion.div>
+								))}
+							</motion.div>
+						)}
+					</InView>
+
 					<h3>Sub-Coordinators</h3>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the team cards as a components */}
