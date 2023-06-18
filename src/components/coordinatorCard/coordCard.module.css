@@ -1,11 +1,15 @@
 .coordCard {
-	width: 150px;
+	width: 207px;
 	border-radius: 30px;
 	margin-block: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-inline: 15px;
+	padding-block: 15px;
+	background-color: #282828;
+	color: white;
+
 }
 
 .subCoordCard {
@@ -52,10 +56,10 @@
 
 .coordIcon {
 	margin-top: -2%;
-	width: 50px;
+	width: 150px;
 	display: flex;
 	align-self: center;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .coordIcon img {

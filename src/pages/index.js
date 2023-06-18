@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
 import { members } from '../members'
 import { eventsArr } from '../events'
+import DisplayLottie from '@/components/Lottie'
 
 //const inter = Inter({ subsets: ['latin'] })
 //Unused font
@@ -21,9 +22,14 @@ export default function Home() {
 			<Header selected={'Home'} />
 			<div className={styles.parentDiv}>
 				<div className={styles.heroSection}>
+					<div className="njackhero">
 					<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
 					<div className={styles.heroText}>NJACK</div>
 					<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
+					</div>
+					<div className="lottiehero">
+					<DisplayLottie animationPath='https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json' />
+					</div>
 				</div>
 				<div className={styles.aboutSection}>
 					<h2>About us</h2>
@@ -32,7 +38,7 @@ export default function Home() {
 						As a collective entity, NJACK serves as a nurturing platform for students passionate about computer science at IIT Patna. It provides a vibrant community where like-minded individuals can come together to share knowledge, collaborate on projects, and stay updated with the latest advancements in the field. NJACK organizes guest lectures, coding competitions, hackathons, and other events to foster learning and networking opportunities for its members. Through its inclusive and supportive environment, NJACK strives to empower students, enabling them to excel in their computer science journey and make meaningful contributions to the world of technology.
 					</p>
 				</div>
-				<div className={styles.section} style={{ backgroundColor: '#F1F1F1' }}>
+				<div className={styles.section}>
 					<h2 className={styles.sectionHeading}>Upcoming Events</h2>
 					<div className={styles.cardSection}>
 						{/* TODO: Add the event cards as a components */}
