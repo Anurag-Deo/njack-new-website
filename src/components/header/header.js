@@ -102,17 +102,17 @@ const DeptDrawer = ({ isVisible }) => {
 			<Link href='/departments/cp'>Competitive Programming</Link>
 			<Link href='/departments/devos'>Dev & OS</Link>
 			<Link href='/departments/ml'>Machine Learning</Link>
-			<Link href='/departments/cybersec'>Cyber Securities</Link>
+			<Link href='/departments/cybersec'>Cyber Security</Link>
 		</div>
 	)
 }
 const ResourceDrawer = ({ isVisible }) => {
 	return (
 		<div className={`${styles.resourcedrawer} ${isVisible ? styles.isVisible : ''}`}>
-			<Link href='/resources/cp_resources'>Competitive Programming Resources</Link>
-			<Link href='/resources/dev_resources'>Dev & OS Resources</Link>
-			<Link href='/resources/ml_resources'>Machine Learning Resources</Link>
-			<Link href='/resources/cybersec_resources'>Cyber Securities Resources</Link>
+			<Link href='/resources/cp'>Competitive Programming Resources</Link>
+			<Link href='/resources/dev-os'>Dev & OS Resources</Link>
+			<Link href='/resources/ml'>Machine Learning Resources</Link>
+			<Link href='/resources/cyber-security'>Cyber Security Resources</Link>
 		</div>
 	)
 }

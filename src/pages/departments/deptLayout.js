@@ -98,7 +98,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
 									<CoordCard
 										coordName={member.coordName}
 										coordImage={"https://drive.google.com/uc?export=view&id=" + member.coordImage}
-										coordCommitee={member.coordCommitee}
+										coordCommittee={member.coordCommittee}
 										coordLinkedIn={member.coordLinkedIn}
 										coordGitHub={member.coordGitHub}
 									/>
@@ -125,7 +125,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
 									<CoordCard
 										coordName={member.coordName}
 										coordImage={"https://drive.google.com/uc?export=view&id=" + member.coordImage}
-										coordCommitee={member.coordCommitee}
+										coordCommittee={member.coordCommittee}
 										coordLinkedIn={member.coordLinkedIn}
 										coordGitHub={member.coordGitHub}
 									/>

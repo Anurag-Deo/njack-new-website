@@ -2,12 +2,13 @@ import React from 'react'
 import styles from './coordCard.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
-const CoordCard = ({ coordName, coordImage, coordCommitee, coordLinkedIn, coordGitHub }) => {
+
+const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coordGitHub }) => {
 	return (
 		<div className={styles.coordCard}>
 			<Image width={100} height={100} className={styles.coordImage} src={coordImage} alt='Image' />
 			<div className={styles.coordName}>{coordName}</div>
-			<p>{coordCommitee}</p>
+			<p>{coordCommittee}</p>
 			<div className={styles.coordIcon}>
 				<Link href={coordLinkedIn}>
 					<img src='/home/LinkedIn.png' alt='LinkedIn Page' />

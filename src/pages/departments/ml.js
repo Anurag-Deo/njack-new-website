@@ -1,7 +1,7 @@
 import React from 'react'
 import DeptLayout from './deptLayout'
-import { members } from '../../members'
-import { eventsArr } from '../../events'
+import { members } from '../../data/members'
+import { eventsArr } from '../../data/events'
 
 const ml = () => {
 
@@ -14,7 +14,7 @@ const ml = () => {
 				key: i + 1,
 				coordName: members[0][i].name,
 				coordImage: members[0][i].image,
-				coordCommitee: members[0][i].committee,
+				coordCommittee: members[0][i].committee,
 				coordLinkedIn: members[0][i].linkedin,
 				coordGitHub: members[0][i].github
 			})
@@ -33,7 +33,7 @@ const ml = () => {
 				key: i + 1,
 				coordName: members[1][i].name,
 				coordImage: members[1][i].image,
-				coordCommitee: members[1][i].committee,
+				coordCommittee: members[1][i].committee,
 				coordLinkedIn: members[1][i].linkedin,
 				coordGitHub: members[1][i].github
 			})

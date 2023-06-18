@@ -6,9 +6,9 @@
 	/* justify-content: center; */
 	align-items: center;
 	/* height: 100vh; */
-	width: 100vw;
+	/* width: 100vw; */
 	background-color: #161616;
-	position: absolute;
+	/* position: absolute; */
 	color: white;
 }
 
@@ -95,7 +95,7 @@
 	color: gainsboro;
 	font-weight: 300;
 	text-align: left;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 	line-height: 26px;
 	word-spacing: 4px;
 	font-family: Josefin Sans, light;
@@ -105,8 +105,9 @@
 .section {
 	width: 100vw;
 	background-color: #161616;
-	position: relative;
-	gap: 40px;
+	overflow-x: hidden;
+	/* position: relative; */
+	/* gap: 40px; */
 	color: white;
 	/* margin-block: 66px; */
 }
@@ -119,8 +120,7 @@
 	margin-bottom: 30px;
 	row-gap: 40px;
 	flex-wrap: wrap;
-	padding: 20px;
-	
+	/* padding: 20px; */
 }
 
 .cardSection div {

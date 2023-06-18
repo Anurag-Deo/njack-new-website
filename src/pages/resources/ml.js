@@ -16,13 +16,13 @@ export async function getServerSideProps() {
 }
 
 
-const ml_resources = ({ pageData }) => {
+const ml = ({ pageData }) => {
  
   return (
    <ResourcesComponent pageData={pageData} />
   )
 }
 
-export default ml_resources
+export default ml
 
 

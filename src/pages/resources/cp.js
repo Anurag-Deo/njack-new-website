@@ -17,13 +17,13 @@ export async function getServerSideProps() {
 }
 
 
-const cp_resources = ({ pageData }) => {
+const cp = ({ pageData }) => {
   
   return (
     <ResourcesComponent pageData={pageData} />
   )
 }
 
-export default cp_resources
+export default cp
 
 
