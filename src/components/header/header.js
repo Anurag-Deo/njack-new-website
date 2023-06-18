@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import styles from './header.module.css'
+import Link from 'next/link'
 const HeaderComp = ({ selected }) => {
 	const [isDrawerVisible, setDrawerVisibility] = useState(false)
 	const [isResourceDrawerVisible, setResourceDrawerVisibility] = useState(false)
@@ -22,36 +23,36 @@ const HeaderComp = ({ selected }) => {
 	
 	return (
 		<>
-			<a style={{ marginLeft: '5%' }} href='\#'>
+			<Link style={{ marginLeft: '5%' }} href='/#'>
 				<img id={styles.logo} loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
-			</a>
+			</Link>
 			<section>
-				<a id={selected == 'Home' ? styles.selected : undefined} href='\#'>
+				<Link id={selected == 'Home' ? styles.selected : undefined} href='/#'>
 					HOME
-				</a>
+				</Link>
 				{/* 480 for Home + 4 */}
-				{/* Change @media (max-width: __px) accordingly <a id={selected == 'Resources' ? styles.selected : undefined} href='\resources'>
+				{/* Change @media (max-width: __px) accordingly <Link id={selected == 'Resources' ? styles.selected : undefined} href='/resources'>
 					RESOURCES
-				</a> */}
+				</Link> */}
 				{/* 400 for Home + 3*/}
 				<div onMouseEnter={drawerHandleMouse} onMouseLeave={drawerHandleMouse} style={{ display: 'flex' }}>
-					<a id={selected == 'Departments' ? styles.selected : undefined} href='#'>
+					<Link id={selected == 'Departments' ? styles.selected : undefined} href='#'>
 						DEPARTMENTS
-					</a>
+					</Link>
 					{isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
 				</div>
 				<div onMouseEnter={resourcedrawerHandleMouse} onMouseLeave={resourcedrawerHandleMouse} style={{ display: 'flex' }}>
-					<a id={selected == 'Resources' ? styles.selected : undefined} href='#'>
+					<Link id={selected == 'Resources' ? styles.selected : undefined} href='#'>
 						RESOURCES
-					</a>
+					</Link>
 					{isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
 				</div>
-				<a id={selected == 'Gallery' ? styles.selected : undefined} href='\gallery'>
+				<Link id={selected == 'Gallery' ? styles.selected : undefined} href='/gallery'>
 					GALLERY
-				</a>
-				<a id={selected == 'Contact' ? styles.selected : undefined} href='\contactus'>
+				</Link>
+				<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contactus'>
 					CONTACT
-				</a>
+				</Link>
 			</section>
 			<div id={styles.menuButton} onMouseLeave={menuHandleMouseLeave}>
 				<img loading='lazy' src='/home/MenuIcon.png' alt='Menu' onClick={menuHandleMouseClick} />
@@ -65,32 +66,32 @@ const HeaderComp = ({ selected }) => {
 const MenuDrawer = ({ selected, isDrawerVisible, drawerHandleMouse, resourcedrawerHandleMouse, isResourceDrawerVisible }) => {
 	return (
 		<section id={styles.menuDrawerVisible}>
-			<a id={selected == 'Home' ? styles.selected : undefined} href='\#'>
+			<Link id={selected == 'Home' ? styles.selected : undefined} href='/#'>
 				HOME
-			</a>
+			</Link>
 			{/* 480 for Home + 4 */}
-			{/* Change @media (max-width: __px) accordingly <a id={selected == 'Resources' ? styles.selected : undefined} href='\resources'>
+			{/* Change @media (max-width: __px) accordingly <Link id={selected == 'Resources' ? styles.selected : undefined} href='/resources'>
 					RESOURCES
-				</a> */}
+				</Link> */}
 			{/* 400 for Home + 3*/}
 			<div onMouseEnter={drawerHandleMouse} onMouseLeave={drawerHandleMouse} style={{ display: 'flex' }}>
-				<a id={selected == 'Departments' ? styles.selected : undefined} href='#'>
+				<Link id={selected == 'Departments' ? styles.selected : undefined} href='#'>
 					DEPARTMENTS
-				</a>
+				</Link>
 				{isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
 			</div>
 			<div onMouseEnter={resourcedrawerHandleMouse} onMouseLeave={resourcedrawerHandleMouse} style={{ display: 'flex' }}>
-				<a id={selected == 'Resources' ? styles.selected : undefined} href='#'>
+				<Link id={selected == 'Resources' ? styles.selected : undefined} href='#'>
 					RESOURCES
-				</a>
+				</Link>
 				{isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
 			</div>
-			<a id={selected == 'Gallery' ? styles.selected : undefined} href='\gallery'>
+			<Link id={selected == 'Gallery' ? styles.selected : undefined} href='/gallery'>
 				GALLERY
-			</a>
-			<a id={selected == 'Contact' ? styles.selected : undefined} href='\contactus'>
+			</Link>
+			<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contactus'>
 				CONTACT
-			</a>
+			</Link>
 		</section>
 	)
 }
@@ -98,20 +99,20 @@ const MenuDrawer = ({ selected, isDrawerVisible, drawerHandleMouse, resourcedraw
 const DeptDrawer = ({ isVisible }) => {
 	return (
 		<div className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
-			<a href='\departments\cp'>Competitive Programming</a>
-			<a href='\departments\devos'>Dev & OS</a>
-			<a href='\departments\ml'>Machine Learning</a>
-			<a href='\departments\cybersec'>Cyber Securities</a>
+			<Link href='/departments/cp'>Competitive Programming</Link>
+			<Link href='/departments/devos'>Dev & OS</Link>
+			<Link href='/departments/ml'>Machine Learning</Link>
+			<Link href='/departments/cybersec'>Cyber Securities</Link>
 		</div>
 	)
 }
 const ResourceDrawer = ({ isVisible }) => {
 	return (
 		<div className={`${styles.resourcedrawer} ${isVisible ? styles.isVisible : ''}`}>
-			<a href='\resources\cp_resources'>Competitive Programming Resources</a>
-			<a href='\resources\dev_resources'>Dev & OS Resources</a>
-			<a href='\resources\ml_resources'>Machine Learning Resources</a>
-			<a href='\resources\cybersec_resources'>Cyber Securities Resources</a>
+			<Link href='/resources/cp_resources'>Competitive Programming Resources</Link>
+			<Link href='/resources/dev_resources'>Dev & OS Resources</Link>
+			<Link href='/resources/ml_resources'>Machine Learning Resources</Link>
+			<Link href='/resources/cybersec_resources'>Cyber Securities Resources</Link>
 		</div>
 	)
 }

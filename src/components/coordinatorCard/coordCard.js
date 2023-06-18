@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './coordCard.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 const CoordCard = ({ coordName, coordImage, coordCommitee, coordLinkedIn, coordGitHub }) => {
 	return (
 		<div className={styles.coordCard}>
@@ -8,12 +9,12 @@ const CoordCard = ({ coordName, coordImage, coordCommitee, coordLinkedIn, coordG
 			<div className={styles.coordName}>{coordName}</div>
 			<p>{coordCommitee}</p>
 			<div className={styles.coordIcon}>
-				<a href={coordLinkedIn}>
+				<Link href={coordLinkedIn}>
 					<img src='/home/LinkedIn.png' alt='LinkedIn Page' />
-				</a>
-				<a href={coordGitHub}>
+				</Link>
+				<Link href={coordGitHub}>
 					<img src='/home/GitHub.png' alt='GitHub Page' />
-				</a>
+				</Link>
 			</div>
 		</div>
 	)
@@ -23,9 +24,9 @@ const SubCoordCard = ({ coordName, coordLinkedIn }) => {
 	return (
 		<div className={styles.subCoordCard}>
 			<div className={styles.coordIcon}>
-				<a href={coordLinkedIn}>
+				<Link href={coordLinkedIn}>
 					<img src='/home/LinkedIn.png' alt='LinkedIn Page' />
-				</a>
+				</Link>
 			</div>
 			<p>{coordName}</p>
 		</div>
