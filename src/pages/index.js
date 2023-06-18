@@ -92,76 +92,76 @@ export default function Home() {
 				<div className={styles.section}>
 					<h2 className={styles.sectionHeading}>Our Departments</h2>
 					<InView>
-  {({ inView, ref }) => (
-    <motion.div className={styles.cardSection} ref={ref}>
-      <motion.div
-        className={styles.card}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 1 }}
-      >
-        <DeptCard
-          deptName={'Competitive Programming'}
-          deptImage={'/home/heroImage.png'}
-          deptDesc={
-            "The Competitive Programming Department at NJACK is committed to honing students' problem-solving skills, algorithmic thinking, and programming prowess. Through regular coding contests, workshops, and practice sessions, this department helps participants develop their abilities to solve complex programming challenges efficiently."
-          }
-          deptLink={'/departments/cp'}
-          bgColor={'#FF6559'}
-        />
-      </motion.div>
-      <motion.div
-        className={styles.card}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        <DeptCard
-          deptName={'Dev and OS'}
-          deptImage={'/home/heroImage.png'}
-          deptDesc={
-            "The Development and Open Source Department at NJACK encourages students to delve into the world of software development and contribute to the open-source community. Through hands-on workshops, collaborative projects, and mentorship programs, this department nurtures students' skills in building robust and scalable software solutions."
-          }
-          deptLink={'/departments/devos'}
-          bgColor={'#0091BD'}
-        />
-      </motion.div>
-      <motion.div
-        className={styles.card}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 1, delay: 0.4 }}
-      >
-        <DeptCard
-          deptName={'Machine Learning'}
-          deptImage={'/home/heroImage.png'}
-          deptDesc={
-            "The Machine Learning Department of NJACK is dedicated to exploring the vast field of artificial intelligence and machine learning. Through workshops, lectures, and practical sessions, this department equips members with the knowledge and tools required to tackle complex problems using machine learning algorithms."
-          }
-          deptLink={'/departments/ml'}
-          bgColor={'#FFAC2A'}
-        />
-      </motion.div>
-      <motion.div
-        className={styles.card}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 1, delay: 0.6 }}
-		>
-		  <DeptCard
-			deptName={'Cyber Securities'}
-			deptImage={'/home/heroImage.png'}
-			deptDesc={
-			  "The Cybersecurity Department at NJACK focuses on promoting awareness and understanding of the crucial field of cybersecurity. This department conducts workshops, seminars, and hands-on sessions to educate members about various cybersecurity threats, techniques, and countermeasures."
-			}
-			deptLink={'/departments/cybersec'}
-			bgColor={'#6EEDF3'}
-		  />
-		</motion.div>
-	  </motion.div>
-	)}
-  </InView>
-  
+						{({ inView, ref }) => (
+							<motion.div className={styles.cardSection} ref={ref}>
+								<motion.div
+									className={styles.card}
+									initial={{ opacity: 0, y: 40 }}
+									animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+									transition={{ duration: 1 }}
+								>
+									<DeptCard
+										deptName={'Competitive Programming'}
+										deptImage={'/home/heroImage.png'}
+										deptDesc={
+											"The Competitive Programming Department at NJACK is committed to honing students' problem-solving skills, algorithmic thinking, and programming prowess. Through regular coding contests, workshops, and practice sessions, this department helps participants develop their abilities to solve complex programming challenges efficiently."
+										}
+										deptLink={'/departments/cp'}
+										bgColor={'#FF6559'}
+									/>
+								</motion.div>
+								<motion.div
+									className={styles.card}
+									initial={{ opacity: 0, y: 40 }}
+									animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+									transition={{ duration: 1, delay: 0.2 }}
+								>
+									<DeptCard
+										deptName={'Dev and OS'}
+										deptImage={'/home/heroImage.png'}
+										deptDesc={
+											"The Development and Open Source Department at NJACK encourages students to delve into the world of software development and contribute to the open-source community. Through hands-on workshops, collaborative projects, and mentorship programs, this department nurtures students' skills in building robust and scalable software solutions."
+										}
+										deptLink={'/departments/devos'}
+										bgColor={'#0091BD'}
+									/>
+								</motion.div>
+								<motion.div
+									className={styles.card}
+									initial={{ opacity: 0, y: 40 }}
+									animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+									transition={{ duration: 1, delay: 0.4 }}
+								>
+									<DeptCard
+										deptName={'Machine Learning'}
+										deptImage={'/home/heroImage.png'}
+										deptDesc={
+											"The Machine Learning Department of NJACK is dedicated to exploring the vast field of artificial intelligence and machine learning. Through workshops, lectures, and practical sessions, this department equips members with the knowledge and tools required to tackle complex problems using machine learning algorithms."
+										}
+										deptLink={'/departments/ml'}
+										bgColor={'#FFAC2A'}
+									/>
+								</motion.div>
+								<motion.div
+									className={styles.card}
+									initial={{ opacity: 0, y: 40 }}
+									animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+									transition={{ duration: 1, delay: 0.6 }}
+								>
+									<DeptCard
+										deptName={'Cyber Securities'}
+										deptImage={'/home/heroImage.png'}
+										deptDesc={
+											"The Cybersecurity Department at NJACK focuses on promoting awareness and understanding of the crucial field of cybersecurity. This department conducts workshops, seminars, and hands-on sessions to educate members about various cybersecurity threats, techniques, and countermeasures."
+										}
+										deptLink={'/departments/cybersec'}
+										bgColor={'#6EEDF3'}
+									/>
+								</motion.div>
+							</motion.div>
+						)}
+					</InView>
+
 
 				</div>
 				<div className={styles.section}>

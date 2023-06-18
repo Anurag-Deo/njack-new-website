@@ -12,6 +12,13 @@
 	color: white;
 }
 
+.aboutDept{
+	height: 100vh;
+    display: flex;
+    flex-direction: column;
+	justify-content: space-around;
+}
+
 .deptTitle {
 	display: flex;
 	flex-direction: row;
@@ -66,13 +73,31 @@
 
 .deptDesc {
 	font-family: Josefin Sans, light;
-	font-size: 1.1rem;
-	font-weight: 300;
-	height: auto;
-	line-height: 20px;
-	max-width: 70vw;
-	padding-block: 7.5vh;
-	width: fit-content;
+    font-size: 1.5rem;
+    font-weight: 300;
+    height: auto;
+    line-height: 26px;
+    max-width: 70vw;
+    padding-block: 7.5vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.deptDesc div{
+	width: 70%;
+}
+
+.deptDesc p{
+	width: 50%;
+}
+
+.lottie{
+	width: 50vw;
 }
 
 .section {
@@ -107,7 +132,7 @@
 
 .section .cardSection div {
 	margin-inline: 5px;
-	background-color: #282828;
+	/* background-color: #282828; */
 }
 
 .sectionHeading {
