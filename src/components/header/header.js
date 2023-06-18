@@ -23,11 +23,11 @@ const HeaderComp = ({ selected }) => {
 	
 	return (
 		<>
-			<Link style={{ marginLeft: '5%' }} href='/#'>
+			<Link style={{ marginLeft: '5%' }} href='/'>
 				<img id={styles.logo} loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
 			</Link>
 			<section>
-				<Link id={selected == 'Home' ? styles.selected : undefined} href='/#'>
+				<Link id={selected == 'Home' ? styles.selected : undefined} href='/'>
 					HOME
 				</Link>
 				{/* 480 for Home + 4 */}
@@ -50,7 +50,7 @@ const HeaderComp = ({ selected }) => {
 				<Link id={selected == 'Gallery' ? styles.selected : undefined} href='/gallery'>
 					GALLERY
 				</Link>
-				<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contactus'>
+				<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contact-us'>
 					CONTACT
 				</Link>
 			</section>
@@ -66,7 +66,7 @@ const HeaderComp = ({ selected }) => {
 const MenuDrawer = ({ selected, isDrawerVisible, drawerHandleMouse, resourcedrawerHandleMouse, isResourceDrawerVisible }) => {
 	return (
 		<section id={styles.menuDrawerVisible}>
-			<Link id={selected == 'Home' ? styles.selected : undefined} href='/#'>
+			<Link id={selected == 'Home' ? styles.selected : undefined} href='/'>
 				HOME
 			</Link>
 			{/* 480 for Home + 4 */}
@@ -89,7 +89,7 @@ const MenuDrawer = ({ selected, isDrawerVisible, drawerHandleMouse, resourcedraw
 			<Link id={selected == 'Gallery' ? styles.selected : undefined} href='/gallery'>
 				GALLERY
 			</Link>
-			<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contactus'>
+			<Link id={selected == 'Contact' ? styles.selected : undefined} href='/contact-us'>
 				CONTACT
 			</Link>
 		</section>

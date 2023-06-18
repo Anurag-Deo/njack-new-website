@@ -1,6 +1,4 @@
 import Head from 'next/head'
-//import Image from 'next/image'
-//import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
 import { members } from '../members'
@@ -8,9 +6,6 @@ import { eventsArr } from '../events'
 import DisplayLottie from '@/components/Lottie'
 import { motion } from 'framer-motion'
 import { InView } from 'react-intersection-observer';
-
-//const inter = Inter({ subsets: ['latin'] })
-//Unused font
 
 export default function Home() {
 	let filterdEvents = eventsArr.filter((event) => event.old === false)
@@ -31,7 +26,6 @@ export default function Home() {
 						transition={{ duration: 2 }}
 					>
 						<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
-						<div className={styles.heroText}>NJACK</div>
 						<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
 					</motion.div>
 					<motion.div className={styles.lottiehero}
@@ -245,14 +239,14 @@ export default function Home() {
 								}
 							})}
 						</div>
-						<div className={styles.committee}>
+						{/* <div className={styles.committee}>
 							<p>Cyber Securities</p>
 							{members[1].map((member) => {
 								if (member.committee === 'CyberSec') {
 									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}></SubCoordCard>)
 								}
 							})}
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<img

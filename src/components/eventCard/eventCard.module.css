@@ -1,7 +1,10 @@
 .card {
 	width: 300px;
-	/* max-width: 80%; */
-	height: 400px;
+
+	max-width: 80%;
+	height: 430px;
+
+
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -41,7 +44,8 @@
 }
 
 .card p {
-	font-size: 1.1rem;
+	font-size: 0.9rem;
+	color: gainsboro;
 	font-weight: 300;
 	margin-block: 10px;
 	line-height: 20px;
@@ -55,14 +59,13 @@
 	width: 100%;
 	margin-top: 15px;
 	text-decoration: none;
-	    border-radius: 12px;
+	border-radius: 12px;
 }
-
 
 .registerBtn span {
 	color: #f36d32;
 	width: 80%;
-	background-color: #fff;
+	/* background-color: #fff; */
 	border: 1.5px solid #f36d32;
 	padding: 10px 20px;
 	font-size: 0.8rem;
@@ -87,7 +90,5 @@
 }
 .registerBtn span:active{
 	transform: scale(0.9);
-	background-color: #f6f6f6;
+	/* background-color: #f6f6f6; */
 }
-
-

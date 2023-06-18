@@ -3,9 +3,8 @@ import React from 'react'
 import styles from '../styles/contactus.module.css'
 import Link from 'next/link'
 
-const contactus = () => {
-	const mapCenter = [25.5372633, 84.8472938]
-
+const ContactUs = () => {
+	const mapCenter = [25.5372633, 84.8472938];
 	return (
 		<>
 			<Header selected={'Contact'} />
@@ -43,7 +42,7 @@ const contactus = () => {
 					<section className={styles.rightSection}>
 					<iframe loading="lazy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721"
-              width="500px" height="500px" frameborder="0" style={{borderRadius: "5px"}} allowfullscreen></iframe>
+              width="500px" height="500px" frameBorder="0" style={{borderRadius: "5px"}} allowFullScreen></iframe>
 					</section>
 				</div>
 				{/* <Footer /> */}
@@ -52,4 +51,4 @@ const contactus = () => {
 	)
 }
 
-export default contactus
+export default ContactUs;
