@@ -8,6 +8,7 @@
 	margin-top: 75px;
 	position: absolute;
 	width: 100vw;
+	/* padding-bottom: 20px; */
 }
 
 .sectionHeading {
@@ -28,7 +29,7 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin-top: 75px;
+	margin-top: 10px;
 	max-width: 80vw;
 	min-width: 70vw;
 	align-items: center;

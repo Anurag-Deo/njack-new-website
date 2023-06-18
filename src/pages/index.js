@@ -1,14 +1,9 @@
 import Head from 'next/head'
-//import Image from 'next/image'
-//import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components'
 import { members } from '../members'
 import { eventsArr } from '../events'
 import DisplayLottie from '@/components/Lottie'
-
-//const inter = Inter({ subsets: ['latin'] })
-//Unused font
 
 export default function Home() {
 	return (
@@ -24,7 +19,6 @@ export default function Home() {
 				<div className={styles.heroSection}>
 					<div className={styles.njackhero}>
 						<img loading='lazy' src='/home/NJACK logo.svg' alt='NJACK Logo' />
-						<div className={styles.heroText}>NJACK</div>
 						<div className={styles.subHeroText}>Not just another Computer Science Klub</div>
 					</div>
 					<div className={styles.lottiehero}>
