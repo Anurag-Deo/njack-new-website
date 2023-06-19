@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-import { images, CustomImage } from "../images";
+import { images, CustomImage } from "../data/images";
 import {Footer, Header} from '@/components'
 import styles from '../styles/gallery.module.css'
 
