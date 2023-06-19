@@ -1,79 +1,79 @@
 @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light');
 
 .parentDiv {
-	align-items: center;
-	background-color: #fff;
-	display: flex;
-	flex-direction: column;
-	margin-top: 75px;
-	position: absolute;
-	width: 100vw;
-	/* padding-bottom: 20px; */
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+  position: absolute;
+  width: 100vw;
+  /* padding-bottom: 20px; */
 }
 
 .sectionHeading {
-	justify-self: center;
-	max-width: 90vw;
-	min-width: 80vw;
+  justify-self: center;
+  max-width: 90vw;
+  min-width: 80vw;
 }
 
 .parentDiv h2 {
-	font-family: Josefin Sans, bold;
-	font-size: 1.4rem;
-	font-weight: 700;
-	text-align: left;
-	text-transform: uppercase;
+  font-family: Josefin Sans, bold;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .body {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-top: 10px;
-	max-width: 80vw;
-	min-width: 70vw;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  max-width: 80vw;
+  min-width: 70vw;
+  align-items: center;
 }
 
 .leftSection {
-	align-items: flex-start;
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	margin-right: 5%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 5%;
 }
 
 .leftSection a,
 .leftSection p {
-	color: black;
-	font-family: Josefin Sans;
-	font-size: 1.1rem;
-	font-weight: 400;
-	line-height: 22px;
-	margin-top: 5px;
-	text-decoration: none;
+  color: black;
+  font-family: Josefin Sans;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 22px;
+  margin-top: 5px;
+  text-decoration: none;
 }
 
 #address {
-	font-weight: 300;
+  font-weight: 300;
 }
 
 #social img {
-	height: 18px;
-	position: relative;
-	right: 5px;
-	top: 2px;
+  height: 18px;
+  position: relative;
+  right: 5px;
+  top: 2px;
 }
 
 #social a {
-	font-size: 1rem;
-	left: 10px;
+  font-size: 1rem;
+  left: 10px;
 }
 
 .rightSection {
-	display: flex;
-	flex: 1;
-	min-height: 300px;
-	min-width: 300px;
-	/* font-size: 200px !important; */
+  display: flex;
+  flex: 1;
+  min-height: 300px;
+  min-width: 300px;
+  /* font-size: 200px !important; */
 }

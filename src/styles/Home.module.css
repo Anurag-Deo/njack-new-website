@@ -1,179 +1,177 @@
 /* @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light'); */
 
 .parentDiv {
-	display: flex;
-	flex-direction: column;
-	/* justify-content: center; */
-	align-items: center;
-	/* height: 100vh; */
-	/* width: 100vw; */
-	background-color: #161616;
-	/* position: absolute; */
-	color: white;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* height: 100vh; */
+  /* width: 100vw; */
+  background-color: #161616;
+  /* position: absolute; */
+  color: white;
 }
 
 .heroSection {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	height: 95vh;
-	max-height: max-content;
-	width: 100vw;
-	/* background-image: url('/home/heroImage.png'); */
-	/* background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  max-height: max-content;
+  width: 100vw;
+  /* background-image: url('/home/heroImage.png'); */
+  /* background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat; */
-	background-color: #161616;
-	color: white;
-	padding-inline: 47px;
+  background-color: #161616;
+  color: white;
+  padding-inline: 47px;
 }
 
-
 .njackhero {
-	width: 50vw;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .lottiehero {
-	width: 50vw;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .heroSection img {
-	max-width: 100vw;
-	max-height: 33vh;
+  max-width: 100vw;
+  max-height: 33vh;
 }
 
 .heroText {
-	color: #fff;
-	font-size: 2rem;
-	font-weight: 600;
-	text-align: center;
-	margin-top: 50px;
-	font-family: Josefin Sans;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+  font-family: Josefin Sans;
 }
 
 .subHeroText {
-	color: #a4a9b3;
-	font-size: 1.5rem;
-	font-weight: 400;
-	text-align: center;
-	margin-top: 20px;
-	font-family: Josefin Sans;
+  color: #a4a9b3;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+  font-family: Josefin Sans;
 }
 
 .aboutSection {
-	height: auto;
-	padding-block: 10vh;
-	max-width: 80vw;
-	width: fit-content;
-	background-color: #161616;
-	position: relative;
-	color: white;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  height: auto;
+  padding-block: 10vh;
+  max-width: 80vw;
+  width: fit-content;
+  background-color: #161616;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .aboutSection h2 {
-	font-size: 1.2rem;
-	font-weight: 500;
-	text-align: center;
-	font-family: Josefin Sans;
-	margin-bottom: 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: Josefin Sans;
+  margin-bottom: 50px;
 }
 
 .aboutSection p {
-	font-size: 1.3rem;
-	width: 50%;
-	color: gainsboro;
-	font-weight: 300;
-	text-align: left;
-	/* margin-top: 10px; */
-	line-height: 26px;
-	word-spacing: 4px;
-	font-family: Josefin Sans, light;
-	white-space: pre-wrap;
+  font-size: 1.3rem;
+  width: 50%;
+  color: gainsboro;
+  font-weight: 300;
+  text-align: left;
+  /* margin-top: 10px; */
+  line-height: 26px;
+  word-spacing: 4px;
+  font-family: Josefin Sans, light;
+  white-space: pre-wrap;
 }
 
 .section {
-	width: 100vw;
-	background-color: #161616;
-	overflow-x: hidden;
-	/* position: relative; */
-	/* gap: 40px; */
-	color: white;
-	/* margin-block: 66px; */
+  width: 100vw;
+  background-color: #161616;
+  overflow-x: hidden;
+  /* position: relative; */
+  /* gap: 40px; */
+  color: white;
+  /* margin-block: 66px; */
 }
 
 .cardSection {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	margin-bottom: 30px;
-	row-gap: 40px;
-	flex-wrap: wrap;
-	/* padding: 20px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  /* padding: 20px; */
 }
 
 .cardSection div {
-	margin-inline: 5px;
+  margin-inline: 5px;
 }
 
 .sectionHeading {
-	font-size: 1.6rem;
-	font-weight: 700;
-	text-align: center;
-	margin-top: 50px;
-	font-family: Josefin Sans;
-	margin-bottom: 50px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+  font-family: Josefin Sans;
+  margin-bottom: 50px;
 }
 
 .section h3 {
-	font-size: 1.6rem;
-	font-weight: 700;
-	text-align: center;
-	margin-top: 50px;
-	font-family: Josefin Sans, bold;
-	margin-bottom: 20px;
-	text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+  font-family: Josefin Sans, bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .committee {
-	color: white;
-	height: max-content;
-	text-align: left;
-	font-size: 1.2rem;
-	font-family: Josefin Sans;
-	font-weight: 400;
-	line-height: 35px;
+  color: white;
+  height: max-content;
+  text-align: left;
+  font-size: 1.2rem;
+  font-family: Josefin Sans;
+  font-weight: 400;
+  line-height: 35px;
 }
 
 .committee p {
-	text-indent: 10px;
-	margin-bottom: 20px;
+  text-indent: 10px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
-	.heroSection {
-		flex-direction: column-reverse;
-		height: auto;
-
-	}
-	.lottiehero{
-		width: 100vw;
-	}
-	.aboutSection{
-		flex-direction: column;
-	}
-	.aboutSection p{
-		width: 100%;
-	}
+  .heroSection {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .lottiehero {
+    width: 100vw;
+  }
+  .aboutSection {
+    flex-direction: column;
+  }
+  .aboutSection p {
+    width: 100%;
+  }
 }

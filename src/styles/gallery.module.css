@@ -1,13 +1,12 @@
-.galleryContainer{
-    margin-inline: 150px;
-    margin-top: 50px;
-    background-color: #161616;
-    margin-bottom: 50px;
+.galleryContainer {
+  margin-inline: 150px;
+  margin-top: 50px;
+  background-color: #161616;
+  margin-bottom: 50px;
 }
 
-@media screen and (max-width: 768px){
-    .galleryContainer{
-        margin-inline: 50px;
-    }
+@media screen and (max-width: 768px) {
+  .galleryContainer {
+    margin-inline: 50px;
+  }
 }
-    

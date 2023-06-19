@@ -12,12 +12,12 @@ const nextConfig = {
     ],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
-      },
+        protocol: 'https',
+        hostname: '**'
+      }
     ],
     formats: ['image/avif', 'image/webp']
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,47 +1,34 @@
-import * as React from 'react'
-import Head from 'next/head'
-import { NotionRenderer } from 'react-notion-x'
-import { getPageTitle } from 'notion-utils'
-import dynamic from 'next/dynamic'
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code)
-)
+import * as React from 'react';
+import Head from 'next/head';
+import { NotionRenderer } from 'react-notion-x';
+import { getPageTitle } from 'notion-utils';
+import dynamic from 'next/dynamic';
+const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code));
 const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
-)
+  import('react-notion-x/build/third-party/collection').then((m) => m.Collection)
+);
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
-)
-const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
-  {
-    ssr: false
-  }
-)
-const Modal = dynamic(
-  () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal),
-  {
-    ssr: false
-  }
-)
+);
+const Pdf = dynamic(() => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf), {
+  ssr: false
+});
+const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').then((m) => m.Modal), {
+  ssr: false
+});
 
-export const NotionPage = ({
-  recordMap,
-  rootPageId
-}) => {
+export const NotionPage = ({ recordMap, rootPageId }) => {
   if (!recordMap) {
-    return null
+    return null;
   }
 
-  const title = getPageTitle(recordMap)
-//   console.log(title, recordMap)
+  const title = getPageTitle(recordMap);
+  //   console.log(title, recordMap)
 
   return (
     <>
       <Head>
-        <meta name='description' content='React Notion X Minimal Demo' />
+        <meta name="description" content="React Notion X Minimal Demo" />
 
         <title>NJACK | {title}</title>
         <style>
@@ -84,13 +71,13 @@ export const NotionPage = ({
         darkMode={false}
         rootPageId={rootPageId}
         components={{
-            Code,
-            Collection,
-            Equation,
-            Pdf,
-            Modal
-          }}
+          Code,
+          Collection,
+          Equation,
+          Pdf,
+          Modal
+        }}
       />
     </>
-  )
-}
+  );
+};

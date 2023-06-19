@@ -1,18 +1,11 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import {
-  CoordCard,
-  SubCoordCard,
-  DeptCard,
-  EventCard,
-  Footer,
-  Header,
-} from "@/components";
-import DisplayLottie from "@/components/Lottie";
-import { motion } from "framer-motion";
-import { members } from "@/data/members";
-import { eventsArr } from "@/data/events";
-import departments from "@/data/departments";
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components';
+import DisplayLottie from '@/components/Lottie';
+import { motion } from 'framer-motion';
+import { members } from '@/data/members';
+import { eventsArr } from '@/data/events';
+import departments from '@/data/departments';
 
 export default function Home() {
   const filteredEvents = eventsArr.filter((event) => event.old === false);
@@ -24,20 +17,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header selected={"Home"} />
+      <Header selected={'Home'} />
       <div className={styles.parentDiv}>
         <div className={styles.heroSection}>
           <motion.div
             className={styles.njackhero}
-            initial={{ opacity: 0, x: "-100%" }}
+            initial={{ opacity: 0, x: '-100%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
             viewport={{ once: true }}
           >
             <img loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
-            <div className={styles.subHeroText}>
-              Not just another Computer Science Klub
-            </div>
+            <div className={styles.subHeroText}>Not just another Computer Science Klub</div>
           </motion.div>
           <motion.div
             className={styles.lottiehero}
@@ -61,25 +52,22 @@ export default function Home() {
             <DisplayLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json" />
           </motion.div>
           <motion.p
-            initial={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0, x: '100%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
             viewport={{ once: true }}
           >
-            NJACK is the esteemed Computer Science Club at IIT Patna, dedicated
-            to fostering a community of passionate computer science enthusiasts.
-            With its wide range of departments and initiatives, NJACK aims to
-            provide a platform for students to enhance their skills, engage in
-            productive sessions, and participate in fun events. As a collective
-            entity, NJACK serves as a nurturing platform for students passionate
-            about computer science at IIT Patna. It provides a vibrant community
-            where like-minded individuals can come together to share knowledge,
-            collaborate on projects, and stay updated with the latest
-            advancements in the field. NJACK organizes guest lectures, coding
-            competitions, hackathons, and other events to foster learning and
-            networking opportunities for its members. Through its inclusive and
-            supportive environment, NJACK strives to empower students, enabling
-            them to excel in their computer science journey and make meaningful
+            NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a
+            community of passionate computer science enthusiasts. With its wide range of departments
+            and initiatives, NJACK aims to provide a platform for students to enhance their skills,
+            engage in productive sessions, and participate in fun events. As a collective entity,
+            NJACK serves as a nurturing platform for students passionate about computer science at
+            IIT Patna. It provides a vibrant community where like-minded individuals can come
+            together to share knowledge, collaborate on projects, and stay updated with the latest
+            advancements in the field. NJACK organizes guest lectures, coding competitions,
+            hackathons, and other events to foster learning and networking opportunities for its
+            members. Through its inclusive and supportive environment, NJACK strives to empower
+            students, enabling them to excel in their computer science journey and make meaningful
             contributions to the world of technology.
           </motion.p>
         </div>
@@ -95,7 +83,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: index * 0.2 }}
                 variants={{
                   visible: { opacity: 1, scale: 1 },
-                  hidden: { opacity: 0, scale: 0 },
+                  hidden: { opacity: 0, scale: 0 }
                 }}
               >
                 <EventCard
@@ -122,7 +110,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: index * 0.2 }}
                 variants={{
                   visible: { opacity: 1, scale: 1 },
-                  hidden: { opacity: 0, scale: 0 },
+                  hidden: { opacity: 0, scale: 0 }
                 }}
               >
                 <DeptCard
@@ -139,10 +127,7 @@ export default function Home() {
         <div className={styles.section}>
           <h2 className={styles.sectionHeading}>Our Team</h2>
           <h3>Coordinators</h3>
-          <div
-            className={styles.cardSection}
-            style={{ justifyContent: "center" }}
-          >
+          <div className={styles.cardSection} style={{ justifyContent: 'center' }}>
             {members[0].map((member, index) => (
               <motion.div
                 key={member.name}
@@ -153,16 +138,13 @@ export default function Home() {
                 transition={{ duration: 1, delay: index * 0.2 }}
                 variants={{
                   visible: { opacity: 1, y: 0 },
-                  hidden: { opacity: 0, y: 20 },
+                  hidden: { opacity: 0, y: 20 }
                 }}
               >
-                {member.committee === "Overall Coordinator" && (
+                {member.committee === 'Overall Coordinator' && (
                   <CoordCard
                     coordName={member.name}
-                    coordImage={
-                      "https://drive.google.com/uc?export=view&id=" +
-                      member.image
-                    }
+                    coordImage={'https://drive.google.com/uc?export=view&id=' + member.image}
                     coordCommittee={member.committee}
                     coordLinkedIn={member.linkedin}
                     coordGitHub={member.github}
@@ -183,16 +165,13 @@ export default function Home() {
                 transition={{ duration: 1, delay: index * 0.2 }}
                 variants={{
                   visible: { opacity: 1, y: 0 },
-                  hidden: { opacity: 0, y: 20 },
+                  hidden: { opacity: 0, y: 20 }
                 }}
               >
-                {member.committee !== "Overall Coordinator" && (
+                {member.committee !== 'Overall Coordinator' && (
                   <CoordCard
                     coordName={member.name}
-                    coordImage={
-                      "https://drive.google.com/uc?export=view&id=" +
-                      member.image
-                    }
+                    coordImage={'https://drive.google.com/uc?export=view&id=' + member.image}
                     coordCommittee={member.committee}
                     coordLinkedIn={member.linkedin}
                     coordGitHub={member.github}
@@ -208,7 +187,7 @@ export default function Home() {
             <div className={styles.committee}>
               <p>Competitive Programming</p>
               {members[1].map((member) => {
-                if (member.committee === "CP") {
+                if (member.committee === 'CP') {
                   return (
                     <SubCoordCard
                       coordName={member.name}
@@ -221,7 +200,7 @@ export default function Home() {
             <div className={styles.committee}>
               <p>Development & Open Source</p>
               {members[1].map((member) => {
-                if (member.committee === "Dev&OS") {
+                if (member.committee === 'Dev&OS') {
                   return (
                     <SubCoordCard
                       coordName={member.name}
@@ -234,7 +213,7 @@ export default function Home() {
             <div className={styles.committee}>
               <p>Machine Learning</p>
               {members[1].map((member) => {
-                if (member.committee === "ML") {
+                if (member.committee === 'ML') {
                   return (
                     <SubCoordCard
                       coordName={member.name}
@@ -258,11 +237,11 @@ export default function Home() {
           alt="TeamWork"
           src="\home\team.png"
           style={{
-            alignSelf: "end",
-            marginInline: "5%",
-            maxWidth: "90vw",
-            maxHeight: "25vh",
-            objectFit: "contain",
+            alignSelf: 'end',
+            marginInline: '5%',
+            maxWidth: '90vw',
+            maxHeight: '25vh',
+            objectFit: 'contain'
           }}
         />
         <Footer />

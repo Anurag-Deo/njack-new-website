@@ -1,24 +1,23 @@
 /* @import url('http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext'); */
 @font-face {
-	font-family: 'Josefin Sans';
-	src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
-	font-weight: 300;
+  font-family: 'Josefin Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+  font-weight: 300;
 }
 @font-face {
-	font-family: 'Josefin Sans Bold';
-	src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-	font-weight: 400;
+  font-family: 'Josefin Sans Bold';
+  src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+  font-weight: 400;
 }
 
-
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-	max-width: 100vw;
-	overflow-x: hidden;
+  max-width: 100vw;
+  overflow-x: hidden;
 }

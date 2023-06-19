@@ -1,174 +1,172 @@
 @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light');
 
 .parentDiv {
-	align-items: center;
-	background-color: #161616;
-	display: flex;
-	flex-direction: column;
-	height: fit-content;
-	justify-content: center;
-	position: absolute;
-	width: 100vw;
-	color: white;
+  align-items: center;
+  background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  color: white;
 }
 
-.aboutDept{
-	height: 100vh;
-    display: flex;
-    flex-direction: column;
-	justify-content: space-around;
+.aboutDept {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @media screen and (max-width: 768px) {
-	.aboutDept{
-		height: auto;
-	}
+  .aboutDept {
+    height: auto;
+  }
 }
 
 .deptTitle {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	height: fit-content;
-	justify-content: space-between;
-	margin-top: 50px;
-	width: 70vw;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 70vw;
+  position: relative;
 }
 
 .deptTitle div {
-	display: flex;
-	flex-direction: column;
-	height: 190px;
-	justify-content: center;
-	margin: 0 30px 0 0;
-	flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  justify-content: center;
+  margin: 0 30px 0 0;
+  flex: 1;
 }
 
 @media screen and (max-width: 768px) {
-	.deptTitle {
-		flex-direction: column-reverse;
-		align-items: center;
-	}
+  .deptTitle {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
-
 .deptTitle h1 {
-	color: #ff6559;
-	font-family: Josefin Sans;
-	font-size: 2.6rem;
-	font-weight: bolder;
-	text-transform: uppercase;
+  color: #ff6559;
+  font-family: Josefin Sans;
+  font-size: 2.6rem;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 @media (max-width: 450px) {
-	.deptTitle h1 {
-		font-size: 2rem;
-	}
+  .deptTitle h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 350px) {
-	.deptTitle h1 {
-		font-size: 1.7rem;
-	}
+  .deptTitle h1 {
+    font-size: 1.7rem;
+  }
 }
 
 .deptTitle h4 {
-	font-family: Josefin Sans;
-	font-size: 1.2rem;
-	font-weight: lighter;
+  font-family: Josefin Sans;
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 
 .deptTitle img {
-	height: 190px;
-	margin: 0 50px 0 0;
-	width: 190px;
+  height: 190px;
+  margin: 0 50px 0 0;
+  width: 190px;
 }
 
 .deptDesc {
-	font-family: Josefin Sans, light;
-    font-size: 1.5rem;
-    font-weight: 300;
-    height: auto;
-    line-height: 26px;
-    max-width: 70vw;
-    padding-block: 7.5vh;
-    width: -moz-fit-content;
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 50px;
+  font-family: Josefin Sans, light;
+  font-size: 1.5rem;
+  font-weight: 300;
+  height: auto;
+  line-height: 26px;
+  max-width: 70vw;
+  padding-block: 7.5vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
 }
 
-
-.deptDesc div{
-	width: 70%;
+.deptDesc div {
+  width: 70%;
 }
 
-.deptDesc p{
-	width: 50%;
+.deptDesc p {
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
-	.deptDesc {
-		flex-direction: column;
-	}
-	.deptDesc div{
-		width: 100%;
-	}
-	.deptDesc p{
-		width: 100%;
-	}
+  .deptDesc {
+    flex-direction: column;
+  }
+  .deptDesc div {
+    width: 100%;
+  }
+  .deptDesc p {
+    width: 100%;
+  }
 }
 
-.lottie{
-	width: 50vw;
+.lottie {
+  width: 50vw;
 }
 
 .section {
-	background-color: #161616;
-	display: grid;
-	margin-bottom: 50px;
-	max-width: 90vw;
-	min-width: 80vw;
-	position: relative;
+  background-color: #161616;
+  display: grid;
+  margin-bottom: 50px;
+  max-width: 90vw;
+  min-width: 80vw;
+  position: relative;
 }
 
 .cardSection {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 30px;
-	row-gap: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  row-gap: 40px;
 }
 
 .cardSectionTeams {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 30px;
-	row-gap: 40px;
-	color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  row-gap: 40px;
+  color: white;
 }
 
 .section .cardSection div {
-	margin-inline: 5px;
-	/* background-color: #282828; */
+  margin-inline: 5px;
+  /* background-color: #282828; */
 }
 
 .sectionHeading {
-	font-family: Josefin Sans;
-	font-size: 2.4rem;
-	font-weight: 700;
-	justify-self: center;
-	margin-bottom: 50px;
-	max-width: 80vw;
-	min-width: 70vw;
-	text-align: left;
+  font-family: Josefin Sans;
+  font-size: 2.4rem;
+  font-weight: 700;
+  justify-self: center;
+  margin-bottom: 50px;
+  max-width: 80vw;
+  min-width: 70vw;
+  text-align: left;
 }

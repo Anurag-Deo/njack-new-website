@@ -1,47 +1,35 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
-import { Header, Footer } from '@/components'
+import React from 'react';
+import dynamic from 'next/dynamic';
+import { Header, Footer } from '@/components';
 import Head from 'next/head';
-import 'react-notion-x/src/styles.css'
+import 'react-notion-x/src/styles.css';
 
-
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code)
-)
+const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code));
 const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
-)
+  import('react-notion-x/build/third-party/collection').then((m) => m.Collection)
+);
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
-)
-const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
-  {
-    ssr: false
-  }
-)
-const Modal = dynamic(
-  () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal),
-  {
-    ssr: false
-  }
-)
-
+);
+const Pdf = dynamic(() => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf), {
+  ssr: false
+});
+const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').then((m) => m.Modal), {
+  ssr: false
+});
 
 const resources_component = ({ pageData }) => {
   const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer), {
-    ssr: false,
+    ssr: false
   });
   return (
     <>
       <Header selected={'Resources'} />
       <div>
-      <Head>
-        <title>NJACK | Dev Resources</title>
-        <style>
-          {`
+        <Head>
+          <title>NJACK | Dev Resources</title>
+          <style>
+            {`
             .notion-page{
               width: 90% !important;
             }
@@ -87,26 +75,26 @@ const resources_component = ({ pageData }) => {
               background-size: cover !important;
             }
           `}
-        </style>
-      </Head>
-      {pageData ? <NotionRenderer
-        recordMap={pageData}
-        fullPage={true}
-        darkMode={false}
-        components={{
-          Code,
-          Collection,
-          Equation,
-          Pdf,
-          Modal
-        }}
-      /> : null}
+          </style>
+        </Head>
+        {pageData ? (
+          <NotionRenderer
+            recordMap={pageData}
+            fullPage={true}
+            darkMode={false}
+            components={{
+              Code,
+              Collection,
+              Equation,
+              Pdf,
+              Modal
+            }}
+          />
+        ) : null}
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default resources_component
-
-
+export default resources_component;

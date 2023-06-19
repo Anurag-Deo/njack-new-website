@@ -1,72 +1,100 @@
 .opposites {
-    position: relative;
-    width: 60px;
-    height: 60px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.opposites {
+  animation: opposites 2.5s ease-out 0s infinite;
+}
+.tl,
+.tr,
+.br,
+.bl {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.tl,
+.tr {
+  top: 0;
+}
+.tr,
+.br {
+  left: 30px;
+}
+.tl,
+.br {
+  animation: tlbr 2.5s ease-out 0s infinite;
+}
+.br,
+.bl {
+  top: 30px;
+}
+.tl,
+.bl {
+  left: 0;
+}
+.tr,
+.bl {
+  animation: trbl 2.5s ease-out 0s infinite;
+}
+.tl {
+  background: red;
+  transform-origin: bottom right;
+}
+.tr {
+  background: green;
+  transform-origin: bottom left;
+}
+.br {
+  background: dodgerblue;
+  transform-origin: top left;
+}
+.bl {
+  background: gold;
+  transform-origin: top right;
+}
+
+@keyframes tlbr {
+  0% {
+    transform: rotate(0);
   }
-  .opposites {
-    animation: opposites 2.5s ease-out 0s infinite;  
+  20% {
+    transform: rotate(90deg);
   }
-  .tl, .tr, .br, .bl {
-    width: 30px;
-    height: 30px;
-    position: absolute;
+  40% {
+    transform: rotate(90deg);
   }
-  .tl, .tr {
-    top: 0; 
+  60% {
+    transform: rotate(0);
   }
-  .tr, .br {
-    left: 30px; 
+}
+@keyframes trbl {
+  20% {
+    transform: rotate(0);
   }
-  .tl, .br {
-    animation: tlbr 2.5s ease-out 0s infinite;
+  40% {
+    transform: rotate(90deg);
   }
-  .br, .bl {
-    top: 30px; 
+  60% {
+    transform: rotate(90deg);
   }
-  .tl, .bl {
-    left: 0; 
+  80% {
+    transform: rotate(0);
   }
-  .tr, .bl {
-    animation: trbl 2.5s ease-out 0s infinite;
+}
+@keyframes opposites {
+  80% {
+    transform: rotate(0deg);
   }
-  .tl {
-    background: red;
-    transform-origin: bottom right;
+  100% {
+    transform: rotate(360deg);
   }
-  .tr {
-    background: green; 
-    transform-origin: bottom left;
-  }
-  .br {
-    background: dodgerblue; 
-    transform-origin: top left;
-  }
-  .bl {
-    background: gold; 
-    transform-origin: top right;
-  }
-  
-  @keyframes tlbr {
-    0% {transform: rotate(0);}
-    20% {transform: rotate(90deg);}
-    40% {transform: rotate(90deg);}
-    60% {transform: rotate(0);}
-  }
-  @keyframes trbl {
-    20% {transform: rotate(0);}
-    40% {transform: rotate(90deg);}
-    60% {transform: rotate(90deg);}
-    80% {transform: rotate(0);}
-  }
-  @keyframes opposites {
-    80% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-  }
-  
-  .loading{
-    display: grid;
-    place-items: center;
-    background: #262626;
-    min-height: 100vh;
-  }
-  
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  background: #262626;
+  min-height: 100vh;
+}

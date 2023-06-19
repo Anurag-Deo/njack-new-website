@@ -13,16 +13,16 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-      recordMap,
+      recordMap
     },
-    revalidate: 10,
+    revalidate: 10
   };
 };
 
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: true,
+    fallback: true
   };
 }
 
@@ -40,15 +40,13 @@ export default function Page({ recordMap }) {
       <Header selected={'Departments'} />
       {isLoading ? (
         <div className={styles.loading}>
-        <div className={styles.opposites}>
-        <div className={`${styles.opposite} ${styles.bl}`} />
-        <div className={`${styles.opposite} ${styles.tr}`} />
-        <div className={`${styles.opposite} ${styles.br}`} />
-        <div className={`${styles.opposite} ${styles.tl}`} />
+          <div className={styles.opposites}>
+            <div className={`${styles.opposite} ${styles.bl}`} />
+            <div className={`${styles.opposite} ${styles.tr}`} />
+            <div className={`${styles.opposite} ${styles.br}`} />
+            <div className={`${styles.opposite} ${styles.tl}`} />
+          </div>
         </div>
-      </div>
-      
-      
       ) : (
         <>
           <NotionPage recordMap={recordMap} />
