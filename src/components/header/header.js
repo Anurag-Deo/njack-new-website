@@ -130,9 +130,9 @@ const DeptDrawer = ({ isVisible }) => {
   return (
     <div className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
       <Link href="/departments/cp">Competitive Programming</Link>
-      <Link href="/departments/devos">Dev & OS</Link>
+      <Link href="/departments/dev-os">Dev & OS</Link>
       <Link href="/departments/ml">Machine Learning</Link>
-      <Link href="/departments/cybersec">Cyber Security</Link>
+      <Link href="/departments/cyber-security">Cyber Security</Link>
     </div>
   );
 };

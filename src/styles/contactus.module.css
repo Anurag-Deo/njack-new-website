@@ -77,3 +77,9 @@
   min-width: 300px;
   /* font-size: 200px !important; */
 }
+
+@media screen and (max-width: 768px) {
+  .rightSection {
+    margin: 10px 0px;
+  }
+}
