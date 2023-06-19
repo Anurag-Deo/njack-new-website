@@ -1,21 +1,22 @@
 import React from 'react';
 import DeptLayout from './deptLayout';
-import { members } from '../../data/members';
 import { eventsArr } from '../../data/events';
+import cyberSecCoord from '@/data/coordinators';
+import cyberSecSubCoord from '@/data/sub-coordinators';
 
 const cybersec = () => {
   const coordArr = [];
   const subCoordArr = [];
   const events = [];
-  for (let i = 0; i < members[0].length; i++) {
-    if (members[0][i].committee === 'Cybersec') {
+  for (let i = 0; i < cyberSecCoord.length; i++) {
+    if (cyberSecCoord[i].committee === 'Cybersec') {
       coordArr.push({
         key: i + 1,
-        coordName: members[0][i].name,
-        coordImage: members[0][i].image,
-        coordCommittee: members[0][i].committee,
-        coordLinkedIn: members[0][i].linkedin,
-        coordGitHub: members[0][i].github
+        coordName: cyberSecCoord[i].name,
+        coordImage: cyberSecCoord[i].image,
+        coordCommittee: cyberSecCoord[i].committee,
+        coordLinkedIn: cyberSecCoord[i].linkedin,
+        coordGitHub: cyberSecCoord[i].github
       });
     }
   }
@@ -26,15 +27,15 @@ const cybersec = () => {
   }
   coordinators = coordinators.slice(0, -2);
 
-  for (let i = 0; i < members[1].length; i++) {
-    if (members[1][i].committee === 'Cybersec') {
+  for (let i = 0; i < cyberSecSubCoord.length; i++) {
+    if (cyberSecSubCoord[i].committee === 'Cybersec') {
       subCoordArr.push({
         key: i + 1,
-        coordName: members[1][i].name,
-        coordImage: members[1][i].image,
-        coordCommittee: members[1][i].committee,
-        coordLinkedIn: members[1][i].linkedin,
-        coordGitHub: members[1][i].github
+        coordName: cyberSecSubCoord[i].name,
+        coordImage: cyberSecSubCoord[i].image,
+        coordCommittee: cyberSecSubCoord[i].committee,
+        coordLinkedIn: cyberSecSubCoord[i].linkedin,
+        coordGitHub: cyberSecSubCoord[i].github
       });
     }
   }

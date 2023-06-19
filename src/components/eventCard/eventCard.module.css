@@ -7,12 +7,14 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.383);
   justify-content: space-between;
   transition: all 0.3s ease;
   cursor: pointer;
   overflow: hidden;
   background-color: #282828;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.383);
+  background-color: #161616;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card:hover {
@@ -87,4 +89,10 @@
 .registerBtn span:active {
   transform: scale(0.9);
   /* background-color: #f6f6f6; */
+}
+
+@media screen and (max-width: 320px) {
+  .card {
+    width: 280px;
+  }
 }

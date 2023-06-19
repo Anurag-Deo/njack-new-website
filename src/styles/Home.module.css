@@ -1,14 +1,27 @@
 /* @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light'); */
 
 .parentDiv {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  /* height: 100vh; */
-  /* width: 100vw; */
-  background-color: #161616;
-  /* position: absolute; */
+  /* background-color: #161616; */
+  background: rgb(1, 2, 22);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(1, 2, 22, 1) 0%,
+    rgba(0, 12, 35, 1) 50%,
+    rgba(1, 2, 22, 1) 75%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(1, 2, 22, 1) 0%,
+    rgba(0, 12, 35, 1) 50%,
+    rgba(1, 2, 22, 1) 75%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(1, 2, 22, 1) 0%,
+    rgba(0, 12, 35, 1) 50%,
+    rgba(1, 2, 22, 1) 75%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010216",endColorstr="#010216",GradientType=1);
   color: white;
 }
 
@@ -19,12 +32,8 @@
   align-items: center;
   height: 95vh;
   max-height: max-content;
-  width: 100vw;
-  /* background-image: url('/home/heroImage.png'); */
-  /* background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat; */
-  background-color: #161616;
+  /* width: 100vw; */
+  /* background-color: #161616; */
   color: white;
   padding-inline: 47px;
 }
@@ -49,15 +58,6 @@
   max-height: 33vh;
 }
 
-.heroText {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-  font-family: Josefin Sans;
-}
-
 .subHeroText {
   color: #a4a9b3;
   font-size: 1.5rem;
@@ -66,24 +66,25 @@
   margin-top: 20px;
   font-family: Josefin Sans;
   margin-bottom: 46px;
+  white-space: nowrap;
 }
 
 .aboutSection {
   height: auto;
-  padding-block: 10vh;
-  max-width: 80vw;
-  width: fit-content;
-  background-color: #161616;
+  /* width: 90vw; */
+  /* background-color: #161616; */
   position: relative;
   color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  margin-top: 150px;
 }
-
+.aboutSection > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .aboutSection h2 {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 700;
   text-align: center;
   font-family: Josefin Sans;
   margin-bottom: 50px;
@@ -92,10 +93,10 @@
 .aboutSection p {
   font-size: 1.3rem;
   width: 50%;
+  margin-right: 50px;
   color: gainsboro;
   font-weight: 300;
   text-align: left;
-  /* margin-top: 10px; */
   line-height: 26px;
   word-spacing: 4px;
   font-family: Josefin Sans, light;
@@ -104,38 +105,31 @@
 
 .section {
   width: 100vw;
-  background-color: #161616;
+  /* background-color: #161616; */
   overflow-x: hidden;
-  /* position: relative; */
-  /* gap: 40px; */
   color: white;
-  /* margin-block: 66px; */
 }
 
 .cardSection {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 30px;
   row-gap: 40px;
   flex-wrap: wrap;
-  /* padding: 20px; */
 }
-
 .cardSection div {
   margin-inline: 5px;
 }
-
 .sectionHeading {
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 150px;
   font-family: Josefin Sans;
   margin-bottom: 50px;
 }
-
 .section h3 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -145,7 +139,6 @@
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-
 .committee {
   color: white;
   height: max-content;
@@ -155,24 +148,48 @@
   font-weight: 400;
   line-height: 35px;
 }
-
 .committee p {
   text-indent: 10px;
   margin-bottom: 20px;
 }
-
+@media screen and (max-width: 600px) {
+  .cardSection {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 768px) {
+  .lottiehero {
+    display: none;
+  }
+}
+@media screen and (max-width: 1023px) {
   .heroSection {
     flex-direction: column-reverse;
     height: auto;
   }
+
+  .subHeroText {
+    font-size: large;
+  }
   .lottiehero {
     width: 100vw;
   }
-  .aboutSection {
+  .aboutSection p {
+    width: 95%;
+    font-size: large;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .aboutSection > div {
     flex-direction: column;
   }
-  .aboutSection p {
-    width: 100%;
+  .committee p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .subHeroText {
+    white-space: normal;
   }
 }

@@ -23,7 +23,8 @@
     "react-image-lightbox": "^5.1.4",
     "react-intersection-observer": "^9.5.0",
     "react-lottie": "^1.2.3",
-    "react-notion-x": "^6.16.0"
+    "react-notion-x": "^6.16.0",
+    "react-parallax-tilt": "^1.7.147"
   },
   "devDependencies": {
     "prettier": "^2.8.8"

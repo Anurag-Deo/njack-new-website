@@ -1,30 +1,30 @@
 [
   {
     "deptName": "Competitive Programming",
-    "deptImage": "/home/heroImage.png",
+    "deptImage": "https://drive.google.com/uc?export=view&id=1Fxym_M4BcbrtKq7CrAVdbVpib0WolZzj",
     "deptDesc": "The Competitive Programming Department at NJACK is committed to honing students' problem-solving skills, algorithmic thinking, and programming prowess. Through regular coding contests, workshops, and practice sessions, this department helps participants develop their abilities to solve complex programming challenges efficiently.",
     "deptLink": "/departments/cp",
     "bgColor": "#FF6559"
   },
   {
     "deptName": "Dev and OS",
-    "deptImage": "/home/heroImage.png",
+    "deptImage": "https://drive.google.com/uc?export=view&id=1O5xVyCJkB-xboH0dNKqrsqYfpMG47Ae1",
     "deptDesc": "The Development and Open Source Department at NJACK encourages students to delve into the world of software development and contribute to the open-source community. Through hands-on workshops, collaborative projects, and mentorship programs, this department nurtures students' skills in building robust and scalable software solutions.",
     "deptLink": "/departments/dev-os",
     "bgColor": "#0091BD"
   },
   {
     "deptName": "Machine Learning",
-    "deptImage": "/home/heroImage.png",
+    "deptImage": "https://drive.google.com/uc?export=view&id=1eHz1s7ydP-lcDwI7JqO2J3ABGMgw18qV",
     "deptDesc": "The Machine Learning Department of NJACK is dedicated to exploring the vast field of artificial intelligence and machine learning. Through workshops, lectures, and practical sessions, this department equips members with the knowledge and tools required to tackle complex problems using machine learning algorithms.",
     "deptLink": "/departments/ml",
     "bgColor": "#FFAC2A"
   },
   {
     "deptName": "Cyber Security",
-    "deptImage": "/home/heroImage.png",
+    "deptImage": "https://drive.google.com/uc?export=view&id=1NR6tVOsLt25drtuBvxmuwC-UYmy3wJSy",
     "deptDesc": "The Cybersecurity Department at NJACK focuses on promoting awareness and understanding of the crucial field of cybersecurity. This department conducts workshops, seminars, and hands-on sessions to educate members about various cybersecurity threats, techniques, and countermeasures.",
     "deptLink": "/departments/cyber-security",
-    "bgColor": "#6EEDF3"
+    "bgColor": "#ff80ab"
   }
 ]

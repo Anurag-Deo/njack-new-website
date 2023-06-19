@@ -1,9 +1,8 @@
-import React from 'react';
 import { useState } from 'react';
 import { Gallery } from 'react-grid-gallery';
-import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import { images, CustomImage } from '../data/images';
+import Lightbox from 'react-image-lightbox';
+import { images } from '@/data/images';
 import { Footer, Header } from '@/components';
 import styles from '../styles/gallery.module.css';
 
@@ -26,7 +25,6 @@ const gallery = () => {
       <div className={styles.galleryContainer}>
         <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
         {!!currentImage && (
-          /* @ts-ignore */
           <Lightbox
             mainSrc={currentImage.original}
             imageTitle={currentImage.caption}

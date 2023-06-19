@@ -1,21 +1,22 @@
 import React from 'react';
 import DeptLayout from './deptLayout';
-import { members } from '../../data/members';
 import { eventsArr } from '../../data/events';
+import subCoordsCP from "@/data/sub-coordinators";
+import coordCP from "@/data/coordinators";
 
 const cp = () => {
   const coordArr = [];
   const subCoordArr = [];
   const events = [];
-  for (let i = 0; i < members[0].length; i++) {
-    if (members[0][i].committee === 'CP') {
+  for (let i = 0; i < coordCP.length; i++) {
+    if (coordCP[i].committee === 'CP') {
       coordArr.push({
         key: i + 1,
-        coordName: members[0][i].name,
-        coordImage: members[0][i].image,
-        coordCommittee: members[0][i].committee,
-        coordLinkedIn: members[0][i].linkedin,
-        coordGitHub: members[0][i].github
+        coordName: coordCP[i].name,
+        coordImage: coordCP[i].image,
+        coordCommittee: coordCP[i].committee,
+        coordLinkedIn: coordCP[i].linkedin,
+        coordGitHub: coordCP[i].github
       });
     }
   }
@@ -26,15 +27,15 @@ const cp = () => {
   }
   coordinators = coordinators.slice(0, -2);
 
-  for (let i = 0; i < members[1].length; i++) {
-    if (members[1][i].committee === 'CP') {
+  for (let i = 0; i < subCoordsCP.length; i++) {
+    if (subCoordsCP[i].committee === 'CP') {
       subCoordArr.push({
         key: i + 1,
-        coordName: members[1][i].name,
-        coordImage: members[1][i].image,
-        coordCommittee: members[1][i].committee,
-        coordLinkedIn: members[1][i].linkedin,
-        coordGitHub: members[1][i].github
+        coordName: subCoordsCP[i].name,
+        coordImage: subCoordsCP[i].image,
+        coordCommittee: subCoordsCP[i].committee,
+        coordLinkedIn: subCoordsCP[i].linkedin,
+        coordGitHub: subCoordsCP[i].github
       });
     }
   }

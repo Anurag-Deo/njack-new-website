@@ -7,7 +7,8 @@ const EventCard = ({ image, eventName, desc, registerLink, old }) => {
     <div className={`${styles.card} ${old ? styles.old : undefined}`}>
       <img src={image} />
       <h2>{eventName}</h2>
-      <p>{desc && desc.length > 115 ? desc.slice(0, 115) + '...' : desc} </p>
+      {/* <p>{desc && desc.length > 115 ? desc.slice(0, 115) + '...' : desc} </p> */}
+      <p>{desc}</p>
       <a style={{ textDecoration: 'none' }} href={registerLink}>
         <div className={styles.registerBtn}>
           <span>Session Details</span>

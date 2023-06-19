@@ -1,21 +1,23 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import styles from './header.module.css';
 import Link from 'next/link';
+
 const HeaderComp = ({ selected }) => {
   const [isDrawerVisible, setDrawerVisibility] = useState(false);
   const [isResourceDrawerVisible, setResourceDrawerVisibility] = useState(false);
-  const drawerHandleMouse = (event) => {
+  const [isMenuVisible, setMenuVisibility] = useState(false);
+  
+  const drawerHandleMouse = () => {
     setDrawerVisibility((current) => !current);
   };
-  const resourcedrawerHandleMouse = (event) => {
+  const resourceDrawerHandleMouse = () => {
     setResourceDrawerVisibility((current) => !current);
   };
-  const [isMenuVisible, setMenuVisibility] = useState(false);
-  const menuHandleMouseClick = (event) => {
+  const menuHandleMouseClick = () => {
     setMenuVisibility((current) => !current);
   };
 
-  const menuHandleMouseLeave = (event) => {
+  const menuHandleMouseLeave = () => {
     setMenuVisibility(false);
     setDrawerVisibility(false);
     setResourceDrawerVisibility(false);
@@ -38,18 +40,16 @@ const HeaderComp = ({ selected }) => {
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex' }}
-        >
+          style={{ display: 'flex' }}>
           <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
             DEPARTMENTS
           </Link>
           {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
         </div>
         <div
-          onMouseEnter={resourcedrawerHandleMouse}
-          onMouseLeave={resourcedrawerHandleMouse}
-          style={{ display: 'flex' }}
-        >
+          onMouseEnter={resourceDrawerHandleMouse}
+          onMouseLeave={resourceDrawerHandleMouse}
+          style={{ display: 'flex' }}>
           <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
             RESOURCES
           </Link>
@@ -69,7 +69,7 @@ const HeaderComp = ({ selected }) => {
             selected={selected}
             isDrawerVisible={isDrawerVisible}
             drawerHandleMouse={drawerHandleMouse}
-            resourcedrawerHandleMouse={resourcedrawerHandleMouse}
+            resourceDrawerHandleMouse={resourceDrawerHandleMouse}
             isResourceDrawerVisible={isResourceDrawerVisible}
           />
         )}
@@ -83,7 +83,7 @@ const MenuDrawer = ({
   selected,
   isDrawerVisible,
   drawerHandleMouse,
-  resourcedrawerHandleMouse,
+  resourceDrawerHandleMouse,
   isResourceDrawerVisible
 }) => {
   return (
@@ -99,18 +99,16 @@ const MenuDrawer = ({
       <div
         onMouseEnter={drawerHandleMouse}
         onMouseLeave={drawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
           DEPARTMENTS
         </Link>
         {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
       </div>
       <div
-        onMouseEnter={resourcedrawerHandleMouse}
-        onMouseLeave={resourcedrawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        onMouseEnter={resourceDrawerHandleMouse}
+        onMouseLeave={resourceDrawerHandleMouse}
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
           RESOURCES
         </Link>
@@ -139,10 +137,10 @@ const DeptDrawer = ({ isVisible }) => {
 const ResourceDrawer = ({ isVisible }) => {
   return (
     <div className={`${styles.resourcedrawer} ${isVisible ? styles.isVisible : ''}`}>
-      <Link href="/resources/cp">Competitive Programming Resources</Link>
-      <Link href="/resources/dev-os">Dev & OS Resources</Link>
-      <Link href="/resources/ml">Machine Learning Resources</Link>
-      <Link href="/resources/cyber-security">Cyber Security Resources</Link>
+      <Link href="/resources/cp">Competitive Programming</Link>
+      <Link href="/resources/dev-os">Dev & OS</Link>
+      <Link href="/resources/ml">Machine Learning</Link>
+      <Link href="/resources/cyber-security">Cyber Security</Link>
     </div>
   );
 };

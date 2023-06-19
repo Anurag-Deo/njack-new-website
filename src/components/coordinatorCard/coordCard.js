@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './coordCard.module.css';
 import Image from 'next/image';
-import Link from 'next/link';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coordGitHub }) => {
   return (
@@ -10,12 +10,16 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
       <div className={styles.coordName}>{coordName}</div>
       <p>{coordCommittee}</p>
       <div className={styles.coordIcon}>
-        <Link href={coordLinkedIn}>
-          <img src="/home/LinkedIn.png" alt="LinkedIn Page" />
-        </Link>
-        <Link href={coordGitHub}>
-          <img src="/home/GitHub.png" alt="GitHub Page" />
-        </Link>
+        <a target="_blank" referrerPolicy="no-referrer" href={coordLinkedIn}>
+          <BsLinkedin color="white" />
+        </a>
+        <a
+          target="_blank"
+          referrerPolicy="no-referrer"
+          href={coordGitHub}
+          style={{ marginLeft: '10px' }}>
+          <BsGithub color="white" />
+        </a>
       </div>
     </div>
   );
@@ -24,11 +28,11 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
 const SubCoordCard = ({ coordName, coordLinkedIn }) => {
   return (
     <div className={styles.subCoordCard}>
-      <div className={styles.coordIcon}>
-        <Link href={coordLinkedIn}>
-          <img src="/home/LinkedIn.png" alt="LinkedIn Page" />
-        </Link>
-      </div>
+      {/* <div className={styles.coordIcon}> */}
+        <a href={coordLinkedIn} target="_blank" referrerPolicy="no-referrer">
+          <BsLinkedin color="white" />
+        </a>
+      {/* </div> */}
       <p>{coordName}</p>
     </div>
   );

@@ -7,15 +7,16 @@
   align-items: center;
   padding-inline: 15px;
   padding-block: 15px;
-  background-color: #282828;
+  background-color: #161616;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   color: white;
 }
 
 .subCoordCard {
   display: flex;
+  /* justify-content: center; */
   padding-inline: 15px;
   width: 100%;
-  flex-direction: row;
   height: 40px;
 }
 
@@ -28,7 +29,6 @@
 }
 
 .coordName {
-  /* color: black; */
   height: 35px;
   text-align: center;
   font-size: 1.2rem;
@@ -41,7 +41,7 @@
 .subCoordCard p {
   font-size: 1.2rem;
   font-family: Josefin Sans;
-  /* color: black; */
+  color: gainsboro;
   font-weight: 300;
   text-align: center;
   line-height: 15px;
@@ -54,8 +54,6 @@
 }
 
 .coordIcon {
-  margin-top: -2%;
-  width: 150px;
   display: flex;
   align-self: center;
   justify-content: space-around;
@@ -65,4 +63,21 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+
+@media screen and (max-width: 320px) {
+  .coordImage {
+    width: 80px;
+    height: 80px;
+  }
+  .coordName {
+    font-size: 1rem;
+  }
+  .coordCard p {
+    font-size: medium;
+  }
+  .coordIcon img {
+    width: 15px;
+    height: 15px;
+  }
 }

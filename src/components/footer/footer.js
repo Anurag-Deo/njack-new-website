@@ -1,7 +1,8 @@
 import styles from './footer.module.css';
 import Link from 'next/link';
 import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
-const Footer = ({}) => {
+
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.row}>
@@ -9,22 +10,19 @@ const Footer = ({}) => {
           <img src="\home\NJACK logo.svg" alt="NJACK-Logo" />
           <p>
             NJACK is the Computer Science Club at IIT Patna, dedicated to fostering a community of
-            passionate computer science enthusiasts. NJACK serves as a nurturing platform for
-            students passionate about computer science at IIT Patna.
+            passionate computer science enthusiasts.
           </p>
           <div className={styles.socialIcons}>
             <a
               target="_blank"
               referrerPolicy="no-referrer"
-              href="https://www.facebook.com/njack.iitp/"
-            >
+              href="https://www.facebook.com/njack.iitp/">
               <BsFacebook color="white" size={25} />
             </a>
             <a
               target="_blank"
               referrerPolicy="no-referrer"
-              href="https://www.instagram.com/njackiitp/"
-            >
+              href="https://www.instagram.com/njackiitp/">
               <BsInstagram color="white" size={25} />
             </a>
 
@@ -33,43 +31,39 @@ const Footer = ({}) => {
             </a>
           </div>
         </div>
-        <div className={styles.linkSection}>
-          <div className={styles.links}>
-            <h2>DEPARTMENTS</h2>
-            <ul>
-              <li>
-                <Link href="/departments/cp">Competitive Programming</Link>
-              </li>
-              <li>
-                <Link href="/departments/dev-os">Dev & OS</Link>
-              </li>
-              <li>
-                <Link href="/departments/ml">Machine Learning</Link>
-              </li>
-              <li>
-                <Link href="/departments/cyber-security">Cyber Security</Link>
-              </li>
-            </ul>
-          </div>
+        <div className={styles.links}>
+          <h2>DEPARTMENTS</h2>
+          <ul>
+            <li>
+              <Link href="/departments/cp">Competitive Programming</Link>
+            </li>
+            <li>
+              <Link href="/departments/dev-os">Dev & OS</Link>
+            </li>
+            <li>
+              <Link href="/departments/ml">Machine Learning</Link>
+            </li>
+            <li>
+              <Link href="/departments/cyber-security">Cyber Security</Link>
+            </li>
+          </ul>
         </div>
-        <div className={styles.linkSection}>
-          <div className={styles.links}>
-            <h2>RESOURCES</h2>
-            <ul>
-              <li>
-                <Link href="/resources/cp">Competitive Programming</Link>
-              </li>
-              <li>
-                <Link href="/resources/dev-os">Dev & OS</Link>
-              </li>
-              <li>
-                <Link href="/resources/ml">Machine Learning</Link>
-              </li>
-              <li>
-                <Link href="/resources/cyber-security">Cyber Security</Link>
-              </li>
-            </ul>
-          </div>
+        <div className={styles.links}>
+          <h2>RESOURCES</h2>
+          <ul>
+            <li>
+              <Link href="/resources/cp">Competitive Programming</Link>
+            </li>
+            <li>
+              <Link href="/resources/dev-os">Dev & OS</Link>
+            </li>
+            <li>
+              <Link href="/resources/ml">Machine Learning</Link>
+            </li>
+            <li>
+              <Link href="/resources/cyber-security">Cyber Security</Link>
+            </li>
+          </ul>
         </div>
         <div className={styles.map}>
           <h2>VISIT OUR CAMPUS</h2>
@@ -81,13 +75,12 @@ const Footer = ({}) => {
           />
         </div>
       </div>
-      <div className={`${styles.copyrightText} ${styles.row}`}>
+      <div className={styles.footerEnd}>
         <span style={{ fontWeight: 100 }}>
           &copy; {new Date().getFullYear()} Copyright{' '}
           <span style={{ fontWeight: 600 }}>NJACK, IIT Patna.</span>
         </span>
-        <span></span>
-        <span>Developed by NJACK</span>
+        <span>Developed with ❤️ by NJACK</span>
       </div>
     </footer>
   );

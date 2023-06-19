@@ -1,9 +1,3 @@
-import { Image } from 'react-grid-gallery';
-
-// export interface CustomImage extends Image {
-//   original: string;
-// }
-
 export const images = [
   {
     src: 'https://drive.google.com/uc?export=view&id=1DfBxqUiGpjfx4FQPa1w8HXARU5ST5Jlu',
