@@ -129,6 +129,7 @@ export default function Home() {
           <h3>Coordinators</h3>
           <div className={styles.cardSection} style={{ justifyContent: 'center' }}>
             {members[0].map((member, index) => (
+              member.committee === 'Overall Coordinator' && (
               <motion.div
                 key={member.name}
                 className={styles.card}
@@ -141,7 +142,6 @@ export default function Home() {
                   hidden: { opacity: 0, y: 20 }
                 }}
               >
-                {member.committee === 'Overall Coordinator' && (
                   <CoordCard
                     coordName={member.name}
                     coordImage={'https://drive.google.com/uc?export=view&id=' + member.image}
@@ -149,8 +149,8 @@ export default function Home() {
                     coordLinkedIn={member.linkedin}
                     coordGitHub={member.github}
                   />
-                )}
-              </motion.div>
+                  </motion.div>
+                  )
             ))}
           </div>
 

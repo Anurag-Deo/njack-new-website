@@ -65,6 +65,7 @@
   text-align: center;
   margin-top: 20px;
   font-family: Josefin Sans;
+  margin-bottom: 46px;
 }
 
 .aboutSection {
@@ -114,7 +115,7 @@
 .cardSection {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
   row-gap: 40px;

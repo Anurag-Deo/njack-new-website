@@ -9,6 +9,13 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-block: 50px;
+    padding-inline: 10px;
+  }
+}
+
 .footer h2 {
   font-weight: 200;
 }
@@ -88,7 +95,7 @@
   list-style: none;
 }
 
-@media only screen and (max-width: 416.5px) {
+@media only screen and (max-width: 425px) {
   .socialIcons {
     flex-direction: row;
     justify-content: space-between;
