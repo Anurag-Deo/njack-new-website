@@ -10,39 +10,36 @@
   position: absolute;
   width: 100vw;
   background: rgb(1, 2, 22);
-  background: -moz-radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010216",endColorstr="#010216",GradientType=1);
+  background: -moz-radial-gradient(circle,
+      rgba(1, 2, 22, 1) 0%,
+      rgba(0, 12, 35, 1) 50%,
+      rgba(1, 2, 22, 1) 75%);
+  background: -webkit-radial-gradient(circle,
+      rgba(1, 2, 22, 1) 0%,
+      rgba(0, 12, 35, 1) 50%,
+      rgba(1, 2, 22, 1) 75%);
+  background: radial-gradient(circle,
+      rgba(1, 2, 22, 1) 0%,
+      rgba(0, 12, 35, 1) 50%,
+      rgba(1, 2, 22, 1) 75%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010216", endColorstr="#010216", GradientType=1);
   color: white;
 }
+
 .aboutDept {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .deptTitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 70vw;
 }
+
 .deptDesc {
   font-family: Josefin Sans, light;
   font-size: 1.5rem;
@@ -54,6 +51,7 @@
   align-items: center;
   gap: 50px;
 }
+
 @media screen and (max-width: 768px) {
   .aboutDept {
     height: auto;
@@ -125,9 +123,11 @@
   .deptDesc {
     flex-direction: column;
   }
+
   .deptDesc div {
     width: 100%;
   }
+
   .deptDesc p {
     width: 100%;
   }
@@ -169,7 +169,7 @@
 
 .section .cardSection div {
   margin-inline: 5px;
-  /* background-color: #282828; */
+  /* background-color: rgb(1, 2, 22); */
 }
 
 .sectionHeading {
