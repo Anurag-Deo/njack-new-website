@@ -40,11 +40,11 @@ const resources_component = ({ pageData }) => {
               z-index: 0 !important;
             }
             .notion-frame{
-              background-color: #161616;
+              background-color: rgb(1, 2, 22);
             }
             .notion-header .breadcrumbs, .notion-header .notion-nav-header{
               color: #ffffff;
-              background-color: #161616;
+              background-color: rgb(1, 2, 22);
             }
             .notion-header .breadcrumb.active{
               color: #ffffff;

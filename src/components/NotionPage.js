@@ -34,14 +34,14 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
         <style>
           {`
             .notion-frame{
-              background-color: #282828;
+              background-color: rgb(1, 2, 22);
               color: #ffffff;
             }
             .notion-header{
               z-index: 0 !important;
             }
             .notion-header .notion-nav-header{
-              background-color: #282828;
+              background-color: rgb(1, 2, 22);
               color: #ffffff;
             }
             .notion-header .breadcrumb .title{
@@ -58,8 +58,14 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
               width: 80% !important;
             }
             .notion .notion-code{
-              background-color: #161616;
+              background-color: rgb(1, 2, 22);
               border-radius: 10px;
+            }
+            .notion-bookmark-title, .notion-bookmark-description{
+              color: white;
+            }
+            .notion-bookmark-link-text{
+              color: white !important;
             }
           `}
         </style>

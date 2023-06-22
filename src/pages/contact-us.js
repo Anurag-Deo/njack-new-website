@@ -6,7 +6,7 @@ import Link from 'next/link';
 const ContactUs = () => {
   const mapCenter = [25.5372633, 84.8472938];
   return (
-    <>
+    <div style={{backgroundColor: 'rgb(1, 2, 22)'}}>
       <Header selected={'Contact'} />
       <div className={styles.parentDiv}>
         <div className={styles.sectionHeading}>
@@ -53,7 +53,7 @@ const ContactUs = () => {
         </div>
         {/* <Footer /> */}
       </div>
-    </>
+    </div>
   );
 };
 

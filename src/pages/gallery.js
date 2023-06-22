@@ -20,7 +20,7 @@ const gallery = () => {
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
   return (
-    <div style={{ backgroundColor: '#161616' }}>
+    <div style={{ backgroundColor: 'rgb(1, 2, 22)' }}>
       <Header selected={'Gallery'} />
       <div className={styles.galleryContainer}>
         <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
