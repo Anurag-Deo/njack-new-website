@@ -1,28 +1,13 @@
-@import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:light');
 
 .parentDiv {
   align-items: center;
-  /* background-color: #161616; */
   display: flex;
   flex-direction: column;
   height: fit-content;
   justify-content: center;
   position: absolute;
   width: 100vw;
-  background: rgb(1, 2, 22);
-  background: -moz-radial-gradient(circle,
-      rgba(1, 2, 22, 1) 0%,
-      rgba(0, 12, 35, 1) 50%,
-      rgba(1, 2, 22, 1) 75%);
-  background: -webkit-radial-gradient(circle,
-      rgba(1, 2, 22, 1) 0%,
-      rgba(0, 12, 35, 1) 50%,
-      rgba(1, 2, 22, 1) 75%);
-  background: radial-gradient(circle,
-      rgba(1, 2, 22, 1) 0%,
-      rgba(0, 12, 35, 1) 50%,
-      rgba(1, 2, 22, 1) 75%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010216", endColorstr="#010216", GradientType=1);
   color: white;
 }
 
@@ -31,6 +16,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .deptTitle {
@@ -58,8 +44,6 @@
   }
 }
 
-
-
 @media screen and (max-width: 768px) {
   .deptTitle {
     flex-direction: column-reverse;
@@ -77,6 +61,7 @@
 
 .deptTitle h4 {
   font-family: Josefin Sans;
+  color: gainsboro;
   font-size: 1.2rem;
   font-weight: lighter;
 }
@@ -86,7 +71,7 @@
     font-size: 1.7rem;
     text-align: center;
   }
-  .deptTitle h4{
+  .deptTitle h4 {
     text-align: center;
   }
 }
@@ -96,7 +81,7 @@
     font-size: 1.7rem;
     text-align: center;
   }
-  .deptTitle h4{
+  .deptTitle h4 {
     text-align: center;
   }
 }
@@ -106,11 +91,10 @@
     font-size: 1.5rem;
     text-align: center;
   }
-  .deptTitle h4{
+  .deptTitle h4 {
     text-align: center;
   }
 }
-
 
 .deptTitle img {
   height: 190px;
@@ -126,19 +110,12 @@
   }
 }
 
-
-
-/* .deptDesc div {
-  width: 70%;
-} */
+.deptDesc div {
+  width: 100%;
+}
 
 .deptDesc p {
-  /* width: 50%; */
   font-size: 1.3rem;
-  /* width: 50%; */
-  /* margin-right: 50px; */
-  /* word-spacing: 4px; */
-  /* white-space: pre-wrap; */
   color: gainsboro;
   font-weight: 300;
   text-align: justify;
@@ -149,7 +126,7 @@
 @media screen and (max-width: 768px) {
   .deptDesc {
     flex-direction: column;
-    width:90vw;
+    width: 90vw;
   }
 
   .deptDesc div {
@@ -158,12 +135,7 @@
 
   .deptDesc p {
     width: 100%;
-    text-wrap: balance;
   }
-}
-
-.lottie {
-  width: 100vw;
 }
 
 .section {
@@ -207,7 +179,5 @@
   font-weight: 700;
   justify-self: center;
   margin-bottom: 50px;
-  /* max-width: 80vw;
-  min-width: 70vw; */
   text-align: left;
 }

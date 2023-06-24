@@ -95,6 +95,6 @@
 .loading {
   display: grid;
   place-items: center;
-  background: #262626;
+  background: #0d0d0d;
   min-height: 100vh;
 }

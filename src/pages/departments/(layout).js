@@ -5,13 +5,14 @@ import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
 import DisplayLottie from '@/components/Lottie';
 import Head from 'next/head';
+import Background from '@/components/Background';
 
-const DeptLayout = ({
+const Layout = ({
   deptName,
   deptCoordName,
   deptImage,
   deptDesc,
-  eventsArr,
+  events,
   coordArr,
   subCoordArr
 }) => {
@@ -22,11 +23,12 @@ const DeptLayout = ({
       </Head>
       <Header selected={'Departments'} />
       <div className={styles.parentDiv}>
+        <Background/>
         <div className={styles.aboutDept}>
           <DeptTitle deptName={deptName} deptCoordName={deptCoordName} deptImage={deptImage} />
           <DeptDescription deptDesc={deptDesc} />
         </div>
-        <EventCards eventsArr={eventsArr} />
+        <EventCards events={events} />
         <CoordSection coordArr={coordArr} subCoordArr={subCoordArr} />
         <Footer />
       </div>
@@ -39,7 +41,7 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
     <div className={styles.deptTitle}>
       <div>
         <h1>{deptName}</h1>
-        <h4>Coordinator: {deptCoordName}</h4>
+        <h4>Coordinator(s): {deptCoordName}</h4>
       </div>
       <img src={deptImage} />
     </div>
@@ -49,7 +51,7 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
 const DeptDescription = ({ deptDesc }) => {
   return (
     <div className={styles.deptDesc}>
-      <div className={styles.lottie}>
+      <div>
         <DisplayLottie
           animationPath={'https://assets7.lottiefiles.com/packages/lf20_iv4dsx3q.json'}
         />
@@ -59,23 +61,22 @@ const DeptDescription = ({ deptDesc }) => {
   );
 };
 
-const EventCards = ({ eventsArr }) => {
+const EventCards = ({events}) => {
   return (
     <div className={styles.section}>
       <h2 className={styles.sectionHeading}>Events</h2>
       <InView>
         {({ inView, ref }) => (
           <motion.div className={styles.cardSection} ref={ref}>
-            {eventsArr ? (
-              eventsArr.map((event, index) => (
+            {events ? (
+              events.map((event, index) => (
                 //   {event.old === false && (
                 <motion.div
                   key={event.key}
                   className={styles.card}
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 1, delay: index * 0.2 }}
-                >
+                  transition={{ duration: 1, delay: index * 0.2 }}>
                   <EventCard
                     key={event.key}
                     old={event.old}
@@ -111,8 +112,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
                   className={styles.card}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
+                  transition={{ duration: 0.5, delay: index * 0.1 }}>
                   {member.committee !== 'Overall Coordinator' && (
                     <CoordCard
                       coordName={member.coordName}
@@ -140,8 +140,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
                   className={styles.card}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
+                  transition={{ duration: 0.5, delay: index * 0.1 }}>
                   {member.committee !== 'Overall Coordinator' && (
                     <CoordCard
                       coordName={member.coordName}
@@ -163,4 +162,4 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
   );
 };
 
-export default DeptLayout;
+export default Layout;

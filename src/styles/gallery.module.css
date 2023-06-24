@@ -1,12 +1,10 @@
 .galleryContainer {
-  margin-inline: 150px;
-  margin-top: 50px;
-  background-color: rgb(1, 2, 22);
-  margin-bottom: 50px;
+  /* background-color: #0d0d0d; */
+  padding: 70px 100px;
 }
 
 @media screen and (max-width: 768px) {
   .galleryContainer {
-    margin-inline: 50px;
+    padding: auto;
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NotionAPI } from 'notion-client';
 import Head from 'next/head';
-import ResourcesComponent from './resources_component';
+import ResourcesComponent from './(layout)';
 import 'react-notion-x/src/styles.css';
 
 const pageId = '0aae496d07034e838d48d0b5fee0d449';

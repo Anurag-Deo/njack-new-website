@@ -1,7 +1,7 @@
 .header {
   --_img-h: 6.666vh;
   --_img-min-h: 25px;
-  background-color: #010216;
+  background-color: #0d0d0d;
   display: flex;
   justify-content: space-between;
   position: fixed;

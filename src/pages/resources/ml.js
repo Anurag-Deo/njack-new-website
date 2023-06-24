@@ -1,5 +1,5 @@
 import React from 'react';
-import ResourcesComponent from './resources_component';
+import ResourcesComponent from './(layout)';
 import 'react-notion-x/src/styles.css';
 import { NotionAPI } from 'notion-client';
 

@@ -18,7 +18,7 @@ const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').the
   ssr: false
 });
 
-const resources_component = ({ pageData }) => {
+const Layout = ({ pageData }) => {
   const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer), {
     ssr: false
   });
@@ -27,27 +27,20 @@ const resources_component = ({ pageData }) => {
       <Header selected={'Resources'} />
       <div>
         <Head>
-          <title>NJACK | Dev Resources</title>
+          <title>NJACK | Resources</title>
           <style>
-            {`
+          {`
             .notion-page{
               width: 90% !important;
             }
             .notion-page-no-cover{
               padding-top: 0px !important;
             }
-            .notion-header{
-              z-index: 0 !important;
-            }
             .notion-frame{
-              background-color: rgb(1, 2, 22);
+              background-color: #111;
             }
-            .notion-header .breadcrumbs, .notion-header .notion-nav-header{
-              color: #ffffff;
-              background-color: rgb(1, 2, 22);
-            }
-            .notion-header .breadcrumb.active{
-              color: #ffffff;
+            .notion-nav-header, .notion-header{
+              display: none !important;
             }
             .notion-title{
               color: #ffffff; 
@@ -78,6 +71,7 @@ const resources_component = ({ pageData }) => {
           </style>
         </Head>
         {pageData ? (
+          <>
           <NotionRenderer
             recordMap={pageData}
             fullPage={true}
@@ -90,6 +84,7 @@ const resources_component = ({ pageData }) => {
               Modal
             }}
           />
+          </>
         ) : null}
       </div>
       <Footer />
@@ -97,4 +92,4 @@ const resources_component = ({ pageData }) => {
   );
 };
 
-export default resources_component;
+export default Layout;

@@ -1,13 +1,13 @@
 import React from 'react';
-import DeptLayout from './deptLayout';
-import { eventsArr } from '../../data/events';
+import DeptLayout from './(layout)';
+import events from '../../data/events';
 import subCoordsML from "@/data/sub-coordinators";
 import coordML from "@/data/coordinators";
 
-const ml = () => {
+const ML = () => {
   const coordArr = [];
   const subCoordArr = [];
-  const events = [];
+  const eventsML = [];
   for (let i = 0; i < coordML.length; i++) {
     if (coordML[i].committee === 'ML') {
       coordArr.push({
@@ -39,9 +39,9 @@ const ml = () => {
       });
     }
   }
-  for (let i = 0; i < eventsArr.length; i++) {
-    if (eventsArr[i].dept === 'ML') {
-      events.push(eventsArr[i]);
+  for (let i = 0; i < events.length; i++) {
+    if (events[i].dept === 'ML') {
+      eventsML.push(events[i]);
     }
   }
 
@@ -57,11 +57,11 @@ const ml = () => {
       deptCoordName={deptCoordName}
       deptImage={deptImage}
       deptDesc={deptDesc}
-      eventsArr={events}
+      events={eventsML}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
     />
   );
 };
 
-export default ml;
+export default ML;

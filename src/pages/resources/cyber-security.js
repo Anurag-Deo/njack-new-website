@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-notion-x/src/styles.css';
-import ResourcesComponent from './resources_component';
+import ResourcesComponent from './(layout)';
 import { NotionAPI } from 'notion-client';
 
 const pageId = '59ca205b36174d0aa7c9e2d86a6680f8';

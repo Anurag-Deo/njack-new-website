@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-notion-x/src/styles.css';
 // import { NotionRenderer } from 'react-notion-x'
 import { NotionAPI } from 'notion-client';
-import ResourcesComponent from './resources_component';
+import ResourcesComponent from './(layout)';
 
 const pageId = 'a1e6cd22c5924c268eac02de0531d52e';
 export async function getServerSideProps() {

@@ -1,13 +1,15 @@
-import { Footer, Header } from '@/components';
+import { Header } from '@/components';
 import React from 'react';
 import styles from '../styles/contactus.module.css';
-import Link from 'next/link';
+import Background from '@/components/Background';
+import { BsFacebook, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 const ContactUs = () => {
   const mapCenter = [25.5372633, 84.8472938];
   return (
-    <div style={{backgroundColor: 'rgb(1, 2, 22)'}}>
+    <>
       <Header selected={'Contact'} />
+      <Background />
       <div className={styles.parentDiv}>
         <div className={styles.sectionHeading}>
           <h2>Contact Us</h2>
@@ -15,28 +17,25 @@ const ContactUs = () => {
         <div className={styles.body}>
           <section className={styles.leftSection}>
             <h2>NJACK IIT Patna</h2>
-            <Link href="mailto:njack@iitp.ac.in">njack@iitp.ac.in</Link>
+            <a href="mailto:njack@iitp.ac.in">njack@iitp.ac.in</a>
             <p>+91 63880 17215</p>
             <br />
             <p>Address</p>
             <p id={styles.address}>Gymkhana, Indian Institute of Technology Patna, Bihta, Bihar</p>
             <br />
-            <div id={styles.social}>
-              <p>Social Media</p>
-              <Link href="https://www.facebook.com/njack.iitp/">
-                <img src="\home\Facebook.png" />
-                Facebook
-              </Link>
+            <p>Social Media</p>
+            <div className={styles.social}>
+              <a target='_blank' referrerPolicy='no-referrer' href="https://www.facebook.com/njack.iitp/">
+                <BsFacebook />
+              </a>
               <br />
-              <Link href="https://www.instagram.com/njackiitp/">
-                <img src="\home\Instagram.png" />
-                Instagram
-              </Link>
+              <a target='_blank' referrerPolicy='no-referrer' href="https://www.instagram.com/njackiitp/">
+                <BsInstagram />
+              </a>
               <br />
-              <Link href="https://in.linkedin.com/company/njack-iit-patna">
-                <img src="\home\LinkedIn.png" />
-                LinkedIn
-              </Link>
+              <a target='_blank' referrerPolicy='no-referrer' href="https://in.linkedin.com/company/njack-iit-patna">
+                <BsLinkedin />
+              </a>
             </div>
           </section>
           <section className={styles.rightSection}>
@@ -47,13 +46,12 @@ const ContactUs = () => {
               height="500px"
               frameBorder="0"
               style={{ borderRadius: '5px' }}
-              allowFullScreen
-            ></iframe>
+              allowFullScreen></iframe>
           </section>
         </div>
         {/* <Footer /> */}
       </div>
-    </div>
+    </>
   );
 };
 

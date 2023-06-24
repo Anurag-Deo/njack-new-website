@@ -10,7 +10,6 @@ const notion = new NotionAPI();
 export const getStaticProps = async (context) => {
   const pageId = context.params.pageId || rootNotionPageId;
   const recordMap = await notion.getPage(pageId);
-
   return {
     props: {
       recordMap

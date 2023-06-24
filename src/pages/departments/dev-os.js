@@ -1,11 +1,9 @@
-import React from 'react';
-import DeptLayout from './deptLayout';
-// import { members } from '../../data/members';
-import { eventsArr } from '../../data/events';
+import DeptLayout from './(layout)';
+import events from '@/data/events';
 import coordDevOS from "@/data/coordinators";
 import subCoordDevOS from "@/data/sub-coordinators";
 
-const devos = () => {
+const DevOS = () => {
   const coordArr = [];
   const subCoordArr = [];
   const devEvents = [];
@@ -40,9 +38,9 @@ const devos = () => {
       });
     }
   }
-  for (let i = 0; i < eventsArr.length; i++) {
-    if (eventsArr[i].dept === 'Dev&OS') {
-      devEvents.push(eventsArr[i]);
+  for (let i = 0; i < events.length; i++) {
+    if (events[i].dept === 'Dev&OS') {
+      devEvents.push(events[i]);
     }
   }
 
@@ -58,11 +56,11 @@ const devos = () => {
       deptCoordName={deptCoordName}
       deptImage={deptImage}
       deptDesc={deptDesc}
-      eventsArr={devEvents}
+      events={devEvents}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
     />
   );
 };
 
-export default devos;
+export default DevOS;

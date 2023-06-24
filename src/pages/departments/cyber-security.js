@@ -1,13 +1,13 @@
 import React from 'react';
-import DeptLayout from './deptLayout';
-import { eventsArr } from '../../data/events';
+import DeptLayout from './(layout)';
+import events from '../../data/events';
 import cyberSecCoord from '@/data/coordinators';
 import cyberSecSubCoord from '@/data/sub-coordinators';
 
-const cybersec = () => {
+const CyberSec = () => {
   const coordArr = [];
   const subCoordArr = [];
-  const events = [];
+  const eventsCyber = [];
   for (let i = 0; i < cyberSecCoord.length; i++) {
     if (cyberSecCoord[i].committee === 'Cybersec') {
       coordArr.push({
@@ -39,9 +39,9 @@ const cybersec = () => {
       });
     }
   }
-  for (let i = 0; i < eventsArr.length; i++) {
-    if (eventsArr[i].dept === 'Cybersec') {
-      events.push(eventsArr[i]);
+  for (let i = 0; i < events.length; i++) {
+    if (events[i].dept === 'Cybersec') {
+      eventsCyber.push(events[i]);
     }
   }
   const deptName = 'Cyber Security';
@@ -56,11 +56,11 @@ const cybersec = () => {
       deptCoordName={deptCoordName}
       deptImage={deptImage}
       deptDesc={deptDesc}
-      eventsArr={events}
+      events={eventsCyber}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
     />
   );
 };
 
-export default cybersec;
+export default CyberSec;

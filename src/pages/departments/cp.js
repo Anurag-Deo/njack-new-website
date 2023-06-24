@@ -1,13 +1,13 @@
 import React from 'react';
-import DeptLayout from './deptLayout';
-import { eventsArr } from '../../data/events';
+import DeptLayout from './(layout)';
+import events from '@/data/events';
 import subCoordsCP from "@/data/sub-coordinators";
 import coordCP from "@/data/coordinators";
 
-const cp = () => {
+const CP = () => {
   const coordArr = [];
   const subCoordArr = [];
-  const events = [];
+  const eventsCP = [];
   for (let i = 0; i < coordCP.length; i++) {
     if (coordCP[i].committee === 'CP') {
       coordArr.push({
@@ -39,9 +39,9 @@ const cp = () => {
       });
     }
   }
-  for (let i = 0; i < eventsArr.length; i++) {
-    if (eventsArr[i].dept === 'CP') {
-      events.push(eventsArr[i]);
+  for (let i = 0; i < events.length; i++) {
+    if (events[i].dept === 'CP') {
+      eventsCP.push(events[i]);
     }
   }
 
@@ -57,11 +57,11 @@ const cp = () => {
       deptCoordName={deptCoordName}
       deptImage={deptImage}
       deptDesc={deptDesc}
-      eventsArr={events}
+      events={eventsCP}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
     />
   );
 };
 
-export default cp;
+export default CP;

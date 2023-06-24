@@ -1,29 +1,5 @@
 /* @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light'); */
 
-.parentDiv {
-  /* background-color: #161616; */
-  background: rgb(1, 2, 22);
-  background: -moz-radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(1, 2, 22, 1) 0%,
-    rgba(0, 12, 35, 1) 50%,
-    rgba(1, 2, 22, 1) 75%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#010216",endColorstr="#010216",GradientType=1);
-  color: white;
-}
 
 .heroSection {
   display: flex;
@@ -32,8 +8,6 @@
   align-items: center;
   height: 95vh;
   max-height: max-content;
-  /* width: 100vw; */
-  /* background-color: #161616; */
   color: white;
   padding-inline: 47px;
 }
@@ -59,7 +33,7 @@
 }
 
 .subHeroText {
-  color: #a4a9b3;
+  color: gainsboro;
   font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
@@ -71,8 +45,6 @@
 
 .aboutSection {
   height: auto;
-  /* width: 90vw; */
-  /* background-color: #161616; */
   position: relative;
   color: white;
   margin-top: 150px;

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Gallery } from 'react-grid-gallery';
 import 'react-image-lightbox/style.css';
 import Lightbox from 'react-image-lightbox';
-import { images } from '@/data/images';
+import images  from '@/data/images';
 import { Footer, Header } from '@/components';
 import styles from '../styles/gallery.module.css';
+import Background from '@/components/Background';
 
 const gallery = () => {
   const [index, setIndex] = useState(-1);
@@ -20,27 +21,30 @@ const gallery = () => {
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
   return (
-    <div style={{ backgroundColor: 'rgb(1, 2, 22)' }}>
+    <>
+      <>
       <Header selected={'Gallery'} />
-      <div className={styles.galleryContainer}>
-        <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
-        {!!currentImage && (
-          <Lightbox
-            mainSrc={currentImage.original}
-            imageTitle={currentImage.caption}
-            mainSrcThumbnail={currentImage.src}
-            nextSrc={nextImage.original}
-            nextSrcThumbnail={nextImage.src}
-            prevSrc={prevImage.original}
-            prevSrcThumbnail={prevImage.src}
-            onCloseRequest={handleClose}
-            onMovePrevRequest={handleMovePrev}
-            onMoveNextRequest={handleMoveNext}
-          />
-        )}
-      </div>
+        <div className={styles.galleryContainer}>
+          <Background/>
+          <Gallery images={images} onClick={handleClick} enableImageSelection={false}/>
+          {!!currentImage && (
+            <Lightbox
+              mainSrc={currentImage.original}
+              imageTitle={currentImage.caption}
+              mainSrcThumbnail={currentImage.src}
+              nextSrc={nextImage.original}
+              nextSrcThumbnail={nextImage.src}
+              prevSrc={prevImage.original}
+              prevSrcThumbnail={prevImage.src}
+              onCloseRequest={handleClose}
+              onMovePrevRequest={handleMovePrev}
+              onMoveNextRequest={handleMoveNext}
+            />
+          )}
+        </div>
+      </>
       <Footer />
-    </div>
+    </>
   );
 };
 
