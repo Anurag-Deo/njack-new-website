@@ -149,10 +149,11 @@
 @media screen and (max-width: 768px) {
   .deptDesc {
     flex-direction: column;
+    width:90vw;
   }
 
   .deptDesc div {
-    width: 100%;
+    width: 90%;
   }
 
   .deptDesc p {
