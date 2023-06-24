@@ -157,6 +157,7 @@
 
   .deptDesc p {
     width: 100%;
+    text-wrap: balance;
   }
 }
 
