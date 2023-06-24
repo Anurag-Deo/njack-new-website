@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:light');
 
 .parentDiv {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  height: fit-content;
   justify-content: center;
-  position: absolute;
-  width: 100vw;
+  align-items: center;
+  height: fit-content;
   color: white;
 }
 
@@ -25,32 +23,6 @@
   align-items: center;
   width: 70vw;
 }
-
-.deptDesc {
-  font-family: Josefin Sans, light;
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 26px;
-  width: 70vw;
-  padding-bottom: 7.5vh;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .aboutDept {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .deptTitle {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-}
-
 .deptTitle h1 {
   color: #ff6559;
   font-family: Josefin Sans;
@@ -65,49 +37,22 @@
   font-size: 1.2rem;
   font-weight: lighter;
 }
-
-@media (max-width: 450px) {
-  .deptTitle h1 {
-    font-size: 1.7rem;
-    text-align: center;
-  }
-  .deptTitle h4 {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .deptTitle h1 {
-    font-size: 1.7rem;
-    text-align: center;
-  }
-  .deptTitle h4 {
-    text-align: center;
-  }
-}
-
-@media (max-width: 350px) {
-  .deptTitle h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .deptTitle h4 {
-    text-align: center;
-  }
+.deptDesc {
+  font-family: Josefin Sans, light;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 26px;
+  width: 70vw;
+  padding-bottom: 7.5vh;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .deptTitle img {
   height: 190px;
   margin: 0 50px 0 0;
   width: 190px;
-}
-
-@media screen and (max-width: 768px) {
-  .deptTitle img {
-    margin: 0;
-    height: 120px;
-    width: 120px;
-  }
 }
 
 .deptDesc div {
@@ -122,39 +67,20 @@
   line-height: 26px;
   font-family: Josefin Sans, light;
 }
-
-@media screen and (max-width: 768px) {
-  .deptDesc {
-    flex-direction: column;
-    width: 90vw;
-  }
-
-  .deptDesc div {
-    width: 90%;
-  }
-
-  .deptDesc p {
-    width: 100%;
-  }
-}
-
 .section {
-  /* background-color: #161616; */
   display: grid;
   margin-bottom: 50px;
-  max-width: 90vw;
-  min-width: 80vw;
-  position: relative;
+  width: 90vw;
 }
 
 .cardSection {
   align-items: center;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 30px;
   row-gap: 40px;
+  width: inherit;
 }
 
 .cardSectionTeams {
@@ -170,7 +96,6 @@
 
 .section .cardSection div {
   margin-inline: 5px;
-  /* background-color: rgb(1, 2, 22); */
 }
 
 .sectionHeading {
@@ -180,4 +105,45 @@
   justify-self: center;
   margin-bottom: 50px;
   text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutDept {
+    height: 100%;
+  }
+  .deptTitle {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    margin-top: 11px;
+  }
+  .deptTitle > div > h1 {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .deptTitle > div > h4 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .deptTitle img {
+    margin: 0;
+    height: 120px;
+    width: 120px;
+  }
+  .deptDesc {
+    flex-direction: column;
+    width: 87vw;
+  }
+
+  .deptDesc div {
+    width: 80%;
+    margin: auto;
+  }
+
+  .deptDesc p {
+    width: 100%;
+    font-size: 1rem;
+  }
 }

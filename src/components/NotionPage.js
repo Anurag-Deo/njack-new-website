@@ -65,7 +65,7 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
       <Head>
         <meta name="description" content="React Notion X Minimal Demo" />
 
-        <title>NJACK | {title}</title>
+        <title>{`NJACK | ${title}`}</title>
         <style>
           {`
             .notion-frame{

@@ -1,10 +1,10 @@
 .galleryContainer {
   /* background-color: #0d0d0d; */
-  padding: 70px 100px;
+  padding: 30px 100px;
 }
 
 @media screen and (max-width: 768px) {
   .galleryContainer {
-    padding: auto;
+    padding: 30px 50px;
   }
 }

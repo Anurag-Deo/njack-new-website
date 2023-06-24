@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import styles from './header.module.css';
 import Link from 'next/link';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const HeaderComp = ({ selected }) => {
   const [isDrawerVisible, setDrawerVisibility] = useState(false);
   const [isResourceDrawerVisible, setResourceDrawerVisibility] = useState(false);
   const [isMenuVisible, setMenuVisibility] = useState(false);
-  
+
   const drawerHandleMouse = () => {
     setDrawerVisibility((current) => !current);
   };
@@ -25,18 +26,13 @@ const HeaderComp = ({ selected }) => {
 
   return (
     <>
-      <Link style={{ marginLeft: '5%' }} href="/">
+      <Link href="/">
         <img id={styles.logo} loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
       </Link>
       <section>
         <Link id={selected == 'Home' ? styles.selected : undefined} href="/">
           HOME
         </Link>
-        {/* 480 for Home + 4 */}
-        {/* Change @media (max-width: __px) accordingly <Link id={selected == 'Resources' ? styles.selected : undefined} href='/resources'>
-					RESOURCES
-				</Link> */}
-        {/* 400 for Home + 3*/}
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
@@ -63,7 +59,7 @@ const HeaderComp = ({ selected }) => {
         </Link>
       </section>
       <div id={styles.menuButton} onMouseLeave={menuHandleMouseLeave}>
-        <img loading="lazy" src="/home/MenuIcon.png" alt="Menu" onClick={menuHandleMouseClick} />
+        <GiHamburgerMenu color="white" size={25} onClick={menuHandleMouseClick} />
         {isMenuVisible && (
           <MenuDrawer
             selected={selected}
@@ -127,10 +123,18 @@ const MenuDrawer = ({
 const DeptDrawer = ({ isVisible }) => {
   return (
     <div className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
-      <Link className={styles.drawerText} href="/departments/cp">Competitive Programming</Link>
-      <Link className={styles.drawerText} href="/departments/dev-os">Dev & OS</Link>
-      <Link className={styles.drawerText} href="/departments/ml">Machine Learning</Link>
-      <Link className={styles.drawerText} href="/departments/cyber-security">Cyber Security</Link>
+      <Link className={styles.drawerText} href="/departments/cp">
+        Competitive Programming
+      </Link>
+      <Link className={styles.drawerText} href="/departments/dev-os">
+        Dev & OS
+      </Link>
+      <Link className={styles.drawerText} href="/departments/ml">
+        Machine Learning
+      </Link>
+      <Link className={styles.drawerText} href="/departments/cyber-security">
+        Cyber Security
+      </Link>
     </div>
   );
 };

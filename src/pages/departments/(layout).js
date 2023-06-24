@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../../styles/department.module.css';
 import { EventCard, CoordCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
-import { InView } from 'react-intersection-observer';
 import DisplayLottie from '@/components/Lottie';
 import Head from 'next/head';
 import Background from '@/components/Background';
@@ -19,11 +18,11 @@ const Layout = ({
   return (
     <>
       <Head>
-        <title>NJACK | {deptName}</title>
+        <title>{`NJACK | ${deptName}`}</title>
       </Head>
       <Header selected={'Departments'} />
       <div className={styles.parentDiv}>
-        <Background/>
+        <Background />
         <div className={styles.aboutDept}>
           <DeptTitle deptName={deptName} deptCoordName={deptCoordName} deptImage={deptImage} />
           <DeptDescription deptDesc={deptDesc} />
@@ -43,7 +42,7 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
         <h1>{deptName}</h1>
         <h4>Coordinator(s): {deptCoordName}</h4>
       </div>
-      <img src={deptImage} />
+      <img src={deptImage} loading="lazy" />
     </div>
   );
 };
@@ -61,39 +60,40 @@ const DeptDescription = ({ deptDesc }) => {
   );
 };
 
-const EventCards = ({events}) => {
+const EventCards = ({ events }) => {
   return (
     <div className={styles.section}>
       <h2 className={styles.sectionHeading}>Events</h2>
-      <InView>
-        {({ inView, ref }) => (
-          <motion.div className={styles.cardSection} ref={ref}>
-            {events ? (
-              events.map((event, index) => (
-                //   {event.old === false && (
-                <motion.div
-                  key={event.key}
-                  className={styles.card}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 1, delay: index * 0.2 }}>
-                  <EventCard
-                    key={event.key}
-                    old={event.old}
-                    eventName={event.eventName}
-                    desc={event.desc}
-                    image={event.image}
-                    registerLink={event.registerLink}
-                  />
-                </motion.div>
-                //   )}
-              ))
-            ) : (
-              <h2>No Events</h2>
-            )}
-          </motion.div>
+
+      <motion.div className={styles.cardSection}>
+        {events?.length > 0 ? (
+          events.map((event, index) => (
+            //   {event.old === false && (
+            <motion.div
+              key={event.key}
+              className={styles.card}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              variants={{
+                visible: { opacity: 1, scale: 1 },
+                hidden: { opacity: 0, scale: 0 }
+              }}>
+              <EventCard
+                key={event.key}
+                old={event.old}
+                eventName={event.eventName}
+                desc={event.desc}
+                image={event.image}
+                registerLink={event.registerLink}
+              />
+            </motion.div>
+          ))
+        ) : (
+          <h2 style={{ color: 'gainsboro' }}>No Events</h2>
         )}
-      </InView>
+      </motion.div>
     </div>
   );
 };
@@ -102,62 +102,66 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
   return (
     <div className={styles.section}>
       <h2 className={styles.sectionHeading}>Team</h2>
-      <InView>
-        {({ inView, ref }) => (
-          <motion.div className={styles.cardSectionTeams} ref={ref}>
-            {coordArr ? (
-              coordArr.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  className={styles.card}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}>
-                  {member.committee !== 'Overall Coordinator' && (
-                    <CoordCard
-                      coordName={member.coordName}
-                      coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
-                      coordCommittee={member.coordCommittee}
-                      coordLinkedIn={member.coordLinkedIn}
-                      coordGitHub={member.coordGitHub}
-                    />
-                  )}
-                </motion.div>
-              ))
-            ) : (
-              <h2>No Coordinators</h2>
-            )}
-          </motion.div>
+
+      <motion.div className={styles.cardSectionTeams}>
+        {coordArr?.length > 0 ? (
+          coordArr.map((member, index) => (
+            <motion.div
+              key={member.coordName}
+              className={styles.card}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 20 }
+              }}>
+              {member.committee !== 'Overall Coordinator' && (
+                <CoordCard
+                  key={member.coordName}
+                  coordName={member.coordName}
+                  coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
+                  coordCommittee={member.coordCommittee}
+                  coordLinkedIn={member.coordLinkedIn}
+                  coordGitHub={member.coordGitHub}
+                />
+              )}
+            </motion.div>
+          ))
+        ) : (
+          <h2 style={{ color: 'gainsboro' }}>No Coordinators</h2>
         )}
-      </InView>
-      <InView>
-        {({ inView, ref }) => (
-          <motion.div className={styles.cardSectionTeams} ref={ref}>
-            {subCoordArr ? (
-              subCoordArr.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  className={styles.card}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}>
-                  {member.committee !== 'Overall Coordinator' && (
-                    <CoordCard
-                      coordName={member.coordName}
-                      coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
-                      coordCommittee={member.coordCommittee}
-                      coordLinkedIn={member.coordLinkedIn}
-                      coordGitHub={member.coordGitHub}
-                    />
-                  )}
-                </motion.div>
-              ))
-            ) : (
-              <h2>No Sub Coordinators</h2>
-            )}
-          </motion.div>
+      </motion.div>
+
+      <motion.div className={styles.cardSectionTeams}>
+        {subCoordArr?.length > 0 ? (
+          subCoordArr.map((member, index) => (
+            <motion.div
+              key={member.coordName}
+              className={styles.card}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 20 }
+              }}>
+              <CoordCard
+                key={member.coordName}
+                coordName={member.coordName}
+                coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
+                coordCommittee={member.coordCommittee}
+                coordLinkedIn={member.coordLinkedIn}
+                coordGitHub={member.coordGitHub}
+              />
+            </motion.div>
+          ))
+        ) : (
+          <h2 style={{ color: 'gainsboro' }}>No Sub Coordinators</h2>
         )}
-      </InView>
+      </motion.div>
     </div>
   );
 };

@@ -32,7 +32,7 @@ export default function Home() {
           <Tilt>
             <img loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
           </Tilt>
-          <div className={styles.subHeroText}>Not just another Computer Science Klub</div>
+          <p className={styles.subHeroText}>Not just another Computer Science Klub</p>
         </motion.div>
         <motion.div
           className={styles.lottiehero}
