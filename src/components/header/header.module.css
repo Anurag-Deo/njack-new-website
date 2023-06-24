@@ -130,6 +130,7 @@
 .drawer.isVisible {
   --_drawer-visible: flex;
 }
+
 .resourcedrawer.isVisible {
   --_resourcedrawer-visible: flex;
 }

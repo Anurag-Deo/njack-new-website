@@ -4,6 +4,7 @@ import { EventCard, CoordCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
 import DisplayLottie from '@/components/Lottie';
+import Head from 'next/head';
 
 const DeptLayout = ({
   deptName,
@@ -16,6 +17,9 @@ const DeptLayout = ({
 }) => {
   return (
     <>
+      <Head>
+        <title>NJACK | {deptName}</title>
+      </Head>
       <Header selected={'Departments'} />
       <div className={styles.parentDiv}>
         <div className={styles.aboutDept}>

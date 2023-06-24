@@ -75,28 +75,55 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 450px) {
-  .deptTitle h1 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 350px) {
-  .deptTitle h1 {
-    font-size: 1.7rem;
-  }
-}
-
 .deptTitle h4 {
   font-family: Josefin Sans;
   font-size: 1.2rem;
   font-weight: lighter;
 }
 
+@media (max-width: 450px) {
+  .deptTitle h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .deptTitle h4{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .deptTitle h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  .deptTitle h4{
+    text-align: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .deptTitle h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .deptTitle h4{
+    text-align: center;
+  }
+}
+
+
 .deptTitle img {
   height: 190px;
   margin: 0 50px 0 0;
   width: 190px;
+}
+
+@media screen and (max-width: 768px) {
+  .deptTitle img {
+    margin: 0;
+    height: 120px;
+    width: 120px;
+  }
 }
 
 
@@ -114,7 +141,7 @@
   /* white-space: pre-wrap; */
   color: gainsboro;
   font-weight: 300;
-  text-align: left;
+  text-align: justify;
   line-height: 26px;
   font-family: Josefin Sans, light;
 }
@@ -134,7 +161,7 @@
 }
 
 .lottie {
-  width: 50vw;
+  width: 100vw;
 }
 
 .section {
