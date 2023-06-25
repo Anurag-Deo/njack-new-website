@@ -29,7 +29,7 @@ const Layout = ({ pageData }) => {
         <Head>
           <title>NJACK | Resources</title>
           <style>
-          {`
+            {`
             .notion-page{
               width: 90% !important;
             }
@@ -71,7 +71,6 @@ const Layout = ({ pageData }) => {
           </style>
         </Head>
         {pageData ? (
-          <>
           <NotionRenderer
             recordMap={pageData}
             fullPage={true}
@@ -84,7 +83,6 @@ const Layout = ({ pageData }) => {
               Modal
             }}
           />
-          </>
         ) : null}
       </div>
       <Footer />
