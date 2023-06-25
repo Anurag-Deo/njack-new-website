@@ -4,7 +4,6 @@ import { NotionRenderer } from 'react-notion-x';
 import { getPageTitle } from 'notion-utils';
 import dynamic from 'next/dynamic';
 import 'prismjs/themes/prism-tomorrow.css';
-import Link from 'next/link';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {

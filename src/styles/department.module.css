@@ -136,12 +136,10 @@
     flex-direction: column;
     width: 87vw;
   }
-
   .deptDesc div {
     width: 80%;
     margin: auto;
   }
-
   .deptDesc p {
     width: 100%;
     font-size: 1rem;
