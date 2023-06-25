@@ -25,27 +25,28 @@ const gallery = () => {
       <Header selected={'Gallery'} />
       <div className={styles.galleryContainer}>
         <Background />
-        <h1 style={{ color: 'gainsboro', marginBottom: '50px', textAlign: 'center' }}>
-          Our Gallery
-        </h1>
-        <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
+        <div style={{ zIndex: '2', position: 'relative' }}>
+          <h1 style={{ color: 'gainsboro', marginBottom: '50px', textAlign: 'center' }}>
+            Our Gallery
+          </h1>
+          <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
 
-        {!!currentImage && (
-          <Lightbox
-            mainSrc={currentImage.original}
-            imageTitle={currentImage.caption}
-            mainSrcThumbnail={currentImage.src}
-            nextSrc={nextImage.original}
-            nextSrcThumbnail={nextImage.src}
-            prevSrc={prevImage.original}
-            prevSrcThumbnail={prevImage.src}
-            onCloseRequest={handleClose}
-            onMovePrevRequest={handleMovePrev}
-            onMoveNextRequest={handleMoveNext}
-          />
-        )}
+          {!!currentImage && (
+            <Lightbox
+              mainSrc={currentImage.original}
+              imageTitle={currentImage.caption}
+              mainSrcThumbnail={currentImage.src}
+              nextSrc={nextImage.original}
+              nextSrcThumbnail={nextImage.src}
+              prevSrc={prevImage.original}
+              prevSrcThumbnail={prevImage.src}
+              onCloseRequest={handleClose}
+              onMovePrevRequest={handleMovePrev}
+              onMoveNextRequest={handleMoveNext}
+            />
+          )}
+        </div>
       </div>
-
       <Footer />
     </>
   );

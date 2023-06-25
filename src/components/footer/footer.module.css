@@ -4,6 +4,8 @@
   padding-top: 4%;
   padding-bottom: 4%;
   width: 100vw;
+  z-index: 2;
+  position: relative;
 }
 .footer h2 {
   font-weight: 200;

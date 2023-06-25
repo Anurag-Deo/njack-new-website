@@ -8,6 +8,8 @@
   position: absolute;
   width: 100vw;
   color: white;
+  z-index: 2;
+  position: relative;
 }
 .social {
   display: flex;
@@ -49,7 +51,6 @@
 .leftSection a,
 .leftSection p {
   font-family: Josefin Sans;
-  color: gainsboro;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 22px;

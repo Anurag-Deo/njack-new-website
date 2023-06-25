@@ -7,6 +7,8 @@
   align-items: center;
   height: fit-content;
   color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .aboutDept {

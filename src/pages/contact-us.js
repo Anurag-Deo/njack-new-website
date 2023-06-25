@@ -17,7 +17,9 @@ const ContactUs = () => {
         <div className={styles.body}>
           <section className={styles.leftSection}>
             <h2>NJACK IIT Patna</h2>
-            <a href="mailto:njack@iitp.ac.in">njack@iitp.ac.in</a>
+            <a href="mailto:njack@iitp.ac.in" style={{ color: 'gainsboro' }}>
+              njack@iitp.ac.in
+            </a>
             <p>+91 63880 17215</p>
             <br />
             <p>Address</p>
@@ -28,25 +30,22 @@ const ContactUs = () => {
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://www.facebook.com/njack.iitp/"
-              >
-                <BsFacebook />
+                href="https://www.facebook.com/njack.iitp/">
+                <BsFacebook color="white" />
               </a>
               <br />
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://www.instagram.com/njackiitp/"
-              >
-                <BsInstagram />
+                href="https://www.instagram.com/njackiitp/">
+                <BsInstagram color="white" />
               </a>
               <br />
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://in.linkedin.com/company/njack-iit-patna"
-              >
-                <BsLinkedin />
+                href="https://in.linkedin.com/company/njack-iit-patna">
+                <BsLinkedin color="white" />
               </a>
             </div>
           </section>
@@ -58,8 +57,7 @@ const ContactUs = () => {
               height="500px"
               frameBorder="0"
               style={{ borderRadius: '5px' }}
-              allowFullScreen
-            ></iframe>
+              allowFullScreen></iframe>
           </section>
         </div>
         {/* <Footer /> */}

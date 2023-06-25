@@ -9,7 +9,7 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 3%;
-  z-index: 1;
+  z-index: 10;
 }
 
 @media (max-width: 599.5px) {
