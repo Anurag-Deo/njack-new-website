@@ -39,7 +39,7 @@
   text-decoration: none;
   color: gainsboro;
 }
-.footerEnd{
+.footerEnd {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,17 +61,20 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .row, .footerEnd {
+  .row,
+  .footerEnd {
     flex-direction: column;
     text-align: center;
   }
-  .links,.map,.briefInfo {
+  .links,
+  .map,
+  .briefInfo {
     width: 100%;
   }
   .row > div {
     margin-bottom: 60px;
   }
-  .socialIcons{
+  .socialIcons {
     width: 50%;
     margin-left: auto;
     margin-right: auto;

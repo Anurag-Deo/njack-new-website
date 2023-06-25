@@ -9,9 +9,9 @@
   width: 100vw;
   color: white;
 }
-.social{
+.social {
   display: flex;
-  gap:5px;
+  gap: 5px;
   margin-top: 10px;
 }
 .sectionHeading {
@@ -60,8 +60,6 @@
 #address {
   font-weight: 300;
 }
-
-
 
 .rightSection {
   display: flex;

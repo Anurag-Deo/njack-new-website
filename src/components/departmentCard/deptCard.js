@@ -9,7 +9,7 @@ const DeptCard = ({ deptName, deptImage, deptDesc, deptLink, bgColor }) => {
       <div className={styles.deptName} style={{ backgroundColor: bgColor }}>
         {deptName}
       </div>
-      <div className={styles.deptcard} style={{backgroundColor: bgColor, position: 'relative' }}>
+      <div className={styles.deptcard} style={{ backgroundColor: bgColor, position: 'relative' }}>
         <img src={deptImage} alt="Image" />
         <p>{deptDesc}</p>
         <Link
@@ -20,7 +20,8 @@ const DeptCard = ({ deptName, deptImage, deptDesc, deptLink, bgColor }) => {
             alignItems: 'center',
             position: 'absolute',
             bottom: '100px'
-          }}>
+          }}
+        >
           Know More
           <FiArrowUpRight size={21} />
         </Link>

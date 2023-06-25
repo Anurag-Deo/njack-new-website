@@ -1,7 +1,7 @@
 import DeptLayout from './(layout)';
 import events from '@/data/events';
-import coordDevOS from "@/data/coordinators";
-import subCoordDevOS from "@/data/sub-coordinators";
+import coordDevOS from '@/data/coordinators';
+import subCoordDevOS from '@/data/sub-coordinators';
 
 const DevOS = () => {
   const coordArr = [];

@@ -79,7 +79,8 @@ const EventCards = ({ events }) => {
               variants={{
                 visible: { opacity: 1, scale: 1 },
                 hidden: { opacity: 0, scale: 0 }
-              }}>
+              }}
+            >
               <EventCard
                 key={event.key}
                 old={event.old}
@@ -116,7 +117,8 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 20 }
-              }}>
+              }}
+            >
               {member.committee !== 'Overall Coordinator' && (
                 <CoordCard
                   key={member.coordName}
@@ -147,7 +149,8 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 20 }
-              }}>
+              }}
+            >
               <CoordCard
                 key={member.coordName}
                 coordName={member.coordName}

@@ -25,15 +25,27 @@ const ContactUs = () => {
             <br />
             <p>Social Media</p>
             <div className={styles.social}>
-              <a target='_blank' referrerPolicy='no-referrer' href="https://www.facebook.com/njack.iitp/">
+              <a
+                target="_blank"
+                referrerPolicy="no-referrer"
+                href="https://www.facebook.com/njack.iitp/"
+              >
                 <BsFacebook />
               </a>
               <br />
-              <a target='_blank' referrerPolicy='no-referrer' href="https://www.instagram.com/njackiitp/">
+              <a
+                target="_blank"
+                referrerPolicy="no-referrer"
+                href="https://www.instagram.com/njackiitp/"
+              >
                 <BsInstagram />
               </a>
               <br />
-              <a target='_blank' referrerPolicy='no-referrer' href="https://in.linkedin.com/company/njack-iit-patna">
+              <a
+                target="_blank"
+                referrerPolicy="no-referrer"
+                href="https://in.linkedin.com/company/njack-iit-patna"
+              >
                 <BsLinkedin />
               </a>
             </div>
@@ -46,7 +58,8 @@ const ContactUs = () => {
               height="500px"
               frameBorder="0"
               style={{ borderRadius: '5px' }}
-              allowFullScreen></iframe>
+              allowFullScreen
+            ></iframe>
           </section>
         </div>
         {/* <Footer /> */}

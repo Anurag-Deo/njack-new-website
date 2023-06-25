@@ -17,7 +17,8 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
           target="_blank"
           referrerPolicy="no-referrer"
           href={coordGitHub}
-          style={{ marginLeft: '10px' }}>
+          style={{ marginLeft: '10px' }}
+        >
           <BsGithub color="white" />
         </a>
       </div>
@@ -29,9 +30,9 @@ const SubCoordCard = ({ coordName, coordLinkedIn }) => {
   return (
     <div className={styles.subCoordCard}>
       {/* <div className={styles.coordIcon}> */}
-        <a href={coordLinkedIn} target="_blank" referrerPolicy="no-referrer">
-          <BsLinkedin color="white" />
-        </a>
+      <a href={coordLinkedIn} target="_blank" referrerPolicy="no-referrer">
+        <BsLinkedin color="white" />
+      </a>
       {/* </div> */}
       <p>{coordName}</p>
     </div>

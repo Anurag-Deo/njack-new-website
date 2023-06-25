@@ -1,8 +1,8 @@
 import React from 'react';
 import DeptLayout from './(layout)';
 import events from '@/data/events';
-import subCoordsCP from "@/data/sub-coordinators";
-import coordCP from "@/data/coordinators";
+import subCoordsCP from '@/data/sub-coordinators';
+import coordCP from '@/data/coordinators';
 
 const CP = () => {
   const coordArr = [];

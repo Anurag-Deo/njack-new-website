@@ -28,7 +28,8 @@ export default function Home() {
           initial={{ opacity: 0, x: '-100%' }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}
-          viewport={{ once: true }}>
+          viewport={{ once: true }}
+        >
           <Tilt>
             <img loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
           </Tilt>
@@ -39,7 +40,8 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          viewport={{ once: true }}>
+          viewport={{ once: true }}
+        >
           <DisplayLottie animationPath="https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json" />
         </motion.div>
       </section>
@@ -51,14 +53,16 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <DisplayLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json" />
           </motion.div>
           <motion.p
             initial={{ opacity: 0, x: '100%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a
             community of passionate computer science enthusiasts. With its wide range of departments
             and initiatives, NJACK aims to provide a platform for students to enhance their skills,
@@ -88,7 +92,8 @@ export default function Home() {
               variants={{
                 visible: { opacity: 1, scale: 1 },
                 hidden: { opacity: 0, scale: 0 }
-              }}>
+              }}
+            >
               <EventCard
                 key={event.key}
                 old={event.old}
@@ -114,7 +119,8 @@ export default function Home() {
               variants={{
                 visible: { opacity: 1, scale: 1 },
                 hidden: { opacity: 0, scale: 0 }
-              }}>
+              }}
+            >
               <DeptCard
                 deptName={dept.deptName}
                 deptImage={dept.deptImage}
@@ -143,7 +149,8 @@ export default function Home() {
                   variants={{
                     visible: { opacity: 1, y: 0 },
                     hidden: { opacity: 0, y: 20 }
-                  }}>
+                  }}
+                >
                   <CoordCard
                     coordName={member.name}
                     coordImage={`https://drive.google.com/uc?export=view&id=${member.image}`}
@@ -170,7 +177,8 @@ export default function Home() {
                   variants={{
                     visible: { opacity: 1, y: 0 },
                     hidden: { opacity: 0, y: 20 }
-                  }}>
+                  }}
+                >
                   {member.committee !== 'Overall Coordinator' && (
                     <CoordCard
                       coordName={member.name}

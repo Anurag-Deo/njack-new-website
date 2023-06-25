@@ -1,8 +1,8 @@
 import React from 'react';
 import DeptLayout from './(layout)';
 import events from '../../data/events';
-import subCoordsML from "@/data/sub-coordinators";
-import coordML from "@/data/coordinators";
+import subCoordsML from '@/data/sub-coordinators';
+import coordML from '@/data/coordinators';
 
 const ML = () => {
   const coordArr = [];

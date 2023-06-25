@@ -16,13 +16,15 @@ const Footer = () => {
             <a
               target="_blank"
               referrerPolicy="no-referrer"
-              href="https://www.facebook.com/njack.iitp/">
+              href="https://www.facebook.com/njack.iitp/"
+            >
               <BsFacebook color="white" size={25} />
             </a>
             <a
               target="_blank"
               referrerPolicy="no-referrer"
-              href="https://www.instagram.com/njackiitp/">
+              href="https://www.instagram.com/njackiitp/"
+            >
               <BsInstagram color="white" size={25} />
             </a>
 
