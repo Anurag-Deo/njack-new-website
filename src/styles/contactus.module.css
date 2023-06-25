@@ -1,12 +1,7 @@
 @import url('http://fonts.googleapis.com/css?family=Josefin+Sans:light');
 
 .parentDiv {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 75px;
-  position: absolute;
-  width: 100vw;
+  margin-top: 25px;
   color: white;
   z-index: 2;
   position: relative;
@@ -15,11 +10,6 @@
   display: flex;
   gap: 5px;
   margin-top: 10px;
-}
-.sectionHeading {
-  justify-self: center;
-  max-width: 90vw;
-  min-width: 80vw;
 }
 
 .parentDiv h2 {
@@ -32,20 +22,12 @@
 
 .body {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   margin-top: 10px;
-  max-width: 80vw;
-  min-width: 70vw;
+  width: 87vw;
   align-items: center;
-}
-
-.leftSection {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-right: 5%;
+  justify-content: space-around;
+  margin-inline: auto;
 }
 
 .leftSection a,
@@ -62,15 +44,11 @@
   font-weight: 300;
 }
 
-.rightSection {
-  display: flex;
-  flex: 1;
-  min-height: 300px;
-  min-width: 300px;
-}
-
 @media screen and (max-width: 768px) {
   .rightSection {
-    margin: 10px 0px;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin: 20px 0;
   }
 }
