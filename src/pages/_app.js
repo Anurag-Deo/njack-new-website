@@ -16,13 +16,13 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     let timer;
-    const handleStart = () => timer = setTimeout(() => setLoading(true), 1500);
+    const handleComplete = () => timer = setTimeout(() => setLoading(false), 1500);
 
-    const handleComplete = () => {
+    const handleStart = () => {
       if (timer) {
         clearTimeout(timer);
       }
-      setLoading(false);
+      setLoading(true);
     };
 
     router.events.on('routeChangeStart', handleStart);
