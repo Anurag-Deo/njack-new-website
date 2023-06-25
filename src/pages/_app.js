@@ -91,9 +91,15 @@ export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => setLoading(true);
+    let timer;
+    const handleStart = () => timer = setTimeout(() => setLoading(true), 1500);
 
-    const handleComplete = () => setLoading(false);
+    const handleComplete = () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      setLoading(false);
+    };
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -104,7 +110,7 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleComplete);
       router.events.off('routeChangeError', handleComplete);
     };
-  });
+  },[router.events]);
   return (
     <main className={JosefinSans.className}>
       {loading ? <Loader /> : <Component {...pageProps} />}
