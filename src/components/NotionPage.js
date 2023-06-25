@@ -4,6 +4,8 @@ import { NotionRenderer } from 'react-notion-x';
 import { getPageTitle } from 'notion-utils';
 import dynamic from 'next/dynamic';
 import 'prismjs/themes/prism-tomorrow.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
@@ -68,6 +70,9 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
         <title>{`NJACK | ${title}`}</title>
         <style>
           {`
+            .notion-app{
+              background-color: #111 !important;
+            }
             .notion-frame{
               background-color: #111;
               color: #ffffff;
@@ -109,7 +114,9 @@ export const NotionPage = ({ recordMap, rootPageId }) => {
           Collection,
           Equation,
           Pdf,
-          Modal
+          Modal,
+          nextImage: Image,
+          nextLink: Link
         }}
       />
     </>

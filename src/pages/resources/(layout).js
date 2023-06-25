@@ -2,6 +2,8 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Header, Footer } from '@/components';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import 'react-notion-x/src/styles.css';
 
 const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code));
@@ -30,6 +32,9 @@ const Layout = ({ pageData }) => {
           <title>NJACK | Resources</title>
           <style>
             {`
+            .notion-app{
+              background-color: #111 !important;
+            }
             .notion-page{
               width: 90% !important;
             }
@@ -52,6 +57,10 @@ const Layout = ({ pageData }) => {
               background-color: #282828 !important;
               border-radius: 15px !important;
               color: #ffffff !important;
+            }
+            .notion-collection-card:hover{
+              transform: scale(1.05);
+              transition: transform 0.2s ease-in-out;
             }
             .notion-page-title-text{
               color: #ffffff;
@@ -80,7 +89,9 @@ const Layout = ({ pageData }) => {
               Collection,
               Equation,
               Pdf,
-              Modal
+              Modal,
+              nextImage: Image,
+              nextLink: Link
             }}
           />
         ) : null}
