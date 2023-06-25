@@ -30,13 +30,13 @@ const HeaderComp = ({ selected }) => {
         <img id={styles.logo} loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
       </Link>
       <section>
-        <Link id={selected == 'Home' ? styles.selected : undefined} href="/">
+        <Link style={{height: '30px'}} id={selected == 'Home' ? styles.selected : undefined} href="/">
           HOME
         </Link>
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex' }}>
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
             DEPARTMENTS
           </Link>
@@ -45,16 +45,16 @@ const HeaderComp = ({ selected }) => {
         <div
           onMouseEnter={resourceDrawerHandleMouse}
           onMouseLeave={resourceDrawerHandleMouse}
-          style={{ display: 'flex' }}>
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
             RESOURCES
           </Link>
           {isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
         </div>
-        <Link id={selected == 'Gallery' ? styles.selected : undefined} href="/gallery">
+        <Link style={{height: '30px'}} id={selected == 'Gallery' ? styles.selected : undefined} href="/gallery">
           GALLERY
         </Link>
-        <Link id={selected == 'Contact' ? styles.selected : undefined} href="/contact-us">
+        <Link style={{height: '30px'}} id={selected == 'Contact' ? styles.selected : undefined} href="/contact-us">
           CONTACT
         </Link>
       </section>

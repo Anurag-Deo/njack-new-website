@@ -94,7 +94,7 @@
   min-width: fit-content;
   padding: 20px 0;
   position: absolute;
-  top: 50px;
+  top: 30px;
   row-gap: 20px;
   width: calc(30% - calc(0.8rem * 1.5));
   z-index: 2;
@@ -110,7 +110,7 @@
   min-width: fit-content;
   padding: 20px 0;
   position: absolute;
-  top: 50px;
+  top: 30px;
   row-gap: 20px;
   width: calc(30% - calc(0.8rem * 1.5));
   z-index: 2;
