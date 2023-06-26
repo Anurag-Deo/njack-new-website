@@ -4,7 +4,9 @@ import { Header, Footer } from '@/components';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import 'react-notion-x/src/styles.css';
+import { useEffect } from 'react';
 
 const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code));
 const Collection = dynamic(() =>
@@ -20,7 +22,12 @@ const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').the
   ssr: false
 });
 
-const Layout = ({ pageData }) => {
+export default function Layout({ pageData, pageLink }) {
+  const router = useRouter();
+  useEffect(() => {
+    if(router.pathname !== pageLink)
+      router.replace("/");
+  }, []);
   const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer), {
     ssr: false
   });
@@ -99,6 +106,4 @@ const Layout = ({ pageData }) => {
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}

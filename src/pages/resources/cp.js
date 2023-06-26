@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-notion-x/src/styles.css';
 // import { NotionRenderer } from 'react-notion-x'
 import { NotionAPI } from 'notion-client';
-import ResourcesComponent from './(layout)';
+import ResourcesComponent from './_layout';
 
 const pageId = 'a1e6cd22c5924c268eac02de0531d52e';
 export async function getServerSideProps() {
@@ -16,8 +16,8 @@ export async function getServerSideProps() {
   };
 }
 
-const cp = ({ pageData }) => {
-  return <ResourcesComponent pageData={pageData} />;
+const CP = ({ pageData }) => {
+  return <ResourcesComponent pageData={pageData} pageLink="/resources/cp" />;
 };
 
-export default cp;
+export default CP;

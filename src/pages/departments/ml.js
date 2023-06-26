@@ -1,5 +1,5 @@
 import React from 'react';
-import DeptLayout from './(layout)';
+import DeptLayout from './_layout';
 import events from '../../data/events';
 import subCoordsML from '@/data/sub-coordinators';
 import coordML from '@/data/coordinators';
@@ -60,6 +60,7 @@ const ML = () => {
       events={eventsML}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
+      pageLink='/departments/ml'
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-notion-x/src/styles.css';
-import ResourcesComponent from './(layout)';
+import ResourcesComponent from './_layout';
 import { NotionAPI } from 'notion-client';
 
 const pageId = '59ca205b36174d0aa7c9e2d86a6680f8';
@@ -15,6 +15,6 @@ export async function getServerSideProps() {
   };
 }
 
-const CyberSecurity = ({ pageData }) => <ResourcesComponent pageData={pageData} />;
+const CyberSecurity = ({ pageData }) => <ResourcesComponent pageData={pageData} pageLink="/resources/cyber-security" />;
 
 export default CyberSecurity;

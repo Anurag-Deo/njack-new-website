@@ -1,20 +1,27 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styles from '../../styles/department.module.css';
 import { EventCard, CoordCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
 import DisplayLottie from '@/components/Lottie';
 import Head from 'next/head';
 import Background from '@/components/Background';
+import { useRouter } from 'next/router';
 
-const Layout = ({
+export default function Layout({
   deptName,
   deptCoordName,
   deptImage,
   deptDesc,
   events,
   coordArr,
-  subCoordArr
-}) => {
+  subCoordArr,
+  pageLink
+}) {
+  const router = useRouter();
+  useEffect(() => {
+    if(router.pathname !== pageLink)
+      router.replace("/");
+  }, []);
   return (
     <>
       <Head>
@@ -33,7 +40,7 @@ const Layout = ({
       </div>
     </>
   );
-};
+}
 
 const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
   return (
@@ -165,5 +172,3 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
     </div>
   );
 };
-
-export default Layout;

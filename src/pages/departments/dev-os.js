@@ -1,4 +1,4 @@
-import DeptLayout from './(layout)';
+import DeptLayout from './_layout';
 import events from '@/data/events';
 import coordDevOS from '@/data/coordinators';
 import subCoordDevOS from '@/data/sub-coordinators';
@@ -59,6 +59,7 @@ const DevOS = () => {
       events={devEvents}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
+      pageLink="/departments/dev-os"
     />
   );
 };

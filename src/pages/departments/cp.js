@@ -1,5 +1,5 @@
 import React from 'react';
-import DeptLayout from './(layout)';
+import DeptLayout from './_layout';
 import events from '@/data/events';
 import subCoordsCP from '@/data/sub-coordinators';
 import coordCP from '@/data/coordinators';
@@ -60,6 +60,7 @@ const CP = () => {
       events={eventsCP}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
+      pageLink="/departments/cp"
     />
   );
 };

@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     let timer;
-    const handleComplete = () => timer = setTimeout(() => setLoading(false), 1500);
+    const handleComplete = () => timer = setTimeout(() => setLoading(false), 1000);
 
     const handleStart = () => {
       if (timer) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import DeptLayout from './(layout)';
+import DeptLayout from './_layout';
 import events from '../../data/events';
 import cyberSecCoord from '@/data/coordinators';
 import cyberSecSubCoord from '@/data/sub-coordinators';
@@ -59,6 +59,7 @@ const CyberSec = () => {
       events={eventsCyber}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
+      pageLink="/departments/cyber-security"
     />
   );
 };

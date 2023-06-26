@@ -1,5 +1,5 @@
 import React from 'react';
-import ResourcesComponent from './(layout)';
+import ResourcesComponent from './_layout';
 import 'react-notion-x/src/styles.css';
 import { NotionAPI } from 'notion-client';
 
@@ -15,8 +15,8 @@ export async function getServerSideProps() {
   };
 }
 
-const ml = ({ pageData }) => {
-  return <ResourcesComponent pageData={pageData} />;
+const ML = ({ pageData }) => {
+  return <ResourcesComponent pageData={pageData} pageLink="/resources/ml" />;
 };
 
-export default ml;
+export default ML;
