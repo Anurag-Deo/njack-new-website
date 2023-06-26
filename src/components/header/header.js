@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './header.module.css';
 import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -33,15 +33,13 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Home' ? styles.selected : undefined}
-          href="/"
-        >
+          href="/">
           HOME
         </Link>
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}
-        >
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
             DEPARTMENTS
           </Link>
@@ -50,8 +48,7 @@ const HeaderComp = ({ selected }) => {
         <div
           onMouseEnter={resourceDrawerHandleMouse}
           onMouseLeave={resourceDrawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}
-        >
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
             RESOURCES
           </Link>
@@ -60,15 +57,13 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Gallery' ? styles.selected : undefined}
-          href="/gallery"
-        >
+          href="/gallery">
           GALLERY
         </Link>
         <Link
           style={{ height: '30px' }}
           id={selected == 'Contact' ? styles.selected : undefined}
-          href="/contact-us"
-        >
+          href="/contact-us">
           CONTACT
         </Link>
       </section>
@@ -109,8 +104,7 @@ const MenuDrawer = ({
       <div
         onMouseEnter={drawerHandleMouse}
         onMouseLeave={drawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
           DEPARTMENTS
         </Link>
@@ -119,8 +113,7 @@ const MenuDrawer = ({
       <div
         onMouseEnter={resourceDrawerHandleMouse}
         onMouseLeave={resourceDrawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
           RESOURCES
         </Link>
@@ -166,12 +159,39 @@ const ResourceDrawer = ({ isVisible }) => {
 };
 
 const Header = ({ selected }) => {
+  const [isElevated, setIsElevated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setIsElevated(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
-      <header className={styles.header}>
+      <header
+        style={{
+          boxShadow: isElevated
+            ? 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'
+            : 'none'
+        }}
+        className={styles.header}>
         <HeaderComp selected={selected} />
       </header>
-      <header className={styles.header} id={styles.copy}>
+      <header
+        style={{
+          boxShadow: isElevated
+            ? 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'
+            : 'none'
+        }}
+        className={styles.header}
+        id={styles.copy}>
         <HeaderComp selected={selected} />
       </header>
     </>

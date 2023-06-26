@@ -108,6 +108,7 @@ export default function Home() {
             {departments.map((dept, index) => (
               <motion.div
                 className={styles.card}
+                key={dept.deptName}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -193,7 +194,13 @@ export default function Home() {
               <p>Competitive Programming</p>
               {subCoordinators.map((member) => {
                 if (member.committee === 'CP') {
-                  return <SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin} />;
+                  return (
+                    <SubCoordCard
+                      key={member.linkedin}
+                      coordName={member.name}
+                      coordLinkedIn={member.linkedin}
+                    />
+                  );
                 }
               })}
             </div>
@@ -201,7 +208,13 @@ export default function Home() {
               <p>Development & Open Source</p>
               {subCoordinators.map((member) => {
                 if (member.committee === 'Dev&OS') {
-                  return <SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin} />;
+                  return (
+                    <SubCoordCard
+                      key={member.linkedin}
+                      coordName={member.name}
+                      coordLinkedIn={member.linkedin}
+                    />
+                  );
                 }
               })}
             </div>
@@ -209,7 +222,13 @@ export default function Home() {
               <p>Machine Learning</p>
               {subCoordinators.map((member) => {
                 if (member.committee === 'ML') {
-                  return <SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin} />;
+                  return (
+                    <SubCoordCard
+                      key={member.linkedin}
+                      coordName={member.name}
+                      coordLinkedIn={member.linkedin}
+                    />
+                  );
                 }
               })}
             </div>
@@ -217,7 +236,7 @@ export default function Home() {
 							<p>Cyber Security</p>
 							{subCoordinators.map((member) => {
 								if (member.committee === 'CyberSec') {
-									return (<SubCoordCard coordName={member.name} coordLinkedIn={member.linkedin}/>)
+									return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
 								}
 							})}
 						</div> */}
