@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '@/styles/home.module.css';
+import styles from '../styles/Home.module.css';
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components';
 import DisplayLottie from '@/components/Lottie';
 import { motion } from 'framer-motion';
