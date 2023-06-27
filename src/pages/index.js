@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components';
-import DisplayLottie from '@/components/Lottie';
 import { motion } from 'framer-motion';
 import events from '@/data/events';
 import departments from '@/data/departments';
 import coordinators from '@/data/coordinators';
 import subCoordinators from '@/data/sub-coordinators';
 import Tilt from 'react-parallax-tilt';
+import DisplayLottie from '@/components/Lottie';
 import Background from '@/components/Background';
 
 export default function Home() {
