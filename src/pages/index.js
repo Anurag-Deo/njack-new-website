@@ -192,48 +192,55 @@ export default function Home() {
           <div className={styles.cardSection}>
             <div className={styles.committee}>
               <p>Competitive Programming</p>
-              {subCoordinators.map((member) => {
-                if (member.committee === 'CP') {
-                  return (
-                    <SubCoordCard
-                      key={member.linkedin}
-                      coordName={member.name}
-                      coordLinkedIn={member.linkedin}
-                    />
-                  );
-                }
-              })}
+              
+                {subCoordinators.map((member) => {
+                  if (member.committee === 'CP') {
+                    return (
+                      <SubCoordCard
+                        key={member.linkedin}
+                        coordName={member.name}
+                        coordLinkedIn={member.linkedin}
+                      />
+                    );
+                  }
+                })}
+              
             </div>
             <div className={styles.committee}>
               <p>Development & Open Source</p>
-              {subCoordinators.map((member) => {
-                if (member.committee === 'Dev&OS') {
-                  return (
-                    <SubCoordCard
-                      key={member.linkedin}
-                      coordName={member.name}
-                      coordLinkedIn={member.linkedin}
-                    />
-                  );
-                }
-              })}
+              
+                {subCoordinators.map((member) => {
+                  if (member.committee === 'Dev&OS') {
+                    return (
+                      <SubCoordCard
+                        key={member.linkedin}
+                        coordName={member.name}
+                        coordLinkedIn={member.linkedin}
+                      />
+                    );
+                  }
+                })}
+              
             </div>
             <div className={styles.committee}>
               <p>Machine Learning</p>
-              {subCoordinators.map((member) => {
-                if (member.committee === 'ML') {
-                  return (
-                    <SubCoordCard
-                      key={member.linkedin}
-                      coordName={member.name}
-                      coordLinkedIn={member.linkedin}
-                    />
-                  );
-                }
-              })}
+              
+                {subCoordinators.map((member) => {
+                  if (member.committee === 'ML') {
+                    return (
+                      <SubCoordCard
+                        key={member.linkedin}
+                        coordName={member.name}
+                        coordLinkedIn={member.linkedin}
+                      />
+                    );
+                  }
+                })}
+              
             </div>
-            {/* <div className={styles.committee}>
-							<p>Cyber Security</p>
+            {/* 
+            <div className={styles.committee}>
+            <p>Cyber Security</p>
 							{subCoordinators.map((member) => {
 								if (member.committee === 'CyberSec') {
 									return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)

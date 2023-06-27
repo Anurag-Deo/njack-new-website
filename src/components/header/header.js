@@ -178,7 +178,7 @@ const Header = ({ selected }) => {
       <header
         style={{
           boxShadow: isElevated
-            ? 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'
+            ? 'rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             : 'none'
         }}
         className={styles.header}>
@@ -187,7 +187,7 @@ const Header = ({ selected }) => {
       <header
         style={{
           boxShadow: isElevated
-            ? 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'
+            ? 'rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             : 'none'
         }}
         className={styles.header}
