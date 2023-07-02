@@ -21,11 +21,6 @@ async function handler(req, res) {
             const response = await notion.databases.query({
                 database_id: databaseId,
             });
-            // console.log('response', response);
-            // Iterate through each item in response and log it into the console
-            // response.results.forEach((page) => {
-            //     console.log(page.properties.Name.title[0].plain_text);
-            // });
 
             const data = response.results.map((result) => {
                 return ({
@@ -36,7 +31,6 @@ async function handler(req, res) {
                     github: result.properties.Github.rich_text[0].plain_text
                 });
             });
-            // console.log('data', data);
             if (data.length === 0) {
                 res.status(200).json([]);
             } else {

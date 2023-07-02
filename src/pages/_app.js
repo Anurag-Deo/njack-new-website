@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }) {
 
   const [coords, setCoords] = useState([]);
   const [subcoords, setSubCoords] = useState([]);
+  const [events, setEvents] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +35,19 @@ export default function App({ Component, pageProps }) {
       }
     };
 
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/getEvents');
+        const data = await response.json();
+        console.log('data', data);
+        setEvents(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchData();
+    fetchEvents();
   }, []);
 
   useEffect(() => {
@@ -60,7 +73,7 @@ export default function App({ Component, pageProps }) {
   },[router.events]);
   return (
     <main className={JosefinSans.className}>
-      {loading ? <Loader /> : <Component {...pageProps} coords={coords} subcoords={subcoords} />}
+      {loading ? <Loader /> : <Component {...pageProps} coords={coords} subcoords={subcoords} events={events} />}
     </main>
   );
 }
