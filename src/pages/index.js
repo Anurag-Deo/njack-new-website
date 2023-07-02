@@ -1,16 +1,17 @@
 import Head from 'next/head';
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
 import events from '@/data/events';
 import departments from '@/data/departments';
-import coordinators from '@/data/coordinators';
-import subCoordinators from '@/data/sub-coordinators';
+// import coordinators from '@/data/coordinators';
+// import subCoordinators from '@/data/sub-coordinators';
 import Tilt from 'react-parallax-tilt';
 import DisplayLottie from '@/components/Lottie';
 import Background from '@/components/Background';
 
-export default function Home() {
+export default function Home({ coords, subcoords }) {
   const filteredEvents = events.filter((event) => event.old === false);
   return (
     <>
@@ -132,7 +133,7 @@ export default function Home() {
           <h2 className={styles.sectionHeading}>Our Team</h2>
           <h3>Coordinators</h3>
           <div className={styles.cardSection} style={{ justifyContent: 'center' }}>
-            {coordinators.map(
+            {coords.map(
               (member, index) =>
                 member.committee === 'Overall Coordinator' && (
                   <motion.div
@@ -159,7 +160,7 @@ export default function Home() {
           </div>
 
           <div className={styles.cardSection}>
-            {coordinators.map((member, index) => {
+            {coords.map((member, index) => {
               if (member.committee !== 'Overall Coordinator') {
                 return (
                   <motion.div
@@ -189,11 +190,19 @@ export default function Home() {
           </div>
 
           <h3>Sub-Coordinators</h3>
+          {!(subcoords.length > 0) && (
+            <div className={styles.cardSection}>
+              <p style={{ textAlign: 'center', width: '100%' }}>
+                Sub-Coordinator details will be updated soon.
+              </p>
+            </div>
+          )}
+          {subcoords.length > 0 && (
           <div className={styles.cardSection}>
             <div className={styles.committee}>
               <p>Competitive Programming</p>
               
-                {subCoordinators.map((member) => {
+              {subcoords.map((member) => {
                   if (member.committee === 'CP') {
                     return (
                       <SubCoordCard
@@ -209,7 +218,7 @@ export default function Home() {
             <div className={styles.committee}>
               <p>Development & Open Source</p>
               
-                {subCoordinators.map((member) => {
+              {subcoords.map((member) => {
                   if (member.committee === 'Dev&OS') {
                     return (
                       <SubCoordCard
@@ -225,7 +234,7 @@ export default function Home() {
             <div className={styles.committee}>
               <p>Machine Learning</p>
               
-                {subCoordinators.map((member) => {
+              {subcoords.map((member) => {
                   if (member.committee === 'ML') {
                     return (
                       <SubCoordCard
@@ -241,13 +250,14 @@ export default function Home() {
             {/* 
             <div className={styles.committee}>
             <p>Cyber Security</p>
-							{subCoordinators.map((member) => {
-								if (member.committee === 'CyberSec') {
-									return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
-								}
-							})}
-						</div> */}
+            {subcoords.map((member) => {
+              if (member.committee === 'CyberSec') {
+                return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
+              }
+            })}
+          </div> */}
           </div>
+          )};
         </section>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <img

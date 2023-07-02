@@ -1,10 +1,12 @@
 import React from 'react';
 import DeptLayout from './_layout';
 import events from '../../data/events';
-import cyberSecCoord from '@/data/coordinators';
-import cyberSecSubCoord from '@/data/sub-coordinators';
+// import cyberSecCoord from '@/data/coordinators';
+// import cyberSecSubCoord from '@/data/sub-coordinators';
 
-const CyberSec = () => {
+const CyberSec = ({ coords, subcoords }) => {
+  const cyberSecCoord = coords;
+  const cyberSecSubCoord = subcoords;
   const coordArr = [];
   const subCoordArr = [];
   const eventsCyber = [];
