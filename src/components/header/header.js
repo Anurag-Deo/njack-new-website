@@ -33,13 +33,15 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Home' ? styles.selected : undefined}
-          href="/">
+          href="/"
+        >
           HOME
         </Link>
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}>
+          style={{ display: 'flex', height: '30px' }}
+        >
           <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
             DEPARTMENTS
           </Link>
@@ -48,7 +50,8 @@ const HeaderComp = ({ selected }) => {
         <div
           onMouseEnter={resourceDrawerHandleMouse}
           onMouseLeave={resourceDrawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}>
+          style={{ display: 'flex', height: '30px' }}
+        >
           <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
             RESOURCES
           </Link>
@@ -57,13 +60,15 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Gallery' ? styles.selected : undefined}
-          href="/gallery">
+          href="/gallery"
+        >
           GALLERY
         </Link>
         <Link
           style={{ height: '30px' }}
           id={selected == 'Contact' ? styles.selected : undefined}
-          href="/contact-us">
+          href="/contact-us"
+        >
           CONTACT
         </Link>
       </section>
@@ -104,7 +109,8 @@ const MenuDrawer = ({
       <div
         onMouseEnter={drawerHandleMouse}
         onMouseLeave={drawerHandleMouse}
-        style={{ display: 'flex' }}>
+        style={{ display: 'flex' }}
+      >
         <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
           DEPARTMENTS
         </Link>
@@ -113,7 +119,8 @@ const MenuDrawer = ({
       <div
         onMouseEnter={resourceDrawerHandleMouse}
         onMouseLeave={resourceDrawerHandleMouse}
-        style={{ display: 'flex' }}>
+        style={{ display: 'flex' }}
+      >
         <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
           RESOURCES
         </Link>
@@ -181,7 +188,8 @@ const Header = ({ selected }) => {
             ? 'rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             : 'none'
         }}
-        className={styles.header}>
+        className={styles.header}
+      >
         <HeaderComp selected={selected} />
       </header>
       <header
@@ -191,7 +199,8 @@ const Header = ({ selected }) => {
             : 'none'
         }}
         className={styles.header}
-        id={styles.copy}>
+        id={styles.copy}
+      >
         <HeaderComp selected={selected} />
       </header>
     </>

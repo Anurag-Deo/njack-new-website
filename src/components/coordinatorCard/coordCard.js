@@ -17,7 +17,8 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
           target="_blank"
           referrerPolicy="no-referrer"
           href={coordGitHub}
-          style={{ marginLeft: '10px' }}>
+          style={{ marginLeft: '10px' }}
+        >
           <BsGithub color="white" />
         </a>
       </div>

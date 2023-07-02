@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
 
   const [coords, setCoords] = useState([]);
   const [subcoords, setSubCoords] = useState([]);
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +29,6 @@ export default function App({ Component, pageProps }) {
         const response2 = await fetch('/api/getSubcoords');
         const data2 = await response2.json();
         setSubCoords(data2);
-
       } catch (error) {
         console.error(error);
       }
@@ -52,7 +51,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     let timer;
-    const handleComplete = () => timer = setTimeout(() => setLoading(false), 1000);
+    const handleComplete = () => (timer = setTimeout(() => setLoading(false), 1000));
 
     const handleStart = () => {
       if (timer) {
@@ -70,10 +69,14 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleComplete);
       router.events.off('routeChangeError', handleComplete);
     };
-  },[router.events]);
+  }, [router.events]);
   return (
     <main className={JosefinSans.className}>
-      {loading ? <Loader /> : <Component {...pageProps} coords={coords} subcoords={subcoords} events={events} />}
+      {loading ? (
+        <Loader />
+      ) : (
+        <Component {...pageProps} coords={coords} subcoords={subcoords} events={events} />
+      )}
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import DeptLayout from './_layout';
 
-const DevOS = ({coords, subcoords, events}) => {
+const DevOS = ({ coords, subcoords, events }) => {
   const coordDevOS = coords;
   const subCoordDevOS = subcoords;
   const coordArr = [];

@@ -59,7 +59,7 @@ const ML = ({ coords, subcoords, events }) => {
       events={eventsML}
       coordArr={coordArr}
       subCoordArr={subCoordArr}
-      pageLink='/departments/ml'
+      pageLink="/departments/ml"
     />
   );
 };

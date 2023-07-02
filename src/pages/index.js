@@ -9,7 +9,7 @@ import DisplayLottie from '@/components/Lottie';
 import Background from '@/components/Background';
 
 export default function Home({ coords, subcoords, events }) {
-  const filteredEvents = events.filter((event) => event.old === "FALSE");
+  const filteredEvents = events.filter((event) => event.old === 'FALSE');
   return (
     <>
       <Head>
@@ -27,7 +27,8 @@ export default function Home({ coords, subcoords, events }) {
             initial={{ opacity: 0, x: '-100%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <Tilt>
               <img loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
             </Tilt>
@@ -38,7 +39,8 @@ export default function Home({ coords, subcoords, events }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <DisplayLottie animationPath="https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json" />
           </motion.div>
         </section>
@@ -50,14 +52,16 @@ export default function Home({ coords, subcoords, events }) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2 }}
-              viewport={{ once: true }}>
+              viewport={{ once: true }}
+            >
               <DisplayLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json" />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, x: '100%' }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
-              viewport={{ once: true }}>
+              viewport={{ once: true }}
+            >
               NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a
               community of passionate computer science enthusiasts. With its wide range of
               departments and initiatives, NJACK aims to provide a platform for students to enhance
@@ -87,7 +91,8 @@ export default function Home({ coords, subcoords, events }) {
                 variants={{
                   visible: { opacity: 1, scale: 1 },
                   hidden: { opacity: 0, scale: 0 }
-                }}>
+                }}
+              >
                 <EventCard
                   key={event.key}
                   old={event.old}
@@ -114,7 +119,8 @@ export default function Home({ coords, subcoords, events }) {
                 variants={{
                   visible: { opacity: 1, scale: 1 },
                   hidden: { opacity: 0, scale: 0 }
-                }}>
+                }}
+              >
                 <DeptCard
                   deptName={dept.deptName}
                   deptImage={dept.deptImage}
@@ -143,7 +149,8 @@ export default function Home({ coords, subcoords, events }) {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 20 }
-                    }}>
+                    }}
+                  >
                     <CoordCard
                       coordName={member.name}
                       coordImage={`https://drive.google.com/uc?export=view&id=${member.image}`}
@@ -155,7 +162,6 @@ export default function Home({ coords, subcoords, events }) {
                 )
             )}
           </div>
-
           <div className={styles.cardSection}>
             {coords.map((member, index) => {
               if (member.committee !== 'Overall Coordinator') {
@@ -170,7 +176,8 @@ export default function Home({ coords, subcoords, events }) {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 20 }
-                    }}>
+                    }}
+                  >
                     {member.committee !== 'Overall Coordinator' && (
                       <CoordCard
                         coordName={member.name}
@@ -185,7 +192,6 @@ export default function Home({ coords, subcoords, events }) {
               }
             })}
           </div>
-
           <h3>Sub-Coordinators</h3>
           {!(subcoords.length > 0) && (
             <div className={styles.cardSection}>
@@ -195,11 +201,11 @@ export default function Home({ coords, subcoords, events }) {
             </div>
           )}
           {subcoords.length > 0 && (
-          <div className={styles.cardSection}>
-            <div className={styles.committee}>
-              <p>Competitive Programming</p>
-              
-              {subcoords.map((member) => {
+            <div className={styles.cardSection}>
+              <div className={styles.committee}>
+                <p>Competitive Programming</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'CP') {
                     return (
                       <SubCoordCard
@@ -210,12 +216,11 @@ export default function Home({ coords, subcoords, events }) {
                     );
                   }
                 })}
-              
-            </div>
-            <div className={styles.committee}>
-              <p>Development & Open Source</p>
-              
-              {subcoords.map((member) => {
+              </div>
+              <div className={styles.committee}>
+                <p>Development & Open Source</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'Dev&OS') {
                     return (
                       <SubCoordCard
@@ -226,12 +231,11 @@ export default function Home({ coords, subcoords, events }) {
                     );
                   }
                 })}
-              
-            </div>
-            <div className={styles.committee}>
-              <p>Machine Learning</p>
-              
-              {subcoords.map((member) => {
+              </div>
+              <div className={styles.committee}>
+                <p>Machine Learning</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'ML') {
                     return (
                       <SubCoordCard
@@ -242,9 +246,8 @@ export default function Home({ coords, subcoords, events }) {
                     );
                   }
                 })}
-              
-            </div>
-            {/* 
+              </div>
+              {/* 
             <div className={styles.committee}>
             <p>Cyber Security</p>
             {subcoords.map((member) => {
@@ -253,8 +256,9 @@ export default function Home({ coords, subcoords, events }) {
               }
             })}
           </div> */}
-          </div>
-          )};
+            </div>
+          )}
+          ;
         </section>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <img

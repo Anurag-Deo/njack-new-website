@@ -11,9 +11,7 @@ const ContactUs = () => {
       <Header selected={'Contact'} />
       <Background />
       <div className={styles.parentDiv}>
-        <h1 style={{ marginBottom: '50px', textAlign: 'center' }}>
-          CONTACT US
-        </h1>
+        <h1 style={{ marginBottom: '50px', textAlign: 'center' }}>CONTACT US</h1>
         <div className={styles.body}>
           <section className={styles.leftSection}>
             <h2>NJACK, IIT Patna</h2>
@@ -32,21 +30,24 @@ const ContactUs = () => {
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://www.facebook.com/njack.iitp/">
+                href="https://www.facebook.com/njack.iitp/"
+              >
                 <BsFacebook color="white" />
               </a>
               <br />
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://www.instagram.com/njackiitp/">
+                href="https://www.instagram.com/njackiitp/"
+              >
                 <BsInstagram color="white" />
               </a>
               <br />
               <a
                 target="_blank"
                 referrerPolicy="no-referrer"
-                href="https://in.linkedin.com/company/njack-iit-patna">
+                href="https://in.linkedin.com/company/njack-iit-patna"
+              >
                 <BsLinkedin color="white" />
               </a>
             </div>
