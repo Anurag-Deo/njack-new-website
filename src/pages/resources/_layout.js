@@ -25,8 +25,7 @@ const Modal = dynamic(() => import('react-notion-x/build/third-party/modal').the
 export default function Layout({ pageData, pageLink }) {
   const router = useRouter();
   useEffect(() => {
-    if(router.pathname !== pageLink)
-      router.replace("/");
+    if (router.pathname !== pageLink) router.replace('/');
   }, []);
   const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer), {
     ssr: false

@@ -16,6 +16,8 @@ export async function getServerSideProps() {
   };
 }
 
-const DevOS = ({ pageData }) => <ResourcesComponent pageData={pageData} pageLink="/resources/dev-os" />;
+const DevOS = ({ pageData }) => (
+  <ResourcesComponent pageData={pageData} pageLink="/resources/dev-os" />
+);
 
 export default DevOS;

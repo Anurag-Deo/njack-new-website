@@ -26,7 +26,7 @@ const gallery = () => {
       <div className={styles.galleryContainer}>
         <Background />
         <div style={{ zIndex: '2', position: 'relative' }}>
-          <h1 style={{ marginBottom: '50px', textAlign: 'center', color:"white" }}>Our Gallery</h1>
+          <h1 style={{ marginBottom: '50px', textAlign: 'center', color: 'white' }}>Our Gallery</h1>
           <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
 
           {!!currentImage && (

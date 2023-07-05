@@ -2,16 +2,14 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { CoordCard, SubCoordCard, DeptCard, EventCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
-import events from '@/data/events';
+// import events from '@/data/events';
 import departments from '@/data/departments';
-import coordinators from '@/data/coordinators';
-import subCoordinators from '@/data/sub-coordinators';
 import Tilt from 'react-parallax-tilt';
 import DisplayLottie from '@/components/Lottie';
 import Background from '@/components/Background';
 
-export default function Home() {
-  const filteredEvents = events.filter((event) => event.old === false);
+export default function Home({ coords, subcoords, events }) {
+  const filteredEvents = events.filter((event) => event.old === 'FALSE');
   return (
     <>
       <Head>
@@ -29,7 +27,8 @@ export default function Home() {
             initial={{ opacity: 0, x: '-100%' }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <Tilt>
               <img loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
             </Tilt>
@@ -40,7 +39,8 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <DisplayLottie animationPath="https://assets3.lottiefiles.com/packages/lf20_mXdqmT1SH2.json" />
           </motion.div>
         </section>
@@ -52,14 +52,16 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2 }}
-              viewport={{ once: true }}>
+              viewport={{ once: true }}
+            >
               <DisplayLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_v1yudlrx.json" />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, x: '100%' }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
-              viewport={{ once: true }}>
+              viewport={{ once: true }}
+            >
               NJACK is the esteemed Computer Science Club at IIT Patna, dedicated to fostering a
               community of passionate computer science enthusiasts. With its wide range of
               departments and initiatives, NJACK aims to provide a platform for students to enhance
@@ -89,7 +91,8 @@ export default function Home() {
                 variants={{
                   visible: { opacity: 1, scale: 1 },
                   hidden: { opacity: 0, scale: 0 }
-                }}>
+                }}
+              >
                 <EventCard
                   key={event.key}
                   old={event.old}
@@ -116,7 +119,8 @@ export default function Home() {
                 variants={{
                   visible: { opacity: 1, scale: 1 },
                   hidden: { opacity: 0, scale: 0 }
-                }}>
+                }}
+              >
                 <DeptCard
                   deptName={dept.deptName}
                   deptImage={dept.deptImage}
@@ -132,7 +136,7 @@ export default function Home() {
           <h2 className={styles.sectionHeading}>Our Team</h2>
           <h3>Coordinators</h3>
           <div className={styles.cardSection} style={{ justifyContent: 'center' }}>
-            {coordinators.map(
+            {coords.map(
               (member, index) =>
                 member.committee === 'Overall Coordinator' && (
                   <motion.div
@@ -145,7 +149,8 @@ export default function Home() {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 20 }
-                    }}>
+                    }}
+                  >
                     <CoordCard
                       coordName={member.name}
                       coordImage={`https://drive.google.com/uc?export=view&id=${member.image}`}
@@ -157,9 +162,8 @@ export default function Home() {
                 )
             )}
           </div>
-
           <div className={styles.cardSection}>
-            {coordinators.map((member, index) => {
+            {coords.map((member, index) => {
               if (member.committee !== 'Overall Coordinator') {
                 return (
                   <motion.div
@@ -172,7 +176,8 @@ export default function Home() {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: 20 }
-                    }}>
+                    }}
+                  >
                     {member.committee !== 'Overall Coordinator' && (
                       <CoordCard
                         coordName={member.name}
@@ -187,13 +192,20 @@ export default function Home() {
               }
             })}
           </div>
-
           <h3>Sub-Coordinators</h3>
-          <div className={styles.cardSection}>
-            <div className={styles.committee}>
-              <p>Competitive Programming</p>
-              
-                {subCoordinators.map((member) => {
+          {!(subcoords.length > 0) && (
+            <div className={styles.cardSection}>
+              <p style={{ textAlign: 'center', width: '100%' }}>
+                Sub-Coordinator details will be updated soon.
+              </p>
+            </div>
+          )}
+          {subcoords.length > 0 && (
+            <div className={styles.cardSection}>
+              <div className={styles.committee}>
+                <p>Competitive Programming</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'CP') {
                     return (
                       <SubCoordCard
@@ -204,12 +216,11 @@ export default function Home() {
                     );
                   }
                 })}
-              
-            </div>
-            <div className={styles.committee}>
-              <p>Development & Open Source</p>
-              
-                {subCoordinators.map((member) => {
+              </div>
+              <div className={styles.committee}>
+                <p>Development & Open Source</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'Dev&OS') {
                     return (
                       <SubCoordCard
@@ -220,12 +231,11 @@ export default function Home() {
                     );
                   }
                 })}
-              
-            </div>
-            <div className={styles.committee}>
-              <p>Machine Learning</p>
-              
-                {subCoordinators.map((member) => {
+              </div>
+              <div className={styles.committee}>
+                <p>Machine Learning</p>
+
+                {subcoords.map((member) => {
                   if (member.committee === 'ML') {
                     return (
                       <SubCoordCard
@@ -236,18 +246,19 @@ export default function Home() {
                     );
                   }
                 })}
-              
-            </div>
-            {/* 
+              </div>
+              {/* 
             <div className={styles.committee}>
             <p>Cyber Security</p>
-							{subCoordinators.map((member) => {
-								if (member.committee === 'CyberSec') {
-									return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
-								}
-							})}
-						</div> */}
-          </div>
+            {subcoords.map((member) => {
+              if (member.committee === 'CyberSec') {
+                return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
+              }
+            })}
+          </div> */}
+            </div>
+          )}
+          ;
         </section>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <img

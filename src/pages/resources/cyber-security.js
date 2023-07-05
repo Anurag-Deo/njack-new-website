@@ -15,6 +15,8 @@ export async function getServerSideProps() {
   };
 }
 
-const CyberSecurity = ({ pageData }) => <ResourcesComponent pageData={pageData} pageLink="/resources/cyber-security" />;
+const CyberSecurity = ({ pageData }) => (
+  <ResourcesComponent pageData={pageData} pageLink="/resources/cyber-security" />
+);
 
 export default CyberSecurity;
