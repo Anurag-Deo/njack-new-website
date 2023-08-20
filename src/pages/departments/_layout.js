@@ -133,6 +133,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
                   coordCommittee={member.coordCommittee}
                   coordLinkedIn={member.coordLinkedIn}
                   coordGitHub={member.coordGitHub}
+                  coordCFHandle={member.coordCFHandle}
                 />
               )}
             </motion.div>
@@ -164,6 +165,7 @@ const CoordSection = ({ coordArr, subCoordArr }) => {
                 coordCommittee={member.coordCommittee}
                 coordLinkedIn={member.coordLinkedIn}
                 coordGitHub={member.coordGitHub}
+				coordCFHandle={member.coordCFHandle}
               />
             </motion.div>
           ))

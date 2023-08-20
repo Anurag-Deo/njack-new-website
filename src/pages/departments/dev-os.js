@@ -14,7 +14,8 @@ const DevOS = ({ coords, subcoords, events }) => {
         coordImage: coordDevOS[i].image,
         coordCommittee: coordDevOS[i].committee,
         coordLinkedIn: coordDevOS[i].linkedin,
-        coordGitHub: coordDevOS[i].github
+        coordGitHub: coordDevOS[i].github,
+		coordCFHandle: coordDevOS[i].cfhandle
       });
     }
   }
@@ -33,7 +34,8 @@ const DevOS = ({ coords, subcoords, events }) => {
         coordImage: subCoordDevOS[i].image,
         coordCommittee: subCoordDevOS[i].committee,
         coordLinkedIn: subCoordDevOS[i].linkedin,
-        coordGitHub: subCoordDevOS[i].github
+        coordGitHub: subCoordDevOS[i].github,
+		coordCFHandle: subCoordDevOS[i].cfhandle
       });
     }
   }

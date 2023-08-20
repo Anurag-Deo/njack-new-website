@@ -15,7 +15,8 @@ const CP = ({ coords, subcoords, events }) => {
         coordImage: coordCP[i].image,
         coordCommittee: coordCP[i].committee,
         coordLinkedIn: coordCP[i].linkedin,
-        coordGitHub: coordCP[i].github
+        coordGitHub: coordCP[i].github,
+		coordCFHandle: coordCP[i].cfhandle
       });
     }
   }
@@ -34,7 +35,8 @@ const CP = ({ coords, subcoords, events }) => {
         coordImage: subCoordsCP[i].image,
         coordCommittee: subCoordsCP[i].committee,
         coordLinkedIn: subCoordsCP[i].linkedin,
-        coordGitHub: subCoordsCP[i].github
+        coordGitHub: subCoordsCP[i].github,
+		coordCFHandle: subCoordsCP[i].cfhandle
       });
     }
   }

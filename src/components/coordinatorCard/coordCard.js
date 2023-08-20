@@ -3,7 +3,7 @@ import styles from './coordCard.module.css';
 import Image from 'next/image';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
-const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coordGitHub }) => {
+const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coordGitHub, coordCFHandle }) => {
   return (
     <div className={styles.coordCard}>
       <Image width={100} height={100} className={styles.coordImage} src={coordImage} alt="Image" />
@@ -13,14 +13,24 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
         <a target="_blank" referrerPolicy="no-referrer" href={coordLinkedIn}>
           <BsLinkedin color="white" />
         </a>
-        <a
-          target="_blank"
-          referrerPolicy="no-referrer"
-          href={coordGitHub}
-          style={{ marginLeft: '10px' }}
-        >
-          <BsGithub color="white" />
-        </a>
+        {coordGitHub && (
+          <a
+            target="_blank"
+            referrerPolicy="no-referrer"
+            href={coordGitHub}
+            style={{ marginLeft: '10px' }}>
+            <BsGithub color="white" />
+          </a>
+        )}
+        {coordCFHandle && (
+          <a
+            target="_blank"
+            referrerPolicy="no-referrer"
+            href={coordCFHandle}
+            style={{ marginLeft: '10px' }}>
+			<Image src={"/home/Codeforces.png"} width={16} height={16} style={{filter: "invert(1)"}}/>
+          </a>
+        )}
       </div>
     </div>
   );
