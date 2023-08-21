@@ -13,7 +13,7 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
         <a target="_blank" referrerPolicy="no-referrer" href={coordLinkedIn}>
           <BsLinkedin color="white" />
         </a>
-        {coordGitHub && (
+        {coordGitHub!='NA' && (
           <a
             target="_blank"
             referrerPolicy="no-referrer"
@@ -22,7 +22,7 @@ const CoordCard = ({ coordName, coordImage, coordCommittee, coordLinkedIn, coord
             <BsGithub color="white" />
           </a>
         )}
-        {coordCFHandle && (
+        {coordCFHandle!='NA' && (
           <a
             target="_blank"
             referrerPolicy="no-referrer"
