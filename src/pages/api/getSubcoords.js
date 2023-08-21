@@ -29,6 +29,8 @@ async function handler(req, res) {
           image: result.properties.Image.rich_text[0].plain_text,
           linkedin: result.properties.LinkedIn.rich_text[0].plain_text,
           github: result.properties.Github.rich_text[0].plain_text
+          //   cfhandle: result.properties.CFHandle.rich_text[0].plain_text
+          //   cfhandle: 'https://codeforces.com/profile/jat.arc2004'
         };
       });
       if (data.length === 0) {

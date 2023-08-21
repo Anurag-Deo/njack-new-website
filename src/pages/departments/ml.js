@@ -15,7 +15,8 @@ const ML = ({ coords, subcoords, events }) => {
         coordImage: coordML[i].image,
         coordCommittee: coordML[i].committee,
         coordLinkedIn: coordML[i].linkedin,
-        coordGitHub: coordML[i].github
+        coordGitHub: coordML[i].github,
+		coordCFHandle: coordML[i].cfhandle
       });
     }
   }
@@ -34,7 +35,8 @@ const ML = ({ coords, subcoords, events }) => {
         coordImage: subCoordsML[i].image,
         coordCommittee: subCoordsML[i].committee,
         coordLinkedIn: subCoordsML[i].linkedin,
-        coordGitHub: subCoordsML[i].github
+        coordGitHub: subCoordsML[i].github,
+		coordCFHandle: subCoordsML[i].cfhandle
       });
     }
   }

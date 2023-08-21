@@ -2,20 +2,21 @@ import React from 'react';
 import DeptLayout from './_layout';
 
 const CyberSec = ({ coords, subcoords, events }) => {
-  const cyberSecCoord = coords;
-  const cyberSecSubCoord = subcoords;
+  const coordCyberSec = coords;
+  const subCoordCyberSec = subcoords;
   const coordArr = [];
   const subCoordArr = [];
   const eventsCyber = [];
-  for (let i = 0; i < cyberSecCoord.length; i++) {
-    if (cyberSecCoord[i].committee === 'Cybersec') {
+  for (let i = 0; i < coordCyberSec.length; i++) {
+    if (coordCyberSec[i].committee === 'Cybersec') {
       coordArr.push({
         key: i + 1,
-        coordName: cyberSecCoord[i].name,
-        coordImage: cyberSecCoord[i].image,
-        coordCommittee: cyberSecCoord[i].committee,
-        coordLinkedIn: cyberSecCoord[i].linkedin,
-        coordGitHub: cyberSecCoord[i].github
+        coordName: coordCyberSec[i].name,
+        coordImage: coordCyberSec[i].image,
+        coordCommittee: coordCyberSec[i].committee,
+        coordLinkedIn: coordCyberSec[i].linkedin,
+        coordGitHub: coordCyberSec[i].github,
+		coordCFHandle: coordCyberSec[i].cfhandle
       });
     }
   }
@@ -26,15 +27,16 @@ const CyberSec = ({ coords, subcoords, events }) => {
   }
   coordinators = coordinators.slice(0, -2);
 
-  for (let i = 0; i < cyberSecSubCoord.length; i++) {
-    if (cyberSecSubCoord[i].committee === 'Cybersec') {
+  for (let i = 0; i < subCoordCyberSec.length; i++) {
+    if (subCoordCyberSec[i].committee === 'Cybersec') {
       subCoordArr.push({
         key: i + 1,
-        coordName: cyberSecSubCoord[i].name,
-        coordImage: cyberSecSubCoord[i].image,
-        coordCommittee: cyberSecSubCoord[i].committee,
-        coordLinkedIn: cyberSecSubCoord[i].linkedin,
-        coordGitHub: cyberSecSubCoord[i].github
+        coordName: subCoordCyberSec[i].name,
+        coordImage: subCoordCyberSec[i].image,
+        coordCommittee: subCoordCyberSec[i].committee,
+        coordLinkedIn: subCoordCyberSec[i].linkedin,
+        coordGitHub: subCoordCyberSec[i].github,
+		coordCFHandle: subCoordCyberSec[i].cfhandle
       });
     }
   }

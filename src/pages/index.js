@@ -157,6 +157,7 @@ export default function Home({ coords, subcoords, events }) {
                       coordCommittee={member.committee}
                       coordLinkedIn={member.linkedin}
                       coordGitHub={member.github}
+                      coordCFHandle={member.cfhandle}
                     />
                   </motion.div>
                 )
@@ -185,6 +186,7 @@ export default function Home({ coords, subcoords, events }) {
                         coordCommittee={member.committee}
                         coordLinkedIn={member.linkedin}
                         coordGitHub={member.github}
+						coordCFHandle={member.cfhandle}
                       />
                     )}
                   </motion.div>
