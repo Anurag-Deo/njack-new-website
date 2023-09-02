@@ -44,11 +44,18 @@
   font-weight: 300;
 }
 
+.panorama{
+  height: 700px;
+}
+
 @media screen and (max-width: 768px) {
   .rightSection {
     display: flex;
     flex: 1;
     width: 100%;
     margin: 20px 0;
+  }
+  .panorama{
+    height: 40vh;
   }
 }

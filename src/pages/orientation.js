@@ -13,7 +13,7 @@ const ContactUs = () => {
             <div className={styles.parentDiv}>
                 <h1 style={{ marginBottom: '50px', textAlign: 'center' }}>ORIENTATION QUIZ FORM</h1>
                 <div className={styles.body}>
-                    <iframe width="1200" height="700" title="Panorama Viewer" scrolling="no" src="https://renderstuff.com/tools/360-panorama-web-viewer-embed/?image=https://res.cloudinary.com/dmc7njn59/image/upload/v1693666808/Frame_1_uztwuf.jpg"></iframe>
+                    <iframe className={styles.panorama} width="1200" title="Panorama Viewer" scrolling="no" src="https://renderstuff.com/tools/360-panorama-web-viewer-embed/?image=https://res.cloudinary.com/dmc7njn59/image/upload/v1693666808/Frame_1_uztwuf.jpg"></iframe>
                     <iframe style={{marginTop: "50px"}} width="1200" height="1200" scrolling="no"  title="Google Form" src="https://forms.gle/6nexjxBvwdYt2CH69"></iframe>
 
                 </div>
