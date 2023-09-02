@@ -82,6 +82,9 @@ export default function Layout({ pageData, pageLink }) {
               background-position: center;
               background-size: cover !important;
             }
+            .notion-page-icon{
+              display: none !important;
+            }
           `}
           </style>
         </Head>
