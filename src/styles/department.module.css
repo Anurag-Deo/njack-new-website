@@ -25,6 +25,7 @@
   align-items: center;
   width: 70vw;
 }
+
 .deptTitle h1 {
   color: #ff6559;
   font-family: Josefin Sans;
@@ -39,7 +40,20 @@
   font-size: 1.2rem;
   font-weight: lighter;
 }
+
 .deptDesc {
+  font-family: Josefin Sans, light;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 26px;
+  width: 70vw;
+  padding-bottom: 7.5vh;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.deptDesc2 {
   font-family: Josefin Sans, light;
   font-size: 1.5rem;
   font-weight: 300;
@@ -69,6 +83,7 @@
   line-height: 26px;
   font-family: Josefin Sans, light;
 }
+
 .section {
   display: grid;
   margin-bottom: 50px;
@@ -113,35 +128,48 @@
   .aboutDept {
     height: 100%;
   }
+
   .deptTitle {
     flex-direction: column-reverse;
     align-items: center;
     width: 100%;
     margin-top: 11px;
   }
-  .deptTitle > div > h1 {
+
+  .deptTitle>div>h1 {
     font-size: 1.1rem;
     white-space: nowrap;
     margin-top: 10px;
     text-align: center;
   }
-  .deptTitle > div > h4 {
+
+  .deptTitle>div>h4 {
     font-size: 1rem;
     text-align: center;
   }
+
   .deptTitle img {
     margin: 0;
     height: 120px;
     width: 120px;
   }
+
   .deptDesc {
     flex-direction: column;
     width: 87vw;
   }
+
+  .deptDesc2 {
+    flex-direction: column;
+    width: 87vw;
+    padding-top: 8vh;
+  }
+
   .deptDesc div {
     width: 80%;
     margin: auto;
   }
+
   .deptDesc p {
     width: 100%;
     font-size: 1rem;
