@@ -186,7 +186,7 @@ export default function Home({ coords, subcoords, events }) {
                         coordCommittee={member.committee}
                         coordLinkedIn={member.linkedin}
                         coordGitHub={member.github}
-						coordCFHandle={member.cfhandle}
+                        coordCFHandle={member.cfhandle}
                       />
                     )}
                   </motion.div>
@@ -249,15 +249,15 @@ export default function Home({ coords, subcoords, events }) {
                   }
                 })}
               </div>
-              
-            <div className={styles.committee}>
-            <p>Cyber Security</p>
-            {subcoords.map((member) => {
-              if (member.committee === 'Cybersec') {
-                return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin}/>)
-              }
-            })}
-          </div>
+
+              <div className={styles.committee}>
+                <p>Cyber Security</p>
+                {subcoords.map((member) => {
+                  if (member.committee === 'Cybersec') {
+                    return (<SubCoordCard key={member.linkedin} coordName={member.name} coordLinkedIn={member.linkedin} />)
+                  }
+                })}
+              </div>
             </div>
           )}
           ;

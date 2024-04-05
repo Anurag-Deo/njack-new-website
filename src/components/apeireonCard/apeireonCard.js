@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './eventCard.module.css';
 
 const ApeireonCard = ({ image, eventName, desc, registerLink, old }) => {
+
   return (
     <div
       className={`${styles.card} ${old == 'TRUE' ? styles.old : undefined}`}

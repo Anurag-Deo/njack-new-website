@@ -55,12 +55,13 @@
 
 .deptDesc2 {
   font-family: Josefin Sans, light;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   line-height: 26px;
   width: 70vw;
   padding-bottom: 7.5vh;
   display: flex;
+  text-align: justify;
   align-items: center;
   gap: 50px;
 }
@@ -136,14 +137,14 @@
     margin-top: 11px;
   }
 
-  .deptTitle>div>h1 {
+  .deptTitle > div > h1 {
     font-size: 1.1rem;
     white-space: nowrap;
     margin-top: 10px;
     text-align: center;
   }
 
-  .deptTitle>div>h4 {
+  .deptTitle > div > h4 {
     font-size: 1rem;
     text-align: center;
   }
