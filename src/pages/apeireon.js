@@ -14,7 +14,7 @@ export default function apeireon({ events, coords, subcoords }) {
   const coordArr = [];
   const subCoordArr = [];
   const apeireonEvents = [];
-  for (let i = 0; i < coordDevOS.length; i++) {
+  for (let i = 0;i < coordDevOS.length;i++) {
     coordArr.push({
       key: i + 1,
       coordName: coordDevOS[i].name,
@@ -32,7 +32,7 @@ export default function apeireon({ events, coords, subcoords }) {
   }
   coordinators = coordinators.slice(0, -2);
 
-  for (let i = 0; i < subCoordDevOS.length; i++) {
+  for (let i = 0;i < subCoordDevOS.length;i++) {
     subCoordArr.push({
       key: i + 1,
       coordName: subCoordDevOS[i].name,
@@ -44,7 +44,7 @@ export default function apeireon({ events, coords, subcoords }) {
     });
   }
 
-  for (let i = 0; i < events.length; i++) {
+  for (let i = 0;i < events.length;i++) {
     if (events[i].dept === 'Apeireon') {
       apeireonEvents.push(events[i]);
     }
@@ -67,14 +67,16 @@ export default function apeireon({ events, coords, subcoords }) {
             // deptCoordName={deptCoordName}
             deptImage="/home/apeireon.png"
           />
-          <DeptDescription deptDesc="Hi this section is all about Apeireon" />
+          <DeptDescription
+            deptDesc="Apeireon name is created from the Greek word Apeiron meaning unlimited, boundless, infinite. Thus, the aim and the vision of the fest are to create such an opportunity which aligns with its name in the coding domain. Join us as we push the boundaries of possibility and dive deep into the heart of the coding culture of IIT Patna. Let's code, connect, and create unforgettable memories together at Apeireon! 🚀"
+          />
         </div>
         <EventCards events={apeireonEvents} />
         {/* {coordArr.length && subCoordArr.length && (
           <CoordSection coordArr={coordArr} subCoordArr={subCoordArr} />
         )} */}
         <Footer />
-      </div>
+      </div >
     </>
   );
 }
@@ -97,16 +99,12 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
 
 const DeptDescription = ({ deptDesc }) => {
   return (
-    <div className={styles.deptDesc2}>
-      {/* <div>
-        <DisplayLottie
-          animationPath={'https://assets7.lottiefiles.com/packages/lf20_iv4dsx3q.json'}
-        />
-      </div> */}
+    <div className={`${styles.deptDesc2} text-justify`}>
       <p>{deptDesc}</p>
     </div>
   );
 };
+
 
 const EventCards = ({ events }) => {
   return (

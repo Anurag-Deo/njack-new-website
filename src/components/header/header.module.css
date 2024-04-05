@@ -22,11 +22,13 @@
     right: 50vw;
     top: 0%;
   }
+
   .header .resourcedrawer {
     right: 50vw;
     top: 0%;
   }
 }
+
 @media (min-width: 600px) {
   .header {
     --_menu-visible: flex;
@@ -112,14 +114,17 @@
   width: calc(30% - calc(0.8rem * 1.5));
   z-index: 2;
 }
+
 @media (max-width: 768px) {
   .header .drawer {
     top: 0;
   }
+
   .header .resourcedrawer {
     top: 0;
   }
 }
+
 .drawer a,
 .resourcedrawer a {
   padding-inline: 20px;

@@ -71,6 +71,14 @@ const HeaderComp = ({ selected }) => {
         >
           CONTACT
         </Link>
+        {/* New Apeireon button */}
+        <Link
+          style={{ height: '30px', backgroundColor: '#ff9f69', color: 'white', padding: '5px 10px', borderRadius: '5px', marginLeft: '10px' }}
+          id={selected == 'Apeireon' ? styles.selected : undefined}
+          href="/apeireon"
+        >
+          Apeireon
+        </Link>
       </section>
       <div id={styles.menuButton} onMouseLeave={menuHandleMouseLeave}>
         <GiHamburgerMenu color="white" size={25} onClick={menuHandleMouseClick} />
@@ -84,10 +92,10 @@ const HeaderComp = ({ selected }) => {
           />
         )}
       </div>
-      {/* {isMenuVisible && <MenuDrawer selected={selected} vertical={true} />} */}
     </>
   );
 };
+
 
 const MenuDrawer = ({
   selected,
@@ -131,6 +139,13 @@ const MenuDrawer = ({
       </Link>
       <Link id={selected == 'Contact' ? styles.selected : undefined} href="/contact-us">
         CONTACT
+      </Link>
+      <Link
+        style={{ fontSize: '20px', color: '#ff9f69' }}
+        id={selected == 'Apeireon' ? styles.selected : undefined}
+        href="/apeireon"
+      >
+        Apeireon
       </Link>
     </section>
   );
