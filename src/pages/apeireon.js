@@ -83,7 +83,7 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 600);
-    }; s
+    };
 
     handleResize();
     window.addEventListener('resize', handleResize);
