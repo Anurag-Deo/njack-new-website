@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/department.module.css';
 import { EventCard, CoordCard, Footer, Header } from '@/components';
 import { motion } from 'framer-motion';
@@ -64,7 +64,6 @@ export default function apeireon({ events, coords, subcoords }) {
         <div className={styles.aboutDept}>
           <DeptTitle
             deptName="Apeireon"
-            // deptCoordName={deptCoordName}
             deptImage="/home/apeireon.png"
           />
           <DeptDescription
@@ -72,9 +71,6 @@ export default function apeireon({ events, coords, subcoords }) {
           />
         </div>
         <EventCards events={apeireonEvents} />
-        {/* {coordArr.length && subCoordArr.length && (
-          <CoordSection coordArr={coordArr} subCoordArr={subCoordArr} />
-        )} */}
         <Footer />
       </div >
     </>
@@ -82,12 +78,22 @@ export default function apeireon({ events, coords, subcoords }) {
 }
 
 const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
-    <div className={styles.deptTitle} style={{ justifyContent: 'center' }}>
-      {/* <div>
-        <h1>{deptName}</h1> */}
-      {/* <h4>Coordinator(s): {deptCoordName}</h4> */}
-      {/* </div> */}
+    <div className={styles.deptTitle} style={{ justifyContent: 'center', marginTop: isMobile ? '90px' : 0 }}>
       <img
         src={deptImage}
         loading="lazy"
@@ -99,7 +105,7 @@ const DeptTitle = ({ deptName, deptCoordName, deptImage }) => {
 
 const DeptDescription = ({ deptDesc }) => {
   return (
-    <div className={`${styles.deptDesc2} text-justify`}>
+    <div className={`${styles.deptDesc2} `}>
       <p>{deptDesc}</p>
     </div>
   );
@@ -144,72 +150,3 @@ const EventCards = ({ events }) => {
   );
 };
 
-const CoordSection = ({ coordArr, subCoordArr }) => {
-  return (
-    <div className={styles.section}>
-      <h2 className={styles.sectionHeading}>Team</h2>
-
-      <motion.div className={styles.cardSectionTeams}>
-        {coordArr?.length > 0 ? (
-          coordArr.map((member, index) => (
-            <motion.div
-              key={member.coordName}
-              className={styles.card}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: index * 0.2 }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 20 }
-              }}>
-              {member.committee !== 'Overall Coordinator' && (
-                <CoordCard
-                  key={member.coordName}
-                  coordName={member.coordName}
-                  coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
-                  coordCommittee={member.coordCommittee}
-                  coordLinkedIn={member.coordLinkedIn}
-                  coordGitHub={member.coordGitHub}
-                  coordCFHandle={member.coordCFHandle}
-                />
-              )}
-            </motion.div>
-          ))
-        ) : (
-          <h2 style={{ color: 'gainsboro' }}>No Coordinators</h2>
-        )}
-      </motion.div>
-
-      <motion.div className={styles.cardSectionTeams}>
-        {subCoordArr?.length > 0 ? (
-          subCoordArr.map((member, index) => (
-            <motion.div
-              key={member.coordName}
-              className={styles.card}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: index * 0.2 }}
-              variants={{
-                visible: { opacity: 1, y: 0 },
-                hidden: { opacity: 0, y: 20 }
-              }}>
-              <CoordCard
-                key={member.coordName}
-                coordName={member.coordName}
-                coordImage={'https://drive.google.com/uc?export=view&id=' + member.coordImage}
-                coordCommittee={member.coordCommittee}
-                coordLinkedIn={member.coordLinkedIn}
-                coordGitHub={member.coordGitHub}
-                coordCFHandle={member.coordCFHandle}
-              />
-            </motion.div>
-          ))
-        ) : (
-          <h2 style={{ color: 'gainsboro' }}>No Sub Coordinators</h2>
-        )}
-      </motion.div>
-    </div>
-  );
-};
