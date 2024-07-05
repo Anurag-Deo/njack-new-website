@@ -1,0 +1,57 @@
+.parentDiv {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  color: white;
+  position: relative;
+  z-index: 2;
+  padding: 2em;
+}
+.parentDiv h1 {
+  margin-block: 1em;
+  font-size: 2.2em;
+}
+.parentDiv form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3em;
+}
+.parentDiv form input[type='submit'] {
+  font-size: 1.3em;
+  font-weight: 700;
+  background: #ff9f69;
+  color: black;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+}
+.input-container label {
+  font-size: 1.3em;
+  font-weight: 100;
+}
+.input-container label .hint {
+  font-size: 0.8em;
+}
+.input-container a {
+  color: rgb(192, 217, 255);
+}
+.input-container input {
+  font-size: 1.3em;
+  padding: 0.3em 1em;
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
