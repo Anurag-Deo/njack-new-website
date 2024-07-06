@@ -6,6 +6,7 @@ import { Footer, Header } from '@/components';
 import Head from 'next/head';
 import Background from '@/components/Background';
 import { useRouter } from 'next/router';
+var bcrypt = require('bcryptjs');
 
 export default function reportCheating({}) {
   const router = useRouter();

@@ -22,6 +22,8 @@
   padding-bottom: 3em;
 }
 .parentDiv form input[type='submit'] {
+  cursor: pointer;
+  margin-bottom: 2em;
   font-size: 1.3em;
   font-weight: 700;
   background: #ff9f69;
