@@ -4,14 +4,14 @@ var bcrypt = require('bcryptjs');
 
 const cors = initMiddleware(
   Cors({
-    methods: ['GET', 'POST'] // Specify the allowed HTTP methods
+    methods: ['POST'] // Specify the allowed HTTP methods
   })
 );
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { getFirestore, collection, getDocs, getDoc, setDoc } from 'firebase/firestore/lite';
+// import { getAnalytics } from 'firebase/analytics';
+import { getFirestore, collection, getDocs, getDoc, setDoc, doc } from 'firebase/firestore/lite';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,7 +29,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 // Get a list of cities from your database
@@ -62,35 +62,18 @@ async function getAllReports() {
   });
 }
 
-async function setReport(report, id = null) {
-  return new Promise(async (resolve, reject) => {
-    if (id) {
-      const citiesRef = collection(db, 'reports');
-
-      await setDoc(doc(reportRef, id), report);
-      resolve();
-      return;
-    } else {
-      const reportRef = collection(db, 'reports');
-
-      await setDoc(doc(reportRef), report);
-      resolve();
-      return;
-    }
-  });
-}
-
 async function handler(req, res) {
   // Run the cors middleware
   await cors(req, res);
 
-  const pwdHash = '$2a$10$gQDsfu0hn0.35YOXz.m4iu7ur/cuwY1tSpoKVXxDH0qfZnzlF3xQK';
+  const pwdHash = '$2a$10$yRTweO.3SY9pEo.iZp99GeHAAYv3sftmEDR8PVCuOIPyvvBRbEuD2';
   if (req.method === 'POST') {
     try {
-      const { id } = req.query;
+      const body = JSON.parse(req.body);
+      const id = body.id;
       let response;
-      bcrypt.compare(id, pwdHash, async (err, res) => {
-        if (!err && res) {
+      bcrypt.compare(id, pwdHash, async (err, result) => {
+        if (!err && result) {
           response = await getAllReports();
           res.status(200).json(response);
         } else {
@@ -102,18 +85,8 @@ async function handler(req, res) {
       console.error(error);
       res.status(500).json({ error: 'An error occurred' });
     }
-  } else if (req.method == 'POST') {
-    try {
-      const { id } = req.query;
-      const body = JSON.parse(req.body);
-      await setReport(id, body);
-    } catch (err) {
-      console.error(error);
-      res.status(500).json({ error: 'An error occurred' });
-    }
   } else {
     res.status(405).json({ error: 'Method not allowed' });
   }
 }
-
 export default handler;

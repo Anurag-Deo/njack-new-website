@@ -28,6 +28,26 @@ export default function reportCheating({}) {
   );
 }
 const ReportingForm = ({ children, style }) => {
+  // Testing SetReport
+  // useEffect(() => {
+  //   console.log('Creating document');
+  //   fetch('/api/setCheatingReport/', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ report: { a: '123' }, pwd: '', id: '' })
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
+
+  // Testing GetStatus
+  // useEffect(() => {
+  //   fetch('/api/getCheatingReport/', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ id: 'gCEEJz4joJfjpF9wVBDu' })
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
   return (
     <div style={style}>
       <h1>Anonymous Codeforces Plagiarism Reporting </h1>
