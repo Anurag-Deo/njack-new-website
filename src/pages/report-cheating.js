@@ -48,6 +48,7 @@ const ReportingForm = ({ children, style }) => {
   //     .then((res) => res.json())
   //     .then((data) => console.log(data));
   // }, []);
+
   return (
     <div style={style}>
       <h1>Anonymous Codeforces Plagiarism Reporting </h1>
