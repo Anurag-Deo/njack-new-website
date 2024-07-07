@@ -1,0 +1,52 @@
+.parentDiv {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  color: white;
+  position: relative;
+  z-index: 2;
+  padding: 2em;
+}
+.reportStatus {
+  padding: 3rem;
+  background-color: rgb(59, 59, 59);
+  border-radius: 20px;
+  font-size: 2rem;
+}
+.reportStatus h1 {
+  font-size: 1em;
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+.admin {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.report {
+  background-color: rgb(56, 56, 56);
+  padding: 2em 1em;
+  border-radius: 10px;
+  margin: 2em 0em;
+}
+.report div {
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+.report div span {
+  font-weight: 500;
+}
+.report button {
+  padding: 0.5em 2em;
+  margin-block: 1em;
+  font-size: 1.2em;
+  margin-right: 1em;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

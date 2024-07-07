@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.6",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "firebase": "^10.12.3",
     "framer-motion": "^10.12.16",
     "next": "13.2.4",
     "notion-client": "^6.16.0",
@@ -21,6 +24,7 @@
     "react-chrono": "^2.2.0",
     "react-dom": "18.2.0",
     "react-grid-gallery": "^1.0.0",
+    "react-hook-form": "^7.52.1",
     "react-icons": "^4.9.0",
     "react-image-lightbox": "^5.1.4",
     "react-lottie": "^1.2.3",

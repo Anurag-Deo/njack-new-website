@@ -33,15 +33,13 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Home' ? styles.selected : undefined}
-          href="/"
-        >
+          href="/">
           HOME
         </Link>
         <div
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}
-        >
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
             DEPARTMENTS
           </Link>
@@ -50,8 +48,7 @@ const HeaderComp = ({ selected }) => {
         <div
           onMouseEnter={resourceDrawerHandleMouse}
           onMouseLeave={resourceDrawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}
-        >
+          style={{ display: 'flex', height: '30px' }}>
           <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
             RESOURCES
           </Link>
@@ -60,24 +57,41 @@ const HeaderComp = ({ selected }) => {
         <Link
           style={{ height: '30px' }}
           id={selected == 'Gallery' ? styles.selected : undefined}
-          href="/gallery"
-        >
+          href="/gallery">
           GALLERY
         </Link>
         <Link
           style={{ height: '30px' }}
           id={selected == 'Contact' ? styles.selected : undefined}
-          href="/contact-us"
-        >
+          href="/contact-us">
           CONTACT
         </Link>
         {/* New Apeireon button */}
         <Link
-          style={{ height: '30px', backgroundColor: '#ff9f69', color: 'white', padding: '5px 10px', borderRadius: '5px', marginLeft: '10px' }}
+          style={{
+            height: '30px',
+            backgroundColor: '#ff9f69',
+            color: 'black',
+            padding: '5px 10px',
+            borderRadius: '5px',
+            marginLeft: '10px'
+          }}
           id={selected == 'Apeireon' ? styles.selected : undefined}
-          href="/apeireon"
-        >
+          href="/apeireon">
           Apeireon
+        </Link>
+        <Link
+          style={{
+            height: '30px',
+            border: '1px solid #ff9f69',
+            color: '#ff9f69',
+            padding: '5px 10px',
+            borderRadius: '5px',
+            marginLeft: '10px'
+          }}
+          id={selected == 'Report' ? styles.selected : undefined}
+          href="/report-cheating">
+          Report Cheating
         </Link>
       </section>
       <div id={styles.menuButton} onMouseLeave={menuHandleMouseLeave}>
@@ -95,7 +109,6 @@ const HeaderComp = ({ selected }) => {
     </>
   );
 };
-
 
 const MenuDrawer = ({
   selected,
@@ -117,8 +130,7 @@ const MenuDrawer = ({
       <div
         onMouseEnter={drawerHandleMouse}
         onMouseLeave={drawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
           DEPARTMENTS
         </Link>
@@ -127,8 +139,7 @@ const MenuDrawer = ({
       <div
         onMouseEnter={resourceDrawerHandleMouse}
         onMouseLeave={resourceDrawerHandleMouse}
-        style={{ display: 'flex' }}
-      >
+        style={{ display: 'flex' }}>
         <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
           RESOURCES
         </Link>
@@ -143,9 +154,14 @@ const MenuDrawer = ({
       <Link
         style={{ fontSize: '20px', color: '#ff9f69' }}
         id={selected == 'Apeireon' ? styles.selected : undefined}
-        href="/apeireon"
-      >
+        href="/apeireon">
         Apeireon
+      </Link>
+      <Link
+        style={{ fontSize: '20px', color: '#ff9f69' }}
+        id={selected == 'Report' ? styles.selected : undefined}
+        href="/report-cheating">
+        Report Cheating
       </Link>
     </section>
   );
@@ -203,8 +219,7 @@ const Header = ({ selected }) => {
             ? 'rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             : 'none'
         }}
-        className={styles.header}
-      >
+        className={styles.header}>
         <HeaderComp selected={selected} />
       </header>
       <header
@@ -214,8 +229,7 @@ const Header = ({ selected }) => {
             : 'none'
         }}
         className={styles.header}
-        id={styles.copy}
-      >
+        id={styles.copy}>
         <HeaderComp selected={selected} />
       </header>
     </>
