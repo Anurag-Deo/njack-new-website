@@ -157,6 +157,12 @@ const MenuDrawer = ({
         href="/apeireon">
         Apeireon
       </Link>
+      <Link
+        style={{ fontSize: '20px', color: '#ff9f69' }}
+        id={selected == 'Report' ? styles.selected : undefined}
+        href="/report-cheating">
+        Report Cheating
+      </Link>
     </section>
   );
 };

@@ -56,7 +56,11 @@ async function getAllReports() {
   return new Promise(async (resolve, reject) => {
     const reportsCol = collection(db, 'reports');
     const reportsSnapshot = await getDocs(reportsCol);
-    const reports = reportsSnapshot.docs.map((doc) => doc.data());
+    const reports = reportsSnapshot.docs.map((doc) => {
+      let data = doc.data();
+      data.id = doc.id;
+      return data;
+    });
     resolve(reports);
     return;
   });

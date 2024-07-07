@@ -59,3 +59,12 @@
   outline: none;
   margin-top: 10px;
 }
+.statusURL {
+  box-sizing: border-box;
+  max-width: 500px;
+  background-color: rgb(44, 44, 44);
+  padding: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  border-radius: 20px;
+}
