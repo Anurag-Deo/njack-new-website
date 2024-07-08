@@ -55,6 +55,8 @@ export default function CheckStatus({}) {
 }
 const AdminSec = ({ reports, pwd }) => {
   const [allDone, setAllDone] = useState(true);
+  const filtersPossible = ['All', 'Pending', 'Cheater', 'Innocent'];
+  const [filter, setFilter] = useState('Pending');
   const updateReport = (report, status) => {
     report.status = status;
     const id = report.id;
@@ -73,8 +75,24 @@ const AdminSec = ({ reports, pwd }) => {
   };
   return (
     <div className={styles.adminSec}>
+      <div className={styles.tabContainer}>
+        {filtersPossible.map((thisFilter) => {
+          return (
+            <div
+              className={
+                filter == thisFilter ? (styles.tabButton, styles.active) : styles.tabButton
+              }
+              onClick={() => {
+                setFilter(thisFilter);
+              }}>
+              {thisFilter}
+            </div>
+          );
+        })}
+      </div>
+
       {reports.map((report) => {
-        if (report.status != 'Pending') {
+        if (filter != 'All' && report.status != filter) {
           return <></>;
         }
         if (allDone) {

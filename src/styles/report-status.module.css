@@ -31,6 +31,9 @@
   padding: 2em 1em;
   border-radius: 10px;
   margin: 2em 0em;
+  max-width: 90vw;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 .report div {
   font-weight: 300;
@@ -49,4 +52,19 @@
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.tabContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.tabButton {
+  color: rgb(181, 181, 181);
+  transition: 0.5s;
+  width: max-content;
+  cursor: pointer;
+}
+.active {
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid white;
 }
