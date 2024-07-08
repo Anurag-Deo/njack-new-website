@@ -70,7 +70,7 @@ async function handler(req, res) {
   // Run the cors middleware
   await cors(req, res);
 
-  const pwdHash = '$2a$10$yRTweO.3SY9pEo.iZp99GeHAAYv3sftmEDR8PVCuOIPyvvBRbEuD2';
+  const pwdHash = '$2a$10$wfdsUgoEYU16YzBy8lvWteOBS2On0OA0jJpu3b5.gjO//PxTuhd7y';
   if (req.method === 'POST') {
     try {
       const body = JSON.parse(req.body);
