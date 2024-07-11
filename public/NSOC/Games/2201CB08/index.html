@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle - IIT Patna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bigContainer">
+        <div id="header">
+           
+            <div class="startGame">
+                <h1 class="st">Let's Solve the Puzzle!</h1>
+                <button id="startButton">Start Game</button>
+            </div>
+        </div>
+        <div class="instruction" id="ins">
+            <h1>Instructions</h1>
+            <ul>
+                <li>Click the "Start Game" button to begin.</li>
+                <li>The game board will appear, and the timer will start.</li>
+                <li>Take pieces from the bottom boxes and place them in the correct order in the top boxes to complete the image.</li>
+                <li>Good luck, and enjoy the game!</li>
+            </ul>
+        </div>
+        <div id="container">
+            <div class="messages"><h1 id="message"></h1></div>
+        
+            <div id="board"></div>
+        
+           
+            <div class="timer"><p>Timer: <span id="timer">00:00</span></p></div>
+            <div class="turn"><h1>Turns: <span id="turns">0</span></h1></div>
+            <div id="pieces"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:sticky;
+    top:0;
+    cursor:pointer;
+    height:30%;
+    
+    
+}
+.nav-list{
+    display:flex;
+    
+width: 50vw;
+/* height: 50%; */
+/* background-color: rgb(1, 20, 14); */
+align-items:center;
+background:none;
+/* justify-content:center; */
+}
+.nav-list li{
+list-style: none;
+padding: 26px 30px;
+/* display:flex; */
+}
+.nav-list li a{
+text-decoration: none;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:18px;
+
+}
+.nav-list li a:hover{color:grey}
+.logo img{
+    height:200px;
+    width:200px;
+    border: solid white;
+    border-radius:50%;
+    margin-right: 70px;
+
+}
+.rightNav{
+    
+    width:50%;
+    text-align:right;
+    
+#search{
+    padding:5px;
+    font-size:18px;
+    border: 2px solid violet;
+    border-radius:6px;
+    margin-top:8px;
+}
+
+}
+.background{
+    background: rgba(0, 0, 0, 0.8) url('ohho.jpg');
+    
+    background-size:cover;
+    background-blend-mode: darken;
+    object-fit: cover;
+    width:100vw;
+    /* height:100vh; */
+
+}
+.box-main{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    font-family: 'Gill Sans';
+    max-width:50%;
+    margin:auto;
+    text-align: center;
+}
+.firstSection{
+    height:100vh;
+}
+.firstHalf{
+width:80%;
+display:flex;
+justify-content:center;
+align-items: center;
+flex-direction: column;
+}
+.secondHalf{
+    width:30%;
+}
+.secondHalf img{
+    /* width:70%; */
+    width:270px;
+    height:270px;
+    
+    border:3px solid black;
+    border-radius:200px;
+}
+.text-big{
+    font-size:50px;
+}
+.text-small{
+    font-size:25px;
+}
+.btn{
+    padding:8px 20px;
+    margin:7px;
+    border:2px solid white;
+    border-radius:8px;
+    font-size:18px;
+    background:none;
+    color:white;
+    cursor:pointer;
+}
+.btn-sm{
+    padding: 6px 10px;
+    vertical-align:middle;
+
+}
+.game a button{
+    height:80px;
+    width:150px;
+    border:4px solid rgb(5, 90, 6);
+    background-color: rgb(75, 255, 47);
+    border-radius:5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+}
+.game a button h1{
+    color:rgb(3, 50, 18)
+    
+}
+.game a button:hover{
+    background-color:rgb(111, 203, 114);
+cursor: pointer;}

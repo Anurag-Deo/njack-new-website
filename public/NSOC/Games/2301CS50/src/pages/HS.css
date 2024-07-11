@@ -1,0 +1,33 @@
+html{
+    background-color: black;
+}
+.main{
+    background-image: url("./src/images/treasure_hunt.jpg");
+    background-color: black;
+    box-shadow: rgba(255, 217, 0, 0.755);
+    border: 2px solid gold;
+}
+.questions{
+    background-color: black;
+    padding: 15px;
+    color: gold;
+    margin: auto;
+}
+.questions h2{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.option {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .selected-option {
+    background-color: #283800; /* Highlight color */
+  }
+  

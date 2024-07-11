@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Codeforces User Rating Variation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0b3d91;
+            color: #cfcfcf;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h2, h3 {
+            color: #f4d03f;
+            text-shadow: 2px 2px 4px #000;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        input {
+            width: 250px;
+            background-color: #1f4e79;
+            color: #f4d03f;
+        }
+        button {
+            background-color: #1f4e79;
+            color: #f4d03f;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #306aba;
+            transform: scale(1.1);
+        }
+        .user-box {
+            background: #3e70b2;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            color: #fff;
+        }
+        .user-box:hover {
+            transform: translateY(-10px);
+        }
+        .highlight {
+            font-weight: bold;
+            color: #f4d03f;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Codeforces Handles:</h2>
+    <input type="text" id="handle1" placeholder="Handle 1">
+    <input type="text" id="handle2" placeholder="Handle 2">
+    <input type="text" id="handle3" placeholder="Handle 3">
+    <h2>Enter Predicted Increase/Decrease (Ex: +45 or -67):</h2>
+    <input type="number" id="prediction1" placeholder="Prediction for Handle 1">
+    <input type="number" id="prediction2" placeholder="Prediction for Handle 2">
+    <input type="number" id="prediction3" placeholder="Prediction for Handle 3">
+    <button onclick="calculateTotalVariation()">Calculate Variation</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function getUserInfo(handle) {
+            var apiUrl = `https://codeforces.com/api/user.info?handles=${handle}&checkHistoricHandles=false`;
+
+            try {
+                let response = await fetch(apiUrl);
+                let data = await response.json();
+
+                if (data.status === "OK") {
+                    return data.result[0];
+                } else {
+                    throw new Error("User not found or API issue.");
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                return null;
+            }
+        }
+
+        async function calculateTotalVariation() {
+            // Get the handles from the input fields
+            var handle1 = document.getElementById("handle1").value;
+            var handle2 = document.getElementById("handle2").value;
+            var handle3 = document.getElementById("handle3").value;
+
+            // Get the predictions from the input fields
+            var prediction1 = parseInt(document.getElementById("prediction1").value);
+            var prediction2 = parseInt(document.getElementById("prediction2").value);
+            var prediction3 = parseInt(document.getElementById("prediction3").value);
+
+            // Fetch the user info
+            let userInfo1 = await getUserInfo(handle1);
+            let userInfo2 = await getUserInfo(handle2);
+            let userInfo3 = await getUserInfo(handle3);
+
+            if (userInfo1 === null || userInfo2 === null || userInfo3 === null) {
+                document.getElementById("result").innerText = "Error fetching one or more user info.";
+                return;
+            }
+
+            // Calculate the differences
+            var difference1 = Math.abs(prediction1);
+            var difference2 = Math.abs(prediction2);
+            var difference3 = Math.abs(prediction3);
+
+            // Calculate the total variation
+            var totalVariation = difference1 + difference2 + difference3;
+
+            // Create a string with the user information
+            var userInfoString = `
+                <div class="user-box">
+                    <p class="highlight">Handle 1: ${userInfo1.handle}</p>
+                    <p>Rating: ${userInfo1.rating}</p>
+                    <p>Max Rating: ${userInfo1.maxRating}</p>
+                    <p>Organization: ${userInfo1.organization || 'N/A'}</p>
+                </div>
+                <div class="user-box">
+                    <p class="highlight">Handle 2: ${userInfo2.handle}</p>
+                    <p>Rating: ${userInfo2.rating}</p>
+                    <p>Max Rating: ${userInfo2.maxRating}</p>
+                    <p>Organization: ${userInfo2.organization || 'N/A'}</p>
+                </div>
+                <div class="user-box">
+                    <p class="highlight">Handle 3: ${userInfo3.handle}</p>
+                    <p>Rating: ${userInfo3.rating}</p>
+                    <p>Max Rating: ${userInfo3.maxRating}</p>
+                    <p>Organization: ${userInfo3.organization || 'N/A'}</p>
+                </div>
+                <h3>Total Absolute Variation: ${totalVariation}</h3>
+            `;
+
+            // Display the user information and total variation
+            document.getElementById("result").innerHTML = userInfoString;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.blink{
+    animation: blink 1s infinite;
+
+}
+.announcement{
+    color: yellow ;
+}
+.question{
+    padding: 10px;
+    position: absolute;
+    background-color: black;
+    color: gold;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.some{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+button{
+    margin: 10px;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

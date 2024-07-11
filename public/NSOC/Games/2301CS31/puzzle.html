@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Puzzle</title>
+    <style>
+        /* External CSS styles from provided file */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #board-container {
+            width: 50%; /* Adjust the width as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #board {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            width: 100%; /* Ensure the board takes full width within its container */
+        }
+
+        #board img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        /* Bubble animation styles */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .shape2 {
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            right: 15%;
+            animation-duration: 10s;
+        }
+
+        .shape3 {
+            width: 100px;
+            height: 100px;
+            bottom: 25%;
+            left: 10%;
+            animation-duration: 12s;
+        }
+
+        .shape4 {
+            width: 60px;
+            height: 60px;
+            bottom: 15%;
+            right: 20%;
+            animation-duration: 14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+    <script src="puzzle.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Slide Puzzle</h1>
+        <div id="board-container">
+            <div id="board"></div>
+        </div>
+        <h2>Turns: <span id="turns">0</span></h2>
+    </div>
+
+    <!-- Bubble animations -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+</body>
+</html>

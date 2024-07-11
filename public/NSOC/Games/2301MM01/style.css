@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0c67ae;
+    background-color: #aed8f8;
+}
+.gamezone{
+    display: flex;
+}
+.logo {
+    height: 125px;
+    width: 450px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-bottom: 15px;
+    
+}
+.score{
+    margin-left: 8.5vw;
+    margin-top: 10px;
+}
+.image{
+    text-align: center;
+}
+.game{
+    
+    margin-left: 10vw;
+    margin-top: 5vh;
+    width: 50vw;
+}
+.rules{
+    width: 50vw;
+    margin-top: 10vh;
+    margin-left: 25px;
+    
+}
+
+#board {
+    width: 361px;
+    height: 362px;
+    background-color: lightblue;
+    border: 10px solid #0c67ae;
+    margin: 0 ;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 118px;
+    height: 118px;
+    border: 1px solid #0c67ae;
+}
+
+img{
+    cursor: pointer;
+}
+
+.restart-button {
+    background-color:#084777;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  

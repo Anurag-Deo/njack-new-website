@@ -1,0 +1,55 @@
+
+.exam-schedule {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    color: gold; /* Text color */
+  }
+  
+  table {
+    width: 80vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: 20px auto;
+  }
+  
+  th, td {
+    border: 1px solid gold; /* Border color */
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #333; /* Dark background for headers */
+    color: gold; /* Header text color */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #222; /* Dark background for even rows */
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #111; /* Darker background for odd rows */
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 50vw;
+    margin: 20px auto;
+    gap: 10px; 
+    padding: 10px;
+  }
+  button {
+    background-color: black; /* Button background */
+    border: 1px solid gold; /* Button border */
+    color: gold; /* Button text */
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #222; /* Change background on hover */
+  }

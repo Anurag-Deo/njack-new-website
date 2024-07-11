@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Start Game</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container start-game-container">
+    <h1>Start the Game!</h1>
+    <div class="player-details">
+      <p>Player: <span id="player-name"></span></p>
+      <p>Highest Score: <span id="highest-score"></span></p>
+    </div>
+    <button class="start-btn" id="start-btn">Start Game</button>
+    <div id="poppers-container"></div>
+  </div>
+  <div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+  </div>
+  <script>
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentPlayer = users.find(u => u.rollNumber === '12345');
+    if (currentPlayer) {
+      document.getElementById('player-name').textContent = currentPlayer.name;
+      document.getElementById('highest-score').textContent = currentPlayer.highestScore || 0;
+    } else {
+      document.getElementById('player-name').textContent = 'Guest';
+      document.getElementById('highest-score').textContent = 0;
+    }
+    document.getElementById('start-btn').addEventListener('click', () => {
+      launchPoppers();
+      setTimeout(() => {
+        window.location.href = 'puzzle.html';
+      }, 3000);
+    });
+
+    function launchPoppers() {
+      const poppersContainer = document.getElementById('poppers-container');
+      poppersContainer.innerHTML = '';
+      for (let i = 0; i < 20; i++) {
+        const popper = document.createElement('div');
+        popper.classList.add('popper');
+        popper.style.left = Math.random() * 100 + 'vw';
+        popper.style.animationDuration = Math.random() * 2 + 3 + 's';
+        poppersContainer.appendChild(popper);
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 2;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .player-details {
+      margin-bottom: 20px;
+    }
+
+    .gate-image img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .start-btn {
+      background: #4CAF50;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .shape1 {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .shape2 {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      right: -100px;
+    }
+
+    .shape3 {
+      width: 150px;
+      height: 150px;
+      bottom: 100px;
+      right: -50px;
+    }
+
+    .shape4 {
+      width: 250px;
+      height: 250px;
+      top: 50px;
+      left: -80px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .popper {
+      position: absolute;
+      bottom: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      border-radius: 50%;
+      animation: pop 3s ease forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</body>
+
+</html>

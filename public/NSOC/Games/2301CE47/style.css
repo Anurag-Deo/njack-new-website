@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #09203F 20%, #537895 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 850px;
+  gap: 30px;
+  padding: 30px 20px;
+  background: #d6e8f7;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.heading h1 {
+  font-size: clamp(3rem, 10vw, 7rem);
+  padding-bottom: 30px;
+  color: #d6e8f7;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+  color: #d6e8f7;
+  margin-bottom: 1.5rem;
+}
+
+.hangman-box img {
+  user-select: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.hangman-box h1 {
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  text-align: center;
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.hangman-box p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.game-box .word-display {
+  gap: 10px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-display .letter {
+  width: clamp(20px, 5vw, 28px);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #000;
+}
+
+.word-display .letter.guessed {
+  margin: -20px 0 15px;
+  border-color: transparent;
+}
+
+.game-box h4 {
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.game-box h4 b {
+  font-weight: 600;
+}
+
+.game-box .guesses-text b {
+  color: #b96464;
+}
+
+.game-box .keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+:where(.game-modal, .keyboard) button {
+  color: #d6e8f7;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #09203F;
+}
+
+.keyboard button {
+  padding: 7px;
+  width: calc(100% / 9 - 5px);
+  min-width: 30px;
+}
+
+.keyboard button[disabled] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+:where(.game-modal, .keyboard) button:hover {
+  background: #393b64;
+}
+
+.game-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 0 10px;
+  transition: opacity 0.4s ease;
+}
+
+.game-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s 0.4s ease;
+}
+
+.game-modal .content {
+  padding: 30px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.game-modal img {
+  max-width: 130px;
+  margin-bottom: 20px;
+}
+
+.game-modal img[src="images/victory.gif"] {
+  margin-left: -10px;
+}
+
+.game-modal h4 {
+  font-size: clamp(1.2rem, 3vw, 1.53rem);
+}
+
+.game-modal p {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  margin: 15px 0 30px;
+  font-weight: 500;
+}
+
+.game-modal p b {
+  color: #979ac7;
+  font-weight: 600;
+}
+
+.game-modal button {
+  padding: 12px 23px;
+}
+/* Adding responsive design*/
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 60px 40px;
+    gap: 70px;
+  }
+
+  .word-display .letter {
+    margin-bottom: 40px;
+  }
+
+  .word-display .letter.guessed {
+    margin: -40px 0 35px;
+  }
+
+  .game-box .keyboard {
+    margin-top: 40px;
+  }
+}

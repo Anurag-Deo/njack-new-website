@@ -17,6 +17,15 @@ const nextConfig = {
       }
     ],
     formats: ['image/avif', 'image/webp']
+  },
+  async redirects() {
+    return [
+      {
+        source: '/nsoc/games',
+        destination: '/nsoc/games/index.html',
+        permanent: true
+      }
+    ];
   }
 };
 

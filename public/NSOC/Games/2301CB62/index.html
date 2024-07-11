@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac a Neelगाय</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="heading">
+            <h1>Whac a Neelगाय</h1>
+            <button id="play-button">Play</button>
+            <button id="instructions-button">Instructions</button>
+        </div>
+    </div>
+    <div id="game-screen" style="display:none;">
+        <div class="heading">
+            <h1>Whac a Neelगाय</h1>
+            <h1 id="score">0</h1>
+        </div>
+        <div id="board"></div>
+    </div>
+    <div id="game-over-screen" style="display:none;">
+        <div class="heading">
+            <h1>Game Over ❌</h1>
+            <h2 id="final-score"></h2>
+            <button id="play-again-button">Play Again</button>
+            <button id="back-to-loading-button">Loading Screen</button>
+        </div>
+    </div>
+    <div id="instructions-screen" style="display:none;">
+        <div class="heading">
+            <h1 style="font-weight: bold;">Instructions</h1>
+            <p style="font-weight: 700;">You are the guard of IIT Patna. The students travel generally through bicycles in the campus.
+                You are in duty so save the students from getting hit by Neelगाय. The game is as follows:
+                 
+            </p>
+                    <li style="font-weight: 800;">
+                    Hit the Neelगाय to get 10 points per each hit
+                    </li>
+                    <li style="font-weight: 800;">Trying to Hit a student? it's GAME OVER ❌</li>
+                
+            <button id="back-to-loading-from-instructions-button">Back to Loading Screen</button>
+        </div>
+    </div>
+</body>
+</html>
