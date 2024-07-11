@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,600;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,600;1,900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -65,6 +65,25 @@ h1 {
   font-weight: 900;
   text-align: center;
 }
+blockquote {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgb(54, 54, 54);
+  margin: 1em;
+  border-radius: 10px;
+  border-left: 10px solid #ffd500;
+}
+blockquote p {
+  color: white;
+  font-size: 1.2rem;
+}
+@media (min-width: 800px) {
+  blockquote {
+    display: none;
+  }
+}
+
 .card {
   width: 300px;
   object-fit: cover;
