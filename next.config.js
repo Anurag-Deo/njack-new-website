@@ -22,7 +22,7 @@ const nextConfig = {
     return [
       {
         source: '/nsoc/games',
-        destination: '/NSOC/Games/index.html',
+        destination: '/nsoc/games/index.html',
         permanent: true
       }
     ];
