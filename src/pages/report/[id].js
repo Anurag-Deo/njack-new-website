@@ -113,6 +113,9 @@ const AdminSec = ({ reports, pwd }) => {
               Other Proofs: <span>{report.otherProofs}</span>
             </div>
             <div>
+             Comments: <span>{report.comments}</span>
+            </div>
+            <div>
               Status: <span>{report.status}</span>
             </div>
             <div>
