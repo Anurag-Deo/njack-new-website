@@ -1,0 +1,21 @@
+.main {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    max-width: 800px;
+    background-color: #000000;
+    color: gold;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}

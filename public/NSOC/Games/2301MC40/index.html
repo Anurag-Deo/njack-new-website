@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            background-color: black;
+        }
+
+        #NSOC {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            margin-top: 0px;
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(to right, #f62153, #e7883e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .game-container {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            height: 500px;
+            border: 5px solid;
+            border-image-slice: 1;
+            border-width: 5px;
+            border-image-source: linear-gradient(to right, #f62153, #e7883e);
+            border-radius: 10px;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .score-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .sentence-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #sentence {
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .correct {
+            color: rgb(12, 206, 12);
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .block {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 162, 0, 0.875);
+            position: absolute;
+            border-radius: 50%;
+            top: 0;
+            box-shadow: 0 0 10px 10px rgba(255, 0, 0, 0.5);
+            animation: glow 1s infinite alternate;
+            z-index: 0;
+        }
+
+        #inputField {
+            margin-top: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 18px;
+            width: 90%;
+            background-color: black;
+            color: white;
+        }
+
+        .boundary {
+            width: 100%;
+            height: 5px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            bottom: 0;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        #resetBtn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transform: translate(140px, -20px);
+            color: white;
+            background: linear-gradient(to right, #f62153, #e7883e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: all 0.3s ease-out;
+        }
+
+        #resetBtn:hover {
+            background: linear-gradient(to right, #f62153, #e7883e);
+            -webkit-text-fill-color: black;
+        }
+
+        .level-up {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(0, 145, 255);
+            opacity: 0;
+            transition: opacity 2s ease-out;
+        }
+
+        .popup {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 18px;
+            color: rgb(255, 102, 0);
+            background: rgba(255, 255, 255, 0);
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            color: rgb(222, 127, 127);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            z-index: 10;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        .rules {
+            padding: 20px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        #startBtn {
+            padding: 5px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transform: translateY(-22px);
+            background-color: rgb(222, 127, 127);
+        }
+
+        .hidden {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        @media (max-width: 500px) {
+            .rules {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p id="NSOC">NJACK SUMMER OF CODE</p>
+    <div class="game-container">
+        <div class="overlay" id="overlay">
+            <div class="rules">
+                <h2>Game Rules</h2>
+                <p>1. Type the sentence shown on the screen as quickly and accurately as possible.</p>
+                <p>2. Each correct word you type pushes the round block upward.</p>
+                <p>3. The block descends slowly over time, increasing in speed as you level up.</p>
+                <p>4. Avoid letting the block touch the white boundary line at the bottom.</p>
+                <p>5. The game ends if the block touches the boundary line.</p>
+                <p>6. Your score is based on the number of correct characters typed.</p>
+                <p>7. Your typing speed (WPM) and accuracy will be displayed at the end.</p>
+                <p>8. Backspace is not allowed and will be ignored.</p>
+                <p>9. Good luck and have fun!</p>
+            </div>
+            <button id="startBtn">Start</button>
+        </div>
+        <div class="score-container">
+            <p style="color: white; z-index: 1;">Score: <span id="score">0</span></p>
+            <p style="color: white; z-index: 1;">High Score: <span id="highScore">0</span></p>
+        </div>
+        <div class="sentence-container" style=" z-index: 1;">
+            <p id="sentence" style="color: white; z-index: 1;">Start typing...</p>
+        </div>
+        <div class="block" id="block"></div>
+        <input type="text" id="inputField" placeholder="Type here..." disabled>
+        <div class="boundary" id="boundary"></div>
+        <p id="message" style=" z-index: 1;"></p>
+        <button id="resetBtn" onclick="startGame()" disabled>Reset</button>
+        <div class="level-up" id="levelUp" style=" z-index: 1;">Level Up!</div>
+        <div class="popup" id="popup" style=" z-index: 1;">Backspace is not allowed!</div>
+    </div>
+    <script>
+        const block = document.getElementById('block');
+        const input = document.getElementById('inputField');
+        const sentenceElem = document.getElementById('sentence');
+        const message = document.getElementById('message');
+        const boundary = document.getElementById('boundary');
+        const scoreElem = document.getElementById('score');
+        const highScoreElem = document.getElementById('highScore');
+        const levelUpElem = document.getElementById('levelUp');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        const sentences = [
+            "Elon Musk is also participating in the NJACK Summer of Code.",
+            "This game will be the winner of the nsoc submissions.",
+            "Our Hemant took really great sessions on web development.",
+            "IIT Patna soon will be the best IIT in India.",
+            "Full form of NJACK is Nerds Jointly Addressing Computer Knowledge.",
+            "Our another subcoord Rishi got bronze in India Skills 2024.",
+            "Get a chance to win a pastry treat in Nescafe if you continue playing this for 2 minutes with accuracy greater than 95 percent.",
+            "The chance to win the pastry treat will be decided by a hand cricket match between us if you have fulfilled the other criteria.",
+        ];
+        let currentSentence = "";
+        let blockSpeed = 1;
+        let blockPosition = 0;
+        let score = 0;
+        let highScore = localStorage.getItem('highScore') || 0;
+        let inputIndex = 0;
+        let startTime;
+        let totalTyped = 0;
+        let correctTyped = 0;
+        let gameInterval;
+        let levelInterval;
+
+        highScoreElem.textContent = highScore;
+
+        startBtn.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                startCountdown();
+            }, 500);
+        });
+
+        function startCountdown() {
+            let countdown = 3;
+            message.textContent = countdown;
+            message.style.color = 'white';
+            message.style.fontSize = '40px';
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                if (countdown > 0) {
+                    message.textContent = countdown;
+                } else {
+                    clearInterval(countdownInterval);
+                    message.textContent = "";
+                    startGame();
+                }
+            }, 1000);
+        }
+
+        function getRandomSentence() {
+            return sentences[Math.floor(Math.random() * sentences.length)];
+        }
+
+        function calculateWPM() {
+            const elapsedTime = (Date.now() - startTime) / 1000 / 60;
+            return (totalTyped / 5) / elapsedTime;
+        }
+
+        function calculateAccuracy() {
+            return (correctTyped / totalTyped) * 100;
+        }
+
+        function startGame() {
+            clearInterval(gameInterval);
+            clearInterval(levelInterval);
+            currentSentence = getRandomSentence();
+            displaySentence(currentSentence);
+            input.value = "";
+            message.textContent = "";
+
+            blockPosition = 0;
+            block.style.top = blockPosition + 'px';
+
+            score = 0;
+            scoreElem.textContent = score;
+
+            inputIndex = 0;
+            totalTyped = 0;
+            correctTyped = 0;
+
+            blockSpeed = 0.8;
+            input.disabled = false;
+            resetBtn.disabled = false;
+            input.focus();
+            startTime = Date.now();
+
+            gameInterval = setInterval(() => {
+                blockPosition += blockSpeed;
+                block.style.top = blockPosition + 'px';
+
+                if (blockPosition + block.offsetHeight >= boundary.offsetTop) {
+                    clearInterval(gameInterval);
+                    clearInterval(levelInterval);
+                    const wpm = calculateWPM();
+                    const accuracy = calculateAccuracy();
+                    message.textContent = `Game Over! WPM: ${wpm.toFixed(2)}, Accuracy: ${accuracy.toFixed(2)}%`;
+                    message.style.color = 'red';
+                    message.style.fontSize = '18px';
+                    message.style.fontStyle = 'Georgia';
+                    message.style.transform = 'translateY(-10px)';
+                    if (score > highScore) {
+                        highScore = score;
+                        highScoreElem.textContent = highScore;
+                        localStorage.setItem('highScore', highScore);
+                    }
+                    input.disabled = true;
+                    resetBtn.disabled = false;
+                }
+            }, 50);
+
+            levelInterval = setInterval(() => {
+                blockSpeed += 0.5;
+                showLevelUp();
+            }, 7000);
+        }
+
+        function displaySentence(sentence) {
+            sentenceElem.innerHTML = '';
+            sentence.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.innerText = char;
+                sentenceElem.appendChild(span);
+            });
+        }
+
+        function showLevelUp() {
+            levelUpElem.style.opacity = 1;
+            setTimeout(() => {
+                levelUpElem.style.opacity = 0;
+            }, 2000);
+        }
+
+        function showPopup() {
+            popup.style.opacity = 1;
+            setTimeout(() => {
+                popup.style.opacity = 0;
+            }, 2000);
+        }
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace') {
+                e.preventDefault();
+                showPopup();
+            }
+        });
+
+        input.addEventListener('input', () => {
+            const userInput = input.value;
+            const sentenceArray = sentenceElem.querySelectorAll('span');
+            totalTyped++;
+
+            if (userInput[inputIndex] === currentSentence[inputIndex]) {
+                sentenceArray[inputIndex].classList.add('correct');
+                sentenceArray[inputIndex].classList.remove('incorrect');
+                correctTyped++;
+                score++;
+                scoreElem.textContent = score;
+
+                blockPosition = Math.max(0, blockPosition - 5);
+                block.style.top = blockPosition + 'px';
+
+            } else {
+                sentenceArray[inputIndex].classList.add('incorrect');
+                sentenceArray[inputIndex].classList.remove('correct');
+
+                blockPosition = Math.min(boundary.offsetTop - block.offsetHeight, blockPosition + 10);
+                block.style.top = blockPosition + 'px';
+            }
+            inputIndex++;
+            if (inputIndex >= currentSentence.length) {
+                currentSentence = getRandomSentence();
+                displaySentence(currentSentence);
+                input.value = "";
+                inputIndex = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>

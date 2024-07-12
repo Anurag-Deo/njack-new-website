@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.user-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-box:nth-child(odd) {
+    background-color: #e1f5fe;
+}
+
+.user-box:nth-child(even) {
+    background-color: #ffecb3;
+}
+
+.user-handle {
+    font-weight: bold;
+    color: #333;
+}
+
+.user-rating {
+    color: #666;
+}
+
+.wallet {
+    position: fixed;
+    right: 400px; /* Adjust the distance from the right edge */
+    top: 40px; /* Adjust the distance from the top edge */
+    background-color: #4caf50;
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wallet h2 {
+    margin: 0 0 10px 0;
+}
+
+.wallet p {
+    margin: 0;
+    font-size: 18px;
+}

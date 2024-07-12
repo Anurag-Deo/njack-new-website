@@ -1,0 +1,76 @@
+body{
+    /* background-image: url("./src/images/intro2.jpg"); */
+    background-size: cover;
+}
+.int,.inta{
+    
+    color: white;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    
+}
+.int::-webkit-scrollbar{
+    display: none;
+}
+.inta::-webkit-scrollbar{
+    display: none;
+}
+.int, .inta ,.intb,.intc, .intd, .inte, .intf{
+    cursor: pointer;
+}
+.introduction{
+    font-family: "Cookie", cursive;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 60px;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: underline;
+    animation: popUp 1s forwards;
+
+}
+.blink{
+    animation: blink 1s infinite;
+
+}
+.intb,.intc,.intd,.inte,.intf{
+    flex-direction: column;
+    color: white;
+}
+.play{
+    font-size: 2em;
+    opacity: 0;
+    transform: scale(0);
+    animation: popUp 1s forwards;
+    background-color: black;
+    color: gold;
+}
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+  

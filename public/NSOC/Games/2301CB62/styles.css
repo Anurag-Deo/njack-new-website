@@ -1,0 +1,130 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: url("./images/watchman.jpg") no-repeat center center/cover;
+}
+
+#loading-screen, #game-over-screen, #instructions-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s;
+}
+
+#game-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#board {
+    width: 90vw;
+    max-width: 540px;
+    height: 90vw;
+    max-height: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("./images/grass.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    animation: fadeIn 1s;
+}
+
+#board div {
+    width: 30%;
+    height: 30%;
+    background-image: url("./images/pipe.png");
+    background-size: cover;
+    transition: transform 0.2s;
+}
+
+#board div:hover {
+    transform: scale(1.1);
+}
+
+#board div img {
+    width: 70%;
+    height: 70%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+h1 {
+    color: black;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.heading {
+    background-color: rgba(0, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+    animation: popIn 0.5s;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#play-button, #instructions-button, #play-again-button, #back-to-loading-button, #back-to-loading-from-instructions-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#play-button:hover, #instructions-button:hover, #play-again-button:hover, #back-to-loading-button:hover, #back-to-loading-from-instructions-button:hover {
+    background-color: lightgray;
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    #board {
+        width: 95vw;
+        height: 95vw;
+    }
+    
+    #board div {
+        width: 32%;
+        height: 32%;
+    }
+    
+    #board div img {
+        width: 60%;
+        height: 60%;
+    }
+    
+    #play-button, #instructions-button, #play-again-button, #back-to-loading-button, #back-to-loading-from-instructions-button {
+        font-size: 16px;
+    }
+}

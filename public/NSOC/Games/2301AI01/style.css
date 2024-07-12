@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.mode {
+    /* font-size: medium; */
+    
+    position: fixed;
+    right: 2vw;
+    cursor: pointer;
+}
+
+
+body {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 100vh;
+    color: white;
+    /* background: linear-gradient(to bottom, teal 0%, rgb(164, 164, 134) 100%); */
+    background: black;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    padding-top: 10px;
+    /* color: white; */
+}
+
+#inpt {
+    height: 35px;
+    width: 60px;
+    border-radius: 4px;
+    /* background-color: #212529; */
+    margin-left: 10px;
+    /* color: rgb(244, 212, 212); */
+    border: 4px solid rgb(0, 0, 0);
+    font-size: large;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+.wrapper {
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: linear-gradient(to bottom, teal 0%, rgb(164, 164, 134) 100%);
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.cards,
+.card,
+.view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cards {
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card {
+    cursor: pointer;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+}
+
+.card.shake {
+    animation: shake 0.35s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.15);
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(0-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    background: rgb(244, 212, 212);
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 6px;
+    transition: transform 0.25s linear;
+    backface-visibility: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .font-view span {
+    font-size: 40px;
+    /* color: #374df7; */
+}
+button{
+    width: 150px;
+    font-size: larger;
+    background: teal;
+    margin-top: 30px;
+    height: 60px;
+    font-weight: 800;
+    padding: 10px;
+    text-transform: uppercase;
+    border: 1px solid rgb(98, 235, 235);
+    box-shadow: 5px 5px;
+    border-radius: 50%;
+}
+.card .back-view {
+    transform: rotateY(-180deg);
+    object-fit: contain;
+}
+.congrats
+{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    display: none;
+    height: 500px;
+    width: 500px;
+    flex-direction: column;
+}
+.card .back-view img {
+    width: 100%;
+    height: 100%;
+}
+
+.card.flip .font-view {
+    transform: rotateY(180deg);
+}
+
+.card.flip .back-view {
+    transform: rotateY(0);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY MATCHING Game</title>
+    <style>
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('logo2.jpeg');
+            /* background-size: cover; */
+            /* background-repeat: no-repeat; */
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        .main{
+            text-align: center;
+            font-size: 100px;
+            font-style: italic;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 300px;
+        }
+
+        #nextpage {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .info {
+    position: absolute;
+    white-space: nowrap;
+    animation: animation 15s linear 5;
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
+    margin-top: 105px;
+  margin-left: 14px;
+  }
+
+  @keyframes animation {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+    <div class="main">
+        WELCOME!!
+    </div>
+    <div class="info">
+        This is a Memory Matching Game based on the Theme 'IIT PATNA' . You will be given a timer of 1 minute. You need to match the images by flapping the card and when two identical images are flapped , You score a point . 
+    </div>
+    <div class="button-container">
+        <button id="nextpage">LET'S START -></button>
+    </div>
+</div>
+    <script>
+        document.getElementById('nextpage').addEventListener('click', function() {
+          window.location.href = 'game.html';
+        });
+      </script>
+  
+</body>
+
+</html>

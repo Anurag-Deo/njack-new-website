@@ -1,0 +1,80 @@
+    body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.CLH {
+  background-image: url(./images1/32640d9a547cc1731ae3381fc8179349cbcf24f9.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  border: 10px solid black;
+  border-radius: 20%;
+  height: 200px;
+  width: 200px;
+}
+
+
+  .admin {
+    background-image: url(./images1/06e6f2990cc4498dad363332a30a240a0ae94d75.jpg); 
+    background-size: cover; 
+    background-position: center; 
+    border: 10px solid black;
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+  }
+  
+
+
+.library {
+  background-image: url(./images1/a66b2420f1fdce31bca3a493d5be108ffd875551.jpg); 
+    background-size: cover; 
+    background-position: center; 
+    border: 10px solid black;
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+}
+
+.hostel {
+  background-image: url(./images1/e663fff492ecb154886bfaa1baa697b8a9bcf1b3.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  border: 10px solid black;
+  border-radius: 20%;
+  height: 200px;
+  width: 200px;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}

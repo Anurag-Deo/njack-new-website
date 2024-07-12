@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: gold;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    max-width: 800px;
+    background-color: #222;
+  }
+  
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .option {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .sub-option {
+    margin-left: 20px;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  

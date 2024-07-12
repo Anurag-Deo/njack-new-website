@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,600;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  font-family: Poppins, sans-serif;
+  background-color: rgb(27, 27, 27);
+}
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.container {
+  padding: 3rem;
+}
+header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 3ch;
+}
+header h1 {
+  font-weight: 500;
+  font-size: 1.3em;
+  text-align: center;
+}
+h2 {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  font-weight: 700;
+  padding: 0;
+  background: linear-gradient(#ffffff 50%, #000000);
+  background: -webkit-linear-gradient(#ffffff 50%, #000000);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1 {
+  margin-top: 0;
+  padding: 0;
+  font-size: 4em;
+  background: linear-gradient(-45deg, #ff007b, #e7ff5d);
+  background: -webkit-linear-gradient(-45deg, #ff007b, #e7ff5d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  text-align: center;
+}
+blockquote {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: rgb(54, 54, 54);
+  margin: 1em;
+  border-radius: 10px;
+  border-left: 10px solid #ffd500;
+}
+blockquote p {
+  color: white;
+  font-size: 1.2rem;
+}
+@media (min-width: 800px) {
+  blockquote {
+    display: none;
+  }
+}
+
+.card {
+  width: 300px;
+  object-fit: cover;
+  margin: 1rem;
+  color: white !important;
+  text-decoration: none !important;
+  background-color: rgb(63, 63, 63);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+a {
+  text-decoration: none !important;
+}
+.card img {
+  border-radius: 20px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.card .detail {
+  padding: 1rem;
+}
+.detail .name {
+  font-size: 1.4rem;
+}
+.detail .roll {
+  opacity: 0.7;
+}

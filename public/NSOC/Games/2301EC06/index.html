@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>WELCOME TO IIT PATNA</h1>
+    <P id="p1">(For students who have joined the institute in the year 2023 or 2024)</P>
+    <div class="please">
+        <p id="p2">Please select your year of joining this institute.</p>
+        <p id="p3">Please specify your gender as well in the below checklist.</p>
+        <p id="p4">Please choose the place where you are arriving.</p>
+    </div>
+
+    <div class="select">
+        <div class="in">
+            <select id="year">
+                <option value="2023">2023</option>
+                <option value="2024" selected>2024</option>
+            </select>
+        </div>
+        <div class="in">
+            <select id="gender">
+                <option value="female">Female</option>
+                <option value="male" selected>Male</option>
+            </select>
+        </div>
+        <div class="in">
+            <select id="place">
+                <option value="jp">Jayprakash Narayan International Airport</option>
+                <option value="br">Bihta Railway Station</option>
+                <option value="pr">Patna Railway Juntion</option>
+                <option value="ppr">Patliputra Railway Juntion</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        
+    </div>
+    <button id="bttn" type="submit">Submit</button>
+    <script src="script.js"></script>
+</body>
+
+</html>

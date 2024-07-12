@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 25px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1em;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+button,
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.start-game-container .start-btn {
+  background-color: #ff6347;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+
+  font-size: 1.5em;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-game-container .start-btn:hover {
+  background-color: #e5533d;
+  transform: scale(1.05);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 15%;
+  animation-duration: 8s;
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  top: 30%;
+  right: 15%;
+  animation-duration: 10s;
+}
+
+.shape3 {
+  width: 100px;
+  height: 100px;
+  bottom: 25%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.shape4 {
+  width: 60px;
+  height: 60px;
+  bottom: 15%;
+  right: 20%;
+  animation-duration: 14s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.player-details {
+  margin-bottom: 20px;
+}
+
+.player-details p {
+  font-size: 1.2em;
+}
+
+.gate-image img {
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+#poppers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.popper {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff6347;
+  border-radius: 50%;
+  animation: pop 5s ease-in-out forwards;
+}
+
+.register-link {
+  font-weight: bold;
+  color: #fbff00;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(2);
+    opacity: 0;
+  }
+}

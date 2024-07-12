@@ -1,0 +1,77 @@
+/* CSS styles from puzzle.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    width: 100%;
+    /* Ensure the board takes full width within its container */
+}
+
+#board img {
+    width: 100px;
+    height: 100px;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* Additional styles from external CSS */
+.player-details {
+    margin-bottom: 20px;
+}
+
+.player-details p {
+    font-size: 1.2em;
+}
+
+.gate-image img {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+#poppers-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.popper {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6347;
+    border-radius: 50%;
+    animation: pop 5s ease-in-out forwards;
+}
+
+.register-link {
+    font-weight: bold;
+    color: #fbff00;
+}
+
+@keyframes pop {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(2);
+        opacity: 0;
+    }
+}

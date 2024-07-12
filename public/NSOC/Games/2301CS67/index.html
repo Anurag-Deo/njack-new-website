@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iEducate</title>
+    <link rel="stylesheet" href="style 2.css">
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo">
+                <img height="60px" width="60px" src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png" alt="logo">
+            </div>
+            <li><a href="IIT Patna Ranklist.html">Home</a></li>
+            <li><a href="IIT Patna Ranklist.html">Top Performer</a></li>
+            <li><a href="IIT Patna Ranklist.html">Your Score</a></li>
+            <li><a href="IIT Patna Ranklist.html">Rules of Game</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+    
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">"Code is like humor. When you have to explain it, it’s bad."</p>
+                <p class="text-small">"First, solve the problem. Then, write the code."</p>
+                <p class="text-small">"Experience is the name everyone gives to their mistakes."</p>
+                <p class="text-small">"In order to be irreplaceable, one must always be different."</p>
+                <div class="buttons">
+                    <button class="btn" onclick="startCoding()">Start Coding</button>
+                    <button class="btn" onclick="viewTutorials()">View Tutorials</button>
+                </div>
+                <div class="game">
+                    <a href="Prediction Game Page.html"><button><h1>Start</h1></button></a>
+                </div>
+            </div>
+
+            <div class="secondHalf">
+                <img src="https://www.pngfind.com/pngs/m/58-585589_patna-july-iit-patna-logo-png-transparent-png.png" alt="computer hona chiye">
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function startCoding() {
+            alert("Let's start coding!");
+        }
+
+        function viewTutorials() {
+            alert("Viewing tutorials...");
+        }
+
+        document.querySelector('.btn-sm').addEventListener('click', function() {
+            const query = document.getElementById('search').value;
+            alert(`Searching for: ${query}`);
+        });
+    </script>
+</body>
+</html>
