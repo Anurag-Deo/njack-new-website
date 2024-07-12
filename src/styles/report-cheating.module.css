@@ -9,6 +9,7 @@
   position: relative;
   z-index: 2;
   padding: 2em;
+  padding-bottom: 0;
 }
 .parentDiv h1 {
   margin-block: 1em;
