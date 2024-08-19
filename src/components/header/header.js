@@ -40,18 +40,18 @@ const HeaderComp = ({ selected }) => {
           onMouseEnter={drawerHandleMouse}
           onMouseLeave={drawerHandleMouse}
           style={{ display: 'flex', height: '30px' }}>
-          <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
+          <a id={selected == 'Departments' ? styles.selected : undefined}>
             DEPARTMENTS
-          </Link>
+          </a>
           {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
         </div>
         <div
           onMouseEnter={resourceDrawerHandleMouse}
           onMouseLeave={resourceDrawerHandleMouse}
           style={{ display: 'flex', height: '30px' }}>
-          <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
+          <a id={selected == 'Resources' ? styles.selected : undefined}>
             RESOURCES
-          </Link>
+          </a>
           {isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
         </div>
         <Link
@@ -131,18 +131,18 @@ const MenuDrawer = ({
         onMouseEnter={drawerHandleMouse}
         onMouseLeave={drawerHandleMouse}
         style={{ display: 'flex' }}>
-        <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
+        <a id={selected == 'Departments' ? styles.selected : undefined}>
           DEPARTMENTS
-        </Link>
+        </a>
         {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
       </div>
       <div
         onMouseEnter={resourceDrawerHandleMouse}
         onMouseLeave={resourceDrawerHandleMouse}
         style={{ display: 'flex' }}>
-        <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
+        <a id={selected == 'Resources' ? styles.selected : undefined}>
           RESOURCES
-        </Link>
+        </a>
         {isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
       </div>
       <Link id={selected == 'Gallery' ? styles.selected : undefined} href="/gallery">
@@ -152,16 +152,16 @@ const MenuDrawer = ({
         CONTACT
       </Link>
       <Link
-        style={{ fontSize: '20px', color: '#ff9f69' }}
+        style={{ color: '#ff9f69' }}
         id={selected == 'Apeireon' ? styles.selected : undefined}
         href="/apeireon">
-        Apeireon
+        APEIREON
       </Link>
       <Link
-        style={{ fontSize: '20px', color: '#ff9f69' }}
+        style={{ color: '#ff9f69' }}
         id={selected == 'Report' ? styles.selected : undefined}
         href="/report-cheating">
-        Report Cheating
+        REPORT CHEATING
       </Link>
     </section>
   );

@@ -36,13 +36,13 @@
   }
 
   .header .drawer {
-    left: calc(25% - calc(0.8rem * 5.5));
+    left: calc(25% - calc(0.8rem * 14));
     top: 100%;
     margin-right: 20px;
   }
 
   .header .resourcedrawer {
-    left: calc(45% - calc(0.8rem * 5.5));
+    left: calc(45% - calc(0.8rem * 16));
     top: 100%;
     margin-right: 20px;
   }
