@@ -12,7 +12,7 @@
   z-index: 10;
 }
 
-@media (max-width: 899.5px) {
+@media (max-width: 1023.5px) {
   .header {
     --_menu-visible: none;
     --_menuButton-visible: flex;
@@ -22,27 +22,16 @@
     right: 50vw;
     top: 0%;
   }
-
-  .header .resourcedrawer {
-    right: 50vw;
-    top: 0%;
-  }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .header {
     --_menu-visible: flex;
     --_menuButton-visible: none;
   }
 
   .header .drawer {
-    left: calc(25% - calc(0.8rem * 5.5));
-    top: 100%;
-    margin-right: 20px;
-  }
-
-  .header .resourcedrawer {
-    left: calc(45% - calc(0.8rem * 5.5));
+    transform: translateX(-25%);
     top: 100%;
     margin-right: 20px;
   }
@@ -61,6 +50,7 @@
   min-height: var(--_img-min-h);
   position: relative;
   min-width: 50%;
+  height: 30px;
 }
 
 .header div,
@@ -85,26 +75,9 @@
 }
 
 .header .drawer {
-  --_drawer-visible: none;
   background-color: rgba(10, 10, 10, 0.8);
   box-shadow: 0px 0px 20px 10px rgba(28, 27, 28, 0.8) inset;
-  display: var(--_drawer-visible);
-  flex-direction: column;
-  height: fit-content;
-  min-width: fit-content;
-  padding: 20px 0;
-  position: absolute;
-  top: 30px;
-  row-gap: 20px;
-  width: calc(30% - calc(0.8rem * 1.5));
-  z-index: 2;
-}
-
-.header .resourcedrawer {
-  --_resourcedrawer-visible: none;
-  background-color: rgba(10, 10, 10, 0.8);
-  box-shadow: 0px 0px 20px 10px rgba(28, 27, 28, 0.8) inset;
-  display: var(--_resourcedrawer-visible);
+  display: flex;
   flex-direction: column;
   height: fit-content;
   min-width: fit-content;
@@ -120,23 +93,10 @@
   .header .drawer {
     top: 0;
   }
-
-  .header .resourcedrawer {
-    top: 0;
-  }
 }
 
-.drawer a,
-.resourcedrawer a {
+.drawer a {
   padding-inline: 20px;
-}
-
-.drawer.isVisible {
-  --_drawer-visible: flex;
-}
-
-.resourcedrawer.isVisible {
-  --_resourcedrawer-visible: flex;
 }
 
 #copy {
@@ -151,7 +111,7 @@
   padding-right: 4%;
 }
 
-#menuButton img {
+#menuButton > img {
   padding: 20%;
   filter: invert(1);
   cursor: pointer;

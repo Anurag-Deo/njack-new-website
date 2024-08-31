@@ -4,24 +4,30 @@ import Link from 'next/link';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const HeaderComp = ({ selected }) => {
-  const [isDrawerVisible, setDrawerVisibility] = useState(false);
-  const [isResourceDrawerVisible, setResourceDrawerVisibility] = useState(false);
+  const [isMobileView, setMobileView] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setMobileView(window.screen.availWidth < 1024);
+    });
+    setMobileView(window.screen.availWidth < 1024);
+  }, []);
+
+  const [drawerVisiblity, setDrawerVisibility] = useState('hidden');
   const [isMenuVisible, setMenuVisibility] = useState(false);
 
-  const drawerHandleMouse = () => {
-    setDrawerVisibility((current) => !current);
-  };
-  const resourceDrawerHandleMouse = () => {
-    setResourceDrawerVisibility((current) => !current);
-  };
+  function drawerHandleMouse(id) {
+    if (drawerVisiblity == id) setDrawerVisibility('hidden');
+    else setDrawerVisibility(id);
+  }
+
   const menuHandleMouseClick = () => {
     setMenuVisibility((current) => !current);
   };
 
   const menuHandleMouseLeave = () => {
     setMenuVisibility(false);
-    setDrawerVisibility(false);
-    setResourceDrawerVisibility(false);
+    setDrawerVisibility('hidden');
   };
 
   return (
@@ -29,147 +35,80 @@ const HeaderComp = ({ selected }) => {
       <Link href="/">
         <img id={styles.logo} loading="lazy" src="/home/NJACK logo.svg" alt="NJACK Logo" />
       </Link>
-      <section>
-        <Link
-          style={{ height: '30px' }}
-          id={selected == 'Home' ? styles.selected : undefined}
-          href="/">
+      <section
+        id={isMobileView && isMenuVisible ? styles.menuDrawerVisible : ''}
+        onMouseLeave={menuHandleMouseLeave}>
+        <Link id={selected == 'Home' ? styles.selected : undefined} href="/">
           HOME
         </Link>
         <div
-          onMouseEnter={drawerHandleMouse}
-          onMouseLeave={drawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}>
-          <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
-            DEPARTMENTS
-          </Link>
-          {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
+          onMouseEnter={() => setDrawerVisibility('dept')}
+          onMouseLeave={() => setDrawerVisibility('hidden')}
+          onClick={() => drawerHandleMouse('dept')}
+          style={{ display: 'flex' }}>
+          <a id={selected == 'Departments' ? styles.selected : undefined}>DEPARTMENTS</a>
+          {drawerVisiblity == 'dept' && <DeptDrawer />}
         </div>
         <div
-          onMouseEnter={resourceDrawerHandleMouse}
-          onMouseLeave={resourceDrawerHandleMouse}
-          style={{ display: 'flex', height: '30px' }}>
-          <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
-            RESOURCES
-          </Link>
-          {isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
+          onMouseEnter={() => setDrawerVisibility('res')}
+          onMouseLeave={() => setDrawerVisibility('hidden')}
+          onClick={() => drawerHandleMouse('res')}
+          style={{ display: 'flex' }}>
+          <a id={selected == 'Resources' ? styles.selected : undefined}>RESOURCES</a>
+          {drawerVisiblity == 'res' && <ResourceDrawer />}
         </div>
-        <Link
-          style={{ height: '30px' }}
-          id={selected == 'Gallery' ? styles.selected : undefined}
-          href="/gallery">
+        <Link id={selected == 'Gallery' ? styles.selected : undefined} href="/gallery">
           GALLERY
         </Link>
-        <Link
-          style={{ height: '30px' }}
-          id={selected == 'Contact' ? styles.selected : undefined}
-          href="/contact-us">
+        <Link id={selected == 'Contact' ? styles.selected : undefined} href="/contact-us">
           CONTACT
         </Link>
-        {/* New Apeireon button */}
         <Link
-          style={{
-            height: '30px',
-            backgroundColor: '#ff9f69',
-            color: 'black',
-            padding: '5px 10px',
-            borderRadius: '5px',
-            marginLeft: '10px'
-          }}
+          style={
+            isMobileView
+              ? { color: '#ff9f69' }
+              : {
+                  backgroundColor: '#ff9f69',
+                  color: 'black',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  marginLeft: '10px'
+                }
+          }
           id={selected == 'Apeireon' ? styles.selected : undefined}
           href="/apeireon">
           Apeireon
         </Link>
         <Link
-          style={{
-            height: '30px',
-            border: '1px solid #ff9f69',
-            color: '#ff9f69',
-            padding: '5px 10px',
-            borderRadius: '5px',
-            marginLeft: '10px'
-          }}
+          style={
+            isMobileView
+              ? { color: '#ff9f69' }
+              : {
+                  border: '1px solid #ff9f69',
+                  color: '#ff9f69',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  marginLeft: '10px'
+                }
+          }
           id={selected == 'Report' ? styles.selected : undefined}
           href="/report-cheating">
           Report Cheating
         </Link>
       </section>
-      <div id={styles.menuButton} onMouseLeave={menuHandleMouseLeave}>
-        <GiHamburgerMenu color="white" size={25} onClick={menuHandleMouseClick} />
-        {isMenuVisible && (
-          <MenuDrawer
-            selected={selected}
-            isDrawerVisible={isDrawerVisible}
-            drawerHandleMouse={drawerHandleMouse}
-            resourceDrawerHandleMouse={resourceDrawerHandleMouse}
-            isResourceDrawerVisible={isResourceDrawerVisible}
-          />
-        )}
-      </div>
+
+      {isMobileView && (
+        <div id={styles.menuButton}>
+          <GiHamburgerMenu color="white" size={25} onClick={menuHandleMouseClick} />
+        </div>
+      )}
     </>
   );
 };
 
-const MenuDrawer = ({
-  selected,
-  isDrawerVisible,
-  drawerHandleMouse,
-  resourceDrawerHandleMouse,
-  isResourceDrawerVisible
-}) => {
+const DeptDrawer = () => {
   return (
-    <section id={styles.menuDrawerVisible}>
-      <Link id={selected == 'Home' ? styles.selected : undefined} href="/">
-        HOME
-      </Link>
-      {/* 480 for Home + 4 */}
-      {/* Change @media (max-width: __px) accordingly <Link id={selected == 'Resources' ? styles.selected : undefined} href='/resources'>
-					RESOURCES
-				</Link> */}
-      {/* 400 for Home + 3*/}
-      <div
-        onMouseEnter={drawerHandleMouse}
-        onMouseLeave={drawerHandleMouse}
-        style={{ display: 'flex' }}>
-        <Link id={selected == 'Departments' ? styles.selected : undefined} href="#">
-          DEPARTMENTS
-        </Link>
-        {isDrawerVisible && <DeptDrawer isVisible={isDrawerVisible} />}
-      </div>
-      <div
-        onMouseEnter={resourceDrawerHandleMouse}
-        onMouseLeave={resourceDrawerHandleMouse}
-        style={{ display: 'flex' }}>
-        <Link id={selected == 'Resources' ? styles.selected : undefined} href="#">
-          RESOURCES
-        </Link>
-        {isResourceDrawerVisible && <ResourceDrawer isVisible={isResourceDrawerVisible} />}
-      </div>
-      <Link id={selected == 'Gallery' ? styles.selected : undefined} href="/gallery">
-        GALLERY
-      </Link>
-      <Link id={selected == 'Contact' ? styles.selected : undefined} href="/contact-us">
-        CONTACT
-      </Link>
-      <Link
-        style={{ fontSize: '20px', color: '#ff9f69' }}
-        id={selected == 'Apeireon' ? styles.selected : undefined}
-        href="/apeireon">
-        Apeireon
-      </Link>
-      <Link
-        style={{ fontSize: '20px', color: '#ff9f69' }}
-        id={selected == 'Report' ? styles.selected : undefined}
-        href="/report-cheating">
-        Report Cheating
-      </Link>
-    </section>
-  );
-};
-
-const DeptDrawer = ({ isVisible }) => {
-  return (
-    <div className={`${styles.drawer} ${isVisible ? styles.isVisible : ''}`}>
+    <div className={styles.drawer}>
       <Link className={styles.drawerText} href="/departments/cp">
         Competitive Programming
       </Link>
@@ -185,9 +124,9 @@ const DeptDrawer = ({ isVisible }) => {
     </div>
   );
 };
-const ResourceDrawer = ({ isVisible }) => {
+const ResourceDrawer = () => {
   return (
-    <div className={`${styles.resourcedrawer} ${isVisible ? styles.isVisible : ''}`}>
+    <div className={styles.drawer}>
       <Link href="/resources/cp">Competitive Programming</Link>
       <Link href="/resources/dev-os">Dev & OS</Link>
       <Link href="/resources/ml">Machine Learning</Link>
