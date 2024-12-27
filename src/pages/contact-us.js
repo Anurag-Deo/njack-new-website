@@ -18,7 +18,7 @@ const ContactUs = () => {
             <a href="mailto:njack@iitp.ac.in" style={{ color: 'gainsboro' }}>
               njack@iitp.ac.in
             </a>
-            <p>+91 63880 17215</p>
+            <p>+91 90276 04845</p>
             <br />
             <p>Address</p>
             <p style={{ fontWeight: 'bold', color: 'aliceblue' }}>
