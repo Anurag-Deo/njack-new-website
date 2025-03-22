@@ -31,6 +31,7 @@
     "react-notion-x": "^6.16.0",
     "react-parallax-tilt": "^1.7.147",
     "react-tsparticles": "^2.10.1",
+    "simple-react-lightbox": "^3.6.9-0",
     "tsparticles": "^2.10.1"
   },
   "devDependencies": {
