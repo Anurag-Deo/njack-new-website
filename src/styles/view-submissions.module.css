@@ -1,0 +1,392 @@
+/* styles/view-submissions.module.css */
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100vh;
+  padding-top: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ff9f69;
+}
+
+/* Login Form Styles */
+.loginContainer {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #ccc;
+}
+
+.formGroup input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #2d3748;
+  background: #1a202c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.loginButton {
+  background: #ff9f69;
+  color: #000;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loginButton:hover {
+  background: #ffbb88;
+}
+
+/* Filters Styling */
+.filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: 8px;
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput, .trackSelect, .sortSelect {
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 1px solid #2d3748;
+  background: #1a202c;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.searchInput {
+  min-width: 300px;
+}
+
+.sortDirectionButton {
+  background: #2d3748;
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sortDirectionButton:hover {
+  background: #3a4a61;
+}
+
+.logoutButton {
+  margin-left: auto;
+  background: #4a5568;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logoutButton:hover {
+  background: #2d3748;
+}
+
+/* Submissions Grid */
+.submissionCount {
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.submissionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.submissionCard {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2d3748;
+}
+
+.submissionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-color: #ff9f69;
+}
+
+.teamName {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #ff9f69;
+  font-size: 1.3rem;
+}
+
+.submissionCardMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.submissionTrack {
+  background: #2d3748;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #ccc;
+}
+
+.submissionDate {
+  color: #ccc;
+}
+
+.submissionPreview {
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.viewDetails {
+  text-align: center;
+  background: #2d3748;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.submissionCard:hover .viewDetails {
+  background: #ff9f69;
+  color: #000;
+}
+
+.noSubmissions {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #ccc;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 8px;
+}
+
+/* Error State */
+.error {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(220, 38, 38, 0.1);
+  color: #f87171;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+/* Detail View */
+.detailView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.detailViewContent {
+  background: #1e293b;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.detailViewContent h2 {
+  color: #ff9f69;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.submissionMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.track {
+  background: #2d3748;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.timestamp {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.submissionSection {
+  margin-bottom: 2rem;
+}
+
+.submissionSection h3 {
+  color: #fff;
+  border-bottom: 1px solid #2d3748;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.linkItem strong {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.linkItem a {
+  color: #63b3ed;
+  word-break: break-all;
+  transition: color 0.2s;
+}
+
+.linkItem a:hover {
+  color: #90cdf4;
+  text-decoration: underline;
+}
+
+.submissionId {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #2d3748;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .searchInput {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .filterGroup {
+    width: 100%;
+  }
+  
+  .logoutButton {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .detailViewContent {
+    padding: 1.5rem;
+  }
+  
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,204 @@
+.parentDiv {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  color: white;
+  position: relative;
+  z-index: 2;
+  padding: 2em;
+  padding-bottom: 0;
+}
+
+.parentDiv h1 {
+  margin-block: 1em;
+  font-size: 2.2em;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 800px;
+}
+
+.parentDiv form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3em;
+  width: 100%;
+}
+
+.parentDiv form input[type='submit'] {
+  cursor: pointer;
+  margin-bottom: 2em;
+  font-size: 1.3em;
+  font-weight: 700;
+  background: #ff9f69;
+  color: black;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  border: none;
+  width: auto;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+}
+
+.input-container label {
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+.input-container label .hint {
+  font-size: 0.8em;
+}
+
+.input-container a {
+  color: rgb(192, 217, 255);
+}
+
+.input-container input, 
+.input-container textarea,
+.input-container select {
+  font-size: 1.3em;
+  padding: 0.7em 1em;
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+  color: white;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-container textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.input-container select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.wordCount {
+  text-align: right;
+  font-size: 0.9em;
+  margin-top: 0.3em;
+  color: #ccc;
+}
+
+.successCard {
+  box-sizing: border-box;
+  max-width: 500px;
+  background-color: rgb(44, 44, 44);
+  padding: 3rem;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.countdownContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.countdownContainer h2 {
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  color: #ff9f69;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 159, 105, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  min-width: 70px;
+  text-align: center;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 1em;
+  color: #ccc;
+}
+
+.expired {
+  font-size: 1.8em;
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+.expiredMessage {
+  background: rgba(255, 107, 107, 0.15);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .countdown {
+    gap: 1rem;
+  }
+  
+  .number {
+    font-size: 2em;
+    min-width: 60px;
+  }
+  
+  .parentDiv {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown {
+    flex-wrap: wrap;
+  }
+  
+  .timeUnit {
+    flex-basis: 40%;
+    margin-bottom: 1rem;
+  }
+  
+  .parentDiv h1 {
+    font-size: 1.8em;
+  }
+}
