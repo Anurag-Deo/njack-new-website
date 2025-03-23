@@ -37,7 +37,7 @@ const SubmissionForm = ({ children, style }) => {
   const [submissionId, setSubmissionId] = useState(null);
 
   // Set your deadline date here
-  const deadlineDate = new Date('March 23, 2025 18:00:00').getTime();
+  const deadlineDate = new Date('March 23, 2025 19:00:00').getTime();
 
   useEffect(() => {
     const timer = setInterval(() => {
