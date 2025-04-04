@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from '../styles/hackathon-submission.module.css';
+import styles from '../../styles/hackathon-submission.module.css';
 
 import { Footer, Header } from '@/components';
 import Loader from '@/components/Loader';
@@ -7,6 +7,7 @@ import Loader from '@/components/Loader';
 import Head from 'next/head';
 import Background from '@/components/Background';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
 
@@ -168,7 +169,15 @@ const SubmissionForm = ({ children, style }) => {
       <img src="/hackmatrix/hackmatrix.png" alt="" className=''/>
         <h2>Submission Deadline</h2>
         {isExpired ? (
-          <div className={styles.expired}>Submission period has ended</div>
+          <>
+            <div className={styles.expired}>Submission period has ended</div>
+            <Link href="/hackmatrix/leaderboard">
+              <button className={styles.leaderboardButton}>View Leaderboard</button>
+            </Link>
+            <Link href="/hackmatrix/submission">
+              <button className={styles.leaderboardButton}>View submissions</button>
+            </Link>
+          </>
         ) : (
           <div className={styles.countdown}>
             <div className={styles.timeUnit}>
