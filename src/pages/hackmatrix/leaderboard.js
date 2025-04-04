@@ -10,7 +10,7 @@ export default function Leaderboard() {
 
     const winners = [
         { position: "1st", team: "Zenith", category: "Overall Winner" },
-        { position: "2nd", team: "Brainy Bots", category: "Overall Runner-up" },
+        { position: "2nd", team: "Brainy Bots", category: "First Runner-up" },
         { position: "3rd", team: "NibbleSquad", category: "Second Runner-up" },
         { position: "Newbie", team: "Corbett", category: "Best Newcomer" },
         { position: "Hardware", team: "MirazeX", category: "Best Hardware Use" },
