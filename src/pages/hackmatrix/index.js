@@ -168,7 +168,6 @@ const SubmissionForm = ({ children, style }) => {
       <div className={styles.countdownContainer}>
       <img src="/hackmatrix/hackmatrix.png" alt="" className=''/>
           <>
-            <div className={styles.expired}>View result</div>
             <Link href="/hackmatrix/leaderboard">
               <button className={styles.leaderboardButton}>View Leaderboard</button>
             </Link>
