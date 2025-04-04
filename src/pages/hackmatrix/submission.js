@@ -127,77 +127,6 @@ export default function ViewSubmissions() {
     { value: 'open', label: 'Open Innovation' }
   ];
 
-  // Submission Detail View Component
-  const SubmissionDetailView = ({ submission }) => {
-
-
-      if (!submission) return null;
-    
-    return (
-      <div className={styles.detailView}>
-        <div className={styles.detailViewContent}>
-          <button className={styles.closeButton} onClick={closeDetailView}>×</button>
-          
-          <h2>{submission.teamName}</h2>
-          <div className={styles.submissionMeta}>
-            <span className={styles.track}>
-              {trackOptions.find(t => t.value === submission.track)?.label || submission.track}
-            </span>
-            <span className={styles.timestamp}>
-              Submitted: {new Date(submission.timestamp).toLocaleString()}
-            </span>
-          </div>
-          
-          <div className={styles.submissionSection}>
-            <h3>Project Description</h3>
-            <p className={styles.description}>{submission.description}</p>
-          </div>
-          
-          <div className={styles.submissionSection}>
-            <h3>Project Links</h3>
-            <div className={styles.linkGrid}>
-              <div className={styles.linkItem}>
-                <strong>GitHub Repository:</strong>
-                <a href={submission.githubRepo} target="_blank" rel="noopener noreferrer">
-                  {submission.githubRepo}
-                </a>
-              </div>
-              
-              <div className={styles.linkItem}>
-                <strong>Demo Video:</strong>
-                <a href={submission.demoVideo} target="_blank" rel="noopener noreferrer">
-                  {submission.demoVideo}
-                </a>
-              </div>
-              
-              {submission.pptLink && (
-                <div className={styles.linkItem}>
-                  <strong>Presentation:</strong>
-                  <a href={submission.pptLink} target="_blank" rel="noopener noreferrer">
-                    {submission.pptLink}
-                  </a>
-                </div>
-              )}
-              
-              {submission.extraFiles && (
-                <div className={styles.linkItem}>
-                  <strong>Additional Files:</strong>
-                  
-                    {submission.extraFiles}
-             
-                </div>
-              )}
-            </div>
-          </div>
-          
-          <div className={styles.submissionId}>
-            <strong>Submission ID:</strong> {submission.id}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <>
       <Head>
@@ -286,7 +215,9 @@ export default function ViewSubmissions() {
                           {submission.description.substring(0, 150)}
                           {submission.description.length > 150 ? '...' : ''}
                         </p>
-                        <div className={styles.viewDetails}>View Details</div>
+                        <a href={submission.pptLink} target="_blank">
+                          <div className={styles.viewDetails}>View Details</div>
+                        </a>
                       </div>
                     ))
                   ) : (
@@ -296,10 +227,6 @@ export default function ViewSubmissions() {
                   )}
                 </div>
               </div>
-            )}
-            
-            {selectedSubmission && (
-              <SubmissionDetailView submission={selectedSubmission} />
             )}
           </>
       </div>
