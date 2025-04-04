@@ -158,9 +158,21 @@
 
 .expired {
   font-size: 1.8em;
-  color: #ff6b6b;
+  color: #fd9e68;
   font-weight: bold;
   margin: 1.5rem 0;
+}
+
+.leaderboardButton {
+  background: #ff9f69;
+  color: black;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 6px;
 }
 
 .expiredMessage {
@@ -171,6 +183,65 @@
   text-align: center;
   font-size: 1.2em;
   width: 100%;
+}
+
+.leaderboardContainer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+
+.leaderboardTitle {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.winnersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.winnerCard {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.winnerCard:hover {
+  transform: translateY(-5px);
+}
+
+.position {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.team {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+@media (max-width: 1024px) {
+  .winnersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -185,6 +256,12 @@
   
   .parentDiv {
     padding: 1em;
+  }
+
+  .winnersGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
 

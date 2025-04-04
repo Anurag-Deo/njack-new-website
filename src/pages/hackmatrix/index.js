@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from '../styles/hackathon-submission.module.css';
+import styles from '../../styles/hackathon-submission.module.css';
 
 import { Footer, Header } from '@/components';
 import Loader from '@/components/Loader';
@@ -7,6 +7,7 @@ import Loader from '@/components/Loader';
 import Head from 'next/head';
 import Background from '@/components/Background';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
 
@@ -166,70 +167,15 @@ const SubmissionForm = ({ children, style }) => {
     return (
       <div className={styles.countdownContainer}>
       <img src="/hackmatrix/hackmatrix.png" alt="" className=''/>
-        <h2>Submission Deadline</h2>
-        {isExpired ? (
-          <div className={styles.expired}>Submission period has ended</div>
-        ) : (
-          <div className={styles.countdown}>
-            <div className={styles.timeUnit}>
-              <span className={styles.number}>{timeLeft.days}</span>
-              <span className={styles.label}>Days</span>
-            </div>
-            <div className={styles.timeUnit}>
-              <span className={styles.number}>{timeLeft.hours}</span>
-              <span className={styles.label}>Hours</span>
-            </div>
-            <div className={styles.timeUnit}>
-              <span className={styles.number}>{timeLeft.minutes}</span>
-              <span className={styles.label}>Minutes</span>
-            </div>
-            <div className={styles.timeUnit}>
-              <span className={styles.number}>{timeLeft.seconds}</span>
-              <span className={styles.label}>Seconds</span>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
-
-  const SuccessCard = () => {
-    return (
-      <div className={styles.successCard}>
-        <div className="desc">
-          Your project has been successfully submitted! You can check the status of your submission at the link below.
-        </div>
-        <div
-          style={{
-            padding: '1em',
-            background: '#ff9f69',
-            color: 'black',
-            fontWeight: '500',
-            marginBlock: '1em',
-            borderRadius: '5px'
-          }}>
-          <div>Submission Link:</div>{' '}
-          <a href={submissionURL} style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap', color: 'black' }}>
-            {submissionURL}
-          </a>
-        </div>
-        <div
-          style={{
-            padding: '1em',
-            background: '#1e293b',
-            color: 'white',
-            fontWeight: '500',
-            marginBlock: '1em',
-            borderRadius: '5px'
-          }}>
-          <div>Submission ID:</div>{' '}
-          <span style={{ wordWrap: 'break-word', whiteSpace: 'pre-wrap', color: '#ff9f69' }}>
-            {submissionId}
-          </span>
-          <div style={{ marginTop: '0.5em', fontSize: '0.9em' }}>
-            Please save this ID for future reference
-          </div>
-        </div>
+          <>
+            <div className={styles.expired}>View result</div>
+            <Link href="/hackmatrix/leaderboard">
+              <button className={styles.leaderboardButton}>View Leaderboard</button>
+            </Link>
+            <Link href="/hackmatrix/submission">
+              <button className={styles.leaderboardButton}>View submissions</button>
+            </Link>
+          </>
       </div>
     );
   };
@@ -241,7 +187,7 @@ const SubmissionForm = ({ children, style }) => {
       ) : (
         <>
           <CountdownTimer />
-          
+{/*           
           {submissionURL != null ? (
             <SuccessCard />
           ) : (
@@ -326,7 +272,7 @@ const SubmissionForm = ({ children, style }) => {
               )}
               {children}
             </div>
-          )}
+          )} */}
         </>
       )}
     </>
